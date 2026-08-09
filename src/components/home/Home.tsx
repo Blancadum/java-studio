@@ -27,7 +27,7 @@ import {
 } from 'lucide-react';
 import JSZip from 'jszip';
 import { JavaFile, StudentPersonaMode } from '../../data/types';
-import { Reveal } from '../Reveal/Reveal';
+import { Reveal } from '../reveal/Reveal';
 import { ChipButton } from '../ChipButton/ChipButton';
 import styles from './Home.module.css';
 
