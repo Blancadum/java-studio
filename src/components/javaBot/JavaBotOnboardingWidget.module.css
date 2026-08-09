@@ -1,0 +1,100 @@
+@reference "../../index.css";
+.wrapper {
+  @apply fixed bottom-5 right-5 z-50 flex flex-col items-end pointer-events-none;
+}
+
+/* ── Panel ──────────────────────────────────────── */
+.panel {
+  @apply pointer-events-auto mb-3 w-90 sm:w-[420px] bg-slate-900 border border-slate-700/80 rounded-3xl shadow-2xl text-white overflow-hidden flex flex-col max-h-[560px];
+}
+.panelHeader {
+  @apply p-4 border-b border-slate-800 flex items-center justify-between;
+  background: linear-gradient(to right, theme('colors.slate.900'), theme('colors.slate.800'), theme('colors.amber.950'));
+}
+.botIcon {
+  @apply w-8 h-8 rounded-xl bg-amber-500 text-slate-950 flex items-center justify-center font-black shadow-md;
+}
+.panelTitle {
+  @apply text-xs font-black tracking-tight text-white flex items-center gap-1.5;
+}
+.panelTitleBadge {
+  @apply text-[10px] text-amber-400 bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/30;
+}
+.panelSubtitle {
+  @apply text-[10px] text-slate-400;
+}
+.closeBtn {
+  @apply p-1 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 transition-colors;
+}
+
+/* ── Body ───────────────────────────────────────── */
+.body {
+  @apply p-4 overflow-y-auto space-y-4 text-xs flex-1;
+}
+.welcomeBubble {
+  @apply flex gap-2.5;
+}
+.welcomeIcon {
+  @apply w-7 h-7 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center shrink-0;
+}
+.welcomeMsg {
+  @apply bg-slate-800 p-3 rounded-2xl border border-slate-700 text-slate-200 space-y-2 leading-relaxed;
+}
+
+/* ── Route options ──────────────────────────────── */
+.routeBtn {
+  @apply w-full text-left p-3 rounded-2xl bg-slate-800/80 hover:bg-slate-800 border border-slate-700 transition-all flex items-start gap-2.5;
+}
+.routeBtnIndigo  { @apply hover:border-indigo-500/50; }
+.routeBtnEmerald { @apply hover:border-emerald-500/50; }
+.routeBtnAmber   { @apply hover:border-amber-500/50; }
+.routeBtnSky     { @apply hover:border-sky-500/50; }
+
+.routeIconIndigo  { @apply p-1.5 rounded-lg bg-indigo-500/20 text-indigo-400 shrink-0 mt-0.5; }
+.routeIconEmerald { @apply p-1.5 rounded-lg bg-emerald-500/20 text-emerald-400 shrink-0 mt-0.5; }
+.routeIconAmber   { @apply p-1.5 rounded-lg bg-amber-500/20 text-amber-400 shrink-0 mt-0.5; }
+.routeIconSky     { @apply p-1.5 rounded-lg bg-sky-500/20 text-sky-400 shrink-0 mt-0.5; }
+
+.routeLabelIndigo  { @apply font-bold text-indigo-300 block mb-0.5; }
+.routeLabelEmerald { @apply font-bold text-emerald-300 block mb-0.5; }
+.routeLabelAmber   { @apply font-bold text-amber-300 block mb-0.5; }
+.routeLabelSky     { @apply font-bold text-sky-300 block mb-0.5; }
+.routeDesc { @apply text-[11px] text-slate-300; }
+
+/* ── Route detail CTA ───────────────────────────── */
+.detailBoxIndigo  { @apply p-3.5 bg-indigo-950/40 border border-indigo-500/30 rounded-2xl space-y-2 text-indigo-100; }
+.detailBoxEmerald { @apply p-3.5 bg-emerald-950/40 border border-emerald-500/30 rounded-2xl space-y-2 text-emerald-100; }
+.detailBoxAmber   { @apply p-3.5 bg-amber-950/40 border border-amber-500/30 rounded-2xl space-y-2 text-amber-100; }
+.detailBoxSky     { @apply p-3.5 bg-sky-950/40 border border-sky-500/30 rounded-2xl space-y-2 text-sky-100; }
+
+.detailTitleIndigo  { @apply flex items-center gap-2 font-bold text-indigo-300; }
+.detailTitleEmerald { @apply flex items-center gap-2 font-bold text-emerald-300; }
+.detailTitleAmber   { @apply flex items-center gap-2 font-bold text-amber-300; }
+.detailTitleSky     { @apply flex items-center gap-2 font-bold text-sky-300; }
+
+.ctaIndigo  { @apply w-full py-2.5 px-4 bg-indigo-500 hover:bg-indigo-400 text-slate-950 font-black rounded-xl transition-all shadow-md flex items-center justify-center gap-2 mt-2 text-xs; }
+.ctaEmerald { @apply w-full py-2.5 px-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black rounded-xl transition-all shadow-md flex items-center justify-center gap-2 mt-2 text-xs; }
+.ctaAmber   { @apply w-full py-2.5 px-4 bg-amber-500 hover:bg-amber-400 text-slate-950 font-black rounded-xl transition-all shadow-md flex items-center justify-center gap-2 mt-2 text-xs; }
+.ctaSky     { @apply w-full py-2.5 px-4 bg-sky-500 hover:bg-sky-400 text-slate-950 font-black rounded-xl transition-all shadow-md flex items-center justify-center gap-2 mt-2 text-xs; }
+
+.backBtn {
+  @apply w-full py-1.5 text-center text-[11px] text-slate-400 hover:text-slate-200 transition-colors;
+}
+
+/* ── Footer bar ─────────────────────────────────── */
+.footerBar {
+  @apply p-2.5 bg-slate-950 border-t border-slate-800 flex items-center justify-between text-[10px] text-slate-400;
+}
+.footerChatBtn {
+  @apply text-amber-400 hover:underline font-bold flex items-center gap-1;
+}
+
+/* ── FAB trigger ────────────────────────────────── */
+.fab {
+  @apply pointer-events-auto p-3.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold rounded-2xl shadow-2xl transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2.5 border border-amber-300/40;
+}
+.fabLabel {
+  @apply text-xs tracking-tight hidden sm:inline;
+}
+.pingOuter { @apply absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-slate-950 animate-ping; }
+.pingInner { @apply absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full border-2 border-slate-950; }

@@ -1,0 +1,207 @@
+@reference "../../index.css";
+/* ── Header ──────────────────────────────────────────────── */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: white;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* ── Brand ───────────────────────────────────────────────── */
+.brand {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #0f172a;
+  background: none;
+  border: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.brand:hover {
+  color: #475569;
+}
+
+/* ── Nav links ───────────────────────────────────────────── */
+.nav {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+@media (min-width: 768px) {
+  .nav {
+    display: flex;
+  }
+}
+
+.navLink {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #64748b;
+  transition: color 0.15s;
+  padding: 0;
+}
+
+.navLink:hover {
+  color: #0f172a;
+}
+
+.navLink:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ── Mode selector ───────────────────────────────────────── */
+.modeWrapper {
+  position: relative;
+}
+
+.modeTrigger {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #64748b;
+  transition: color 0.15s;
+  padding: 0;
+}
+
+.modeTrigger:hover {
+  color: #0f172a;
+}
+
+.modeDot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.chevron {
+  width: 0.875rem;
+  height: 0.875rem;
+  color: #94a3b8;
+  transition: transform 0.15s;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+/* ── Dropdown ────────────────────────────────────────────── */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 16rem;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  z-index: 50;
+}
+
+.dropdownItem {
+  width: 100%;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.1s;
+}
+
+.dropdownItem:hover {
+  background: #f8fafc;
+}
+
+.dropdownItem.active {
+  background: #f8fafc;
+}
+
+.dropdownItemDot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 0.375rem;
+}
+
+.dropdownItemLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.dropdownItemTitle {
+  font-size: 0.875rem;
+  color: #334155;
+}
+
+.dropdownItemTitle.active {
+  font-weight: 500;
+  color: #0f172a;
+}
+
+.dropdownItemDesc {
+  font-size: 0.75rem;
+  color: #94a3b8;
+}
+
+/* ── Right side ──────────────────────────────────────────── */
+.right {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 0.875rem;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.statusDot {
+  width: 0.375rem;
+  height: 0.375rem;
+  border-radius: 50%;
+  background-color: #22c55e;
+  flex-shrink: 0;
+}
+
+.userBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #64748b;
+  transition: color 0.15s;
+  padding: 0;
+}
+
+.userBtn:hover {
+  color: #0f172a;
+}

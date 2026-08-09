@@ -1,0 +1,6 @@
+{
+  "name": "Java II Review & Improvement Studio",
+  "description": "Analyze Java II project revisions (JAVAII_NO vs JAVAII-FIXED), review teacher recommendations, connect with Google Drive, and generate AI proposals to pass Java II.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

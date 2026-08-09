@@ -1,0 +1,95 @@
+@reference "../../index.css";
+.container {
+  @apply max-w-7xl mx-auto px-4 py-8 space-y-8;
+}
+
+/* ── Banner ─────────────────────────────────────── */
+.banner {
+  @apply bg-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-800 space-y-6;
+}
+.bannerTop {
+  @apply flex flex-col lg:flex-row lg:items-center justify-between gap-6 border-b border-slate-800 pb-6;
+}
+.bannerBadges {
+  @apply flex items-center gap-3 mb-2;
+}
+.bannerAuditBadge {
+  @apply px-2.5 py-1 rounded-md text-[11px] font-mono font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30;
+}
+.bannerTitle {
+  @apply text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-100;
+}
+.bannerSummary {
+  @apply text-slate-400 text-xs sm:text-sm mt-1 max-w-2xl;
+}
+.exportBtn {
+  @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs shadow-lg shadow-amber-500/20 transition-all;
+}
+
+/* ── Metric cards ───────────────────────────────── */
+.metricsGrid {
+  @apply grid grid-cols-1 sm:grid-cols-3 gap-4;
+}
+.metricCard {
+  @apply bg-slate-800/60 p-4 rounded-2xl border border-slate-700/60 flex items-center gap-4;
+}
+.metricIconAmber {
+  @apply w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center font-black text-xl border border-amber-500/20 shrink-0;
+}
+.metricIconEmerald {
+  @apply w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-black text-xl border border-emerald-500/20 shrink-0;
+}
+.metricIconBlue {
+  @apply w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center font-black text-xl border border-blue-500/20 shrink-0;
+}
+.metricLabel {
+  @apply text-[11px] font-bold text-slate-400 uppercase tracking-wider block;
+}
+.metricValue {
+  @apply text-sm font-extrabold text-slate-100;
+}
+.metricValueEmerald {
+  @apply text-sm font-extrabold text-emerald-400;
+}
+
+/* ── Strengths / Gaps ───────────────────────────── */
+.strengthsGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4 pt-2;
+}
+.strengthsBox {
+  @apply p-4 bg-emerald-950/30 rounded-2xl border border-emerald-900/60 text-xs text-emerald-200;
+}
+.strengthsTitle {
+  @apply font-bold uppercase text-[11px] tracking-wider text-emerald-400 mb-2 flex items-center gap-1.5;
+}
+.gapsBox {
+  @apply p-4 bg-rose-950/30 rounded-2xl border border-rose-900/60 text-xs text-rose-200;
+}
+.gapsTitle {
+  @apply font-bold uppercase text-[11px] tracking-wider text-rose-400 mb-2 flex items-center gap-1.5;
+}
+.list {
+  @apply space-y-1 list-disc list-inside;
+}
+
+/* ── Tabs ───────────────────────────────────────── */
+.tabBar {
+  @apply flex border-b border-slate-200 dark:border-slate-800 gap-2;
+}
+.tab {
+  @apply pb-3 px-4 font-bold text-xs sm:text-sm flex items-center gap-2 border-b-2 transition-all border-transparent text-slate-500 hover:text-slate-700 dark:hover:text-slate-300;
+}
+.tabActive {
+  @apply border-amber-500 text-amber-600 dark:text-amber-400;
+}
+
+/* ── Likelihood badges ──────────────────────────── */
+.badgeAlta {
+  @apply px-3 py-1 rounded-full text-xs font-black uppercase bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300 border border-emerald-300;
+}
+.badgeMedia {
+  @apply px-3 py-1 rounded-full text-xs font-extrabold uppercase bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 border border-amber-300;
+}
+.badgeBaja {
+  @apply px-3 py-1 rounded-full text-xs font-bold uppercase bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300 border border-rose-300;
+}

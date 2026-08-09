@@ -1,0 +1,893 @@
+@reference "../../index.css";
+
+.container {
+  @apply w-full bg-slate-50 text-slate-900 font-sans selection:bg-amber-300 selection:text-slate-950 relative overflow-hidden;
+}
+
+.heroSection {
+  @apply relative bg-gradient-to-b from-[#eef7ff] via-[#f5f3ff] to-slate-50 border-b border-slate-200/80 text-slate-900 pt-14 pb-24 px-4 sm:px-6 lg:px-8 overflow-hidden;
+}
+
+.heroGlow1 {
+  @apply absolute -top-32 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-r from-[#BFE0FB]/70 via-[#e0d5ff]/60 to-[#fde68a]/50 blur-[130px] rounded-full pointer-events-none;
+}
+
+.heroGlow2 {
+  @apply absolute top-1/3 -left-32 w-[550px] h-[550px] bg-gradient-to-tr from-sky-200/50 via-indigo-100/40 to-purple-200/40 blur-[120px] rounded-full pointer-events-none;
+}
+
+.heroGlow3 {
+  @apply absolute top-1/4 -right-32 w-[550px] h-[550px] bg-gradient-to-br from-amber-200/40 via-rose-100/30 to-sky-100/50 blur-[120px] rounded-full pointer-events-none;
+}
+
+.heroContent {
+  @apply max-w-5xl mx-auto text-center space-y-7 relative z-10;
+}
+
+.heroTag {
+  @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/80 border border-slate-200/90 text-xs font-mono text-slate-700 shadow-sm backdrop-blur-md;
+}
+
+.heroTagPulse {
+  @apply w-2 h-2 rounded-full bg-sky-400 animate-pulse;
+}
+
+.heroTagBrand {
+  @apply text-slate-500 font-bold;
+}
+
+.heroTagSeparator {
+  @apply text-slate-300;
+}
+
+.heroTagLink {
+  @apply text-pink-600 hover:text-purple-700 font-extrabold transition-colors hover:underline inline-flex items-center gap-1;
+}
+
+.headline {
+  @apply font-serif text-4xl sm:text-6xl md:text-7xl tracking-tight leading-[1.06] text-slate-900;
+}
+
+.headlineNormal {
+  @apply block font-normal;
+}
+
+.headlineGradient {
+  @apply block text-transparent bg-clip-text bg-gradient-to-r from-pink-600 via-purple-600 to-indigo-600 font-serif font-bold;
+}
+
+.subtitle {
+  @apply text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed font-sans;
+}
+
+.heroActions {
+  @apply flex flex-wrap items-center justify-center gap-3 pt-2;
+}
+
+.codePreviewCard {
+  @apply mt-12 bg-white/95 backdrop-blur-xl rounded-3xl border border-slate-200 shadow-2xl shadow-purple-900/10 p-5 sm:p-7 text-left max-w-4xl mx-auto relative overflow-hidden;
+}
+
+.codePreviewHeader {
+  @apply flex flex-wrap items-center justify-between border-b border-slate-200/80 pb-3 mb-4 gap-2;
+}
+
+.trafficLightsContainer {
+  @apply flex items-center gap-2;
+}
+
+.trafficLightRed {
+  @apply w-3 h-3 rounded-full bg-rose-400;
+}
+
+.trafficLightYellow {
+  @apply w-3 h-3 rounded-full bg-amber-400;
+}
+
+.trafficLightGreen {
+  @apply w-3 h-3 rounded-full bg-emerald-400;
+}
+
+.codePreviewTitle {
+  @apply ml-2 font-mono text-xs text-slate-600 font-bold flex items-center gap-1.5;
+}
+
+.codePreviewBadge {
+  @apply font-mono text-xs text-purple-900 font-bold flex items-center gap-1.5 bg-purple-50 px-3 py-1 rounded-full border border-purple-200;
+}
+
+.codePreviewGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-xs sm:text-sm leading-relaxed;
+}
+
+.codeBlockBefore {
+  @apply p-4 bg-slate-900 rounded-2xl border border-rose-900/50 text-slate-200 shadow-lg relative overflow-hidden;
+}
+
+.codeBlockHeader {
+  @apply text-[10px] uppercase tracking-wider font-bold mb-3 flex items-center justify-between border-b border-slate-800 pb-2;
+}
+
+.codeBlockTitle {
+  @apply flex items-center gap-1.5;
+}
+
+.codeBlockIndicator {
+  @apply w-2 h-2 rounded-full;
+}
+
+.codeBlockScore {
+  @apply px-2 py-0.5 rounded border font-extrabold text-[10px];
+}
+
+.codeContent {
+  @apply text-xs sm:text-sm overflow-x-auto leading-relaxed;
+}
+
+.codeBlockAfter {
+  @apply p-4 bg-slate-900 rounded-2xl border border-emerald-900/50 text-slate-200 shadow-lg relative overflow-hidden;
+}
+
+.section {
+  @apply py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-b border-slate-200/80 relative;
+}
+
+.sectionHeader {
+  @apply flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4;
+}
+
+.sectionEyebrow {
+  @apply font-mono text-xs text-sky-700 uppercase tracking-widest font-extrabold mb-2;
+}
+
+.sectionTitle {
+  @apply font-serif text-3xl sm:text-4xl text-slate-900;
+}
+
+.sectionDescription {
+  @apply text-xs sm:text-sm text-slate-600 max-w-md;
+}
+
+.modesGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6;
+}
+
+.modeCard {
+  @apply cursor-pointer p-6 rounded-3xl bg-white/90 backdrop-blur-md border transition-all duration-300 hover:-translate-y-1 hover:shadow-xl h-full flex flex-col justify-between;
+}
+
+.modeCard.active {
+  @apply border-pink-500 ring-2 ring-purple-500/50 bg-white shadow-lg shadow-purple-500/10;
+}
+
+.modeCard.inactive {
+  @apply border-slate-200/90 hover:border-sky-300 shadow-sm;
+}
+
+.modeCardHeader {
+  @apply flex items-center justify-between;
+}
+
+.modeCardNumber {
+  @apply font-mono text-xl font-bold text-slate-400 hover:text-slate-900 transition-colors;
+}
+
+.modeCardIconContainer {
+  @apply p-2.5 rounded-2xl bg-sky-50 text-sky-700 transition-colors;
+}
+
+.modeCardTitle {
+  @apply font-serif text-lg font-bold text-slate-900 transition-colors;
+}
+
+.modeCardSubtitle {
+  @apply inline-block mt-1 font-mono text-[10px] text-slate-500 uppercase tracking-wider font-bold;
+}
+
+.modeCardDescription {
+  @apply text-xs text-slate-600 leading-relaxed;
+}
+
+.modeCardAction {
+  @apply pt-4 border-t border-slate-100 flex items-center justify-between font-mono text-xs text-sky-800 font-bold;
+}
+
+.modeCardArrow {
+  @apply w-3.5 h-3.5 transition-transform;
+}
+
+.centeredSectionHeader {
+  @apply text-center max-w-2xl mx-auto mb-14 space-y-3;
+}
+
+.principlesGrid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6;
+}
+
+.principleCard {
+  @apply p-7 rounded-3xl bg-gradient-to-b from-white border border-slate-200/80 shadow-sm space-y-4;
+}
+
+.principleIconContainer {
+  @apply w-10 h-10 rounded-2xl flex items-center justify-center font-bold;
+}
+
+.principleTitle {
+  @apply font-serif text-lg font-bold text-slate-900;
+}
+
+.principleDescription {
+  @apply text-xs text-slate-600 leading-relaxed;
+}
+
+.readmeSection {
+  @apply py-20 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto border-b border-slate-200/80 scroll-mt-20;
+}
+
+.readmeCard {
+  @apply bg-white rounded-3xl border border-pink-200 shadow-xl overflow-hidden p-6 sm:p-10 text-slate-900;
+}
+
+.readmeHeader {
+  @apply flex items-center gap-3 border-b border-slate-100 pb-6 mb-8;
+}
+
+.readmeIconContainer {
+  @apply w-12 h-12 rounded-2xl bg-gradient-to-tr from-pink-500 to-purple-600 flex items-center justify-center text-white shadow-md;
+}
+
+.readmeEyebrow {
+  @apply font-mono text-xs font-bold text-pink-600 uppercase tracking-widest flex items-center gap-2;
+}
+
+.readmeBadge {
+  @apply text-[10px] bg-pink-100 text-pink-800 px-2 py-0.5 rounded-full font-bold;
+}
+
+.readmeTitle {
+  @apply font-serif text-2xl sm:text-3xl font-bold text-slate-900 mt-1;
+}
+
+.justificationBlock {
+  @apply bg-gradient-to-r from-pink-50/60 via-purple-50/40 to-slate-50 p-6 rounded-2xl border border-pink-100/80 mb-8 space-y-3;
+}
+
+.justificationTitle {
+  @apply font-serif text-lg font-bold text-purple-900 flex items-center gap-2;
+}
+
+.justificationText {
+  @apply text-xs sm:text-sm text-slate-700 leading-relaxed font-sans;
+}
+
+.justificationGrid {
+  @apply grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 font-sans text-xs;
+}
+
+.justificationItem {
+  @apply bg-white p-3 rounded-xl border border-slate-200/80 shadow-xs space-y-1;
+}
+
+.justificationItemTitle {
+  @apply block font-bold;
+}
+
+.justificationItemText {
+  @apply text-slate-600;
+}
+
+.justificationConclusion {
+  @apply text-xs text-slate-700 pt-2 leading-relaxed;
+}
+
+.modesBreakdown {
+  @apply space-y-6;
+}
+
+.modesBreakdownTitle {
+  @apply font-serif text-xl font-bold text-slate-900 border-b border-slate-100 pb-2;
+}
+
+.modesBreakdownGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-5;
+}
+
+.modeDetailCard {
+  @apply p-5 rounded-2xl space-y-3;
+}
+
+.modeDetailHeader {
+  @apply flex items-center justify-between;
+}
+
+.modeDetailBadge {
+  @apply font-mono text-xs font-bold px-2.5 py-1 rounded-full;
+}
+
+.modeDetailTag {
+  @apply text-[10px] font-mono;
+}
+
+.modeDetailTitle {
+  @apply font-serif text-base font-bold text-slate-900;
+}
+
+.modeDetailDescription {
+  @apply text-xs text-slate-600 leading-relaxed;
+}
+
+.modeDetailTip {
+  @apply bg-white/80 p-3 rounded-xl text-[11px] font-mono;
+}
+
+.readmeCtaContainer {
+  @apply mt-8 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4 font-mono text-xs;
+}
+
+.readmeCtaText {
+  @apply text-slate-500 font-bold;
+}
+
+.readmeCtaButton {
+  @apply px-4 py-2 rounded-xl bg-slate-900 text-white font-bold hover:bg-slate-800 transition-colors flex items-center gap-2;
+}
+
+.caseStudyCard {
+  @apply p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-sky-50 via-indigo-50/60 to-amber-50/60 border border-slate-200/90 shadow-md grid grid-cols-1 lg:grid-cols-12 gap-8 items-center;
+}
+
+.caseStudyVisualBox {
+  @apply lg:col-span-5 bg-white/90 backdrop-blur-md rounded-2xl p-6 border border-slate-200 text-center space-y-4 shadow-sm;
+}
+
+.caseStudyIconContainer {
+  @apply inline-block p-3 rounded-full bg-amber-100 text-amber-800 mb-2;
+}
+
+.caseStudyScore {
+  @apply font-serif text-4xl font-extrabold text-slate-900;
+}
+
+.caseStudyScoreLabel {
+  @apply font-mono text-xs text-slate-500 uppercase tracking-wider font-bold;
+}
+
+.caseStudyMetrics {
+  @apply pt-4 border-t border-slate-100 text-left space-y-2 text-xs font-mono;
+}
+
+.caseStudyMetricItem {
+  @apply flex items-center justify-between text-slate-700;
+}
+
+.caseStudyMetricValue {
+  @apply text-emerald-700 font-bold;
+}
+
+.caseStudyContent {
+  @apply lg:col-span-7 space-y-4;
+}
+
+.caseStudyTitle {
+  @apply font-serif text-2xl sm:text-3xl text-slate-900 leading-tight;
+}
+
+.caseStudyDescription {
+  @apply text-xs sm:text-sm text-slate-600 leading-relaxed;
+}
+
+.journalHeader {
+  @apply flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4;
+}
+
+.journalViewAll {
+  @apply font-mono text-xs text-sky-800 hover:text-sky-950 font-bold flex items-center gap-1.5;
+}
+
+.journalGrid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6;
+}
+
+.journalArticle {
+  @apply cursor-pointer space-y-4;
+}
+
+.journalArticleCard {
+  @apply overflow-hidden rounded-3xl bg-white border border-slate-200/90 p-6 shadow-sm hover:shadow-md transition-all hover:border-sky-300;
+}
+
+.journalArticleIcon {
+  @apply w-12 h-12 rounded-2xl flex items-center justify-center font-bold mb-4 transition-transform;
+}
+
+.journalArticleTitle {
+  @apply font-serif text-lg font-bold text-slate-900 transition-colors leading-snug;
+}
+
+.journalArticleMeta {
+  @apply mt-2 font-mono text-xs text-slate-500;
+}
+
+.testimonialSection {
+  @apply py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center border-b border-slate-200/80 space-y-6;
+}
+
+.testimonialStars {
+  @apply flex items-center justify-center gap-1 text-amber-400;
+}
+
+.testimonialQuote {
+  @apply font-serif text-2xl sm:text-4xl text-slate-900 leading-relaxed italic;
+}
+
+.testimonialAuthor {
+  @apply font-mono text-xs text-slate-500 font-bold;
+}
+
+.workspaceSection {
+  @apply py-20 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto border-b border-slate-200/80 space-y-8;
+}
+
+.workspaceHeader {
+  @apply text-center max-w-2xl mx-auto space-y-2;
+}
+
+.modeNavBar {
+  @apply bg-slate-100/90 p-2 rounded-2xl border border-slate-200 shadow-sm w-full max-w-full space-y-2 sm:space-y-0 sm:flex sm:items-center sm:justify-between gap-2 overflow-hidden;
+}
+
+.modeNavGrid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-1.5 w-full;
+}
+
+.modeNavButton {
+  @apply px-3 py-2.5 rounded-xl text-xs font-mono font-bold flex items-center justify-center gap-1.5 transition-all text-center leading-tight cursor-pointer;
+}
+
+.modeNavButton.active {
+  @apply bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 text-white shadow-md shadow-pink-500/20 font-extrabold border-0;
+}
+
+.modeNavButton.inactive {
+  @apply bg-white text-slate-700 hover:text-slate-900 hover:bg-slate-50 border border-slate-200/60;
+}
+
+.modeNavButtonNumber {
+  @apply opacity-80 shrink-0;
+}
+
+.modeNavButtonTitle {
+  @apply truncate;
+}
+
+.loadDemoButton {
+  @apply px-3.5 py-2.5 rounded-xl bg-purple-100 hover:bg-purple-200 text-purple-800 border border-purple-300 text-xs font-mono font-bold transition-all flex items-center justify-center gap-1.5 shrink-0 w-full sm:w-auto cursor-pointer;
+}
+
+.workspaceContent {
+  @apply bg-white/95 rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xl space-y-6 backdrop-blur-lg;
+}
+
+.workspaceContentHeader {
+  @apply flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4;
+}
+
+.workspaceContentTitle {
+  @apply text-lg font-extrabold text-slate-900 flex items-center gap-2 font-serif;
+}
+
+.workspaceContentSubtitle {
+  @apply text-xs text-slate-500;
+}
+
+.workspaceContentActions {
+  @apply flex items-center gap-2;
+}
+
+.driveButton {
+  @apply py-1.5 px-3.5 bg-sky-50 hover:bg-sky-100 text-sky-900 border border-sky-200 rounded-xl text-xs font-mono font-bold flex items-center gap-1.5 shadow-sm;
+}
+
+.modeWorkspaceContainer {
+  @apply space-y-6;
+}
+
+.fileDropGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.fileDropZone {
+  @apply p-5 rounded-2xl border-2 border-dashed shadow-sm transition-all;
+}
+
+.fileDropHeader {
+  @apply flex items-center justify-between mb-3;
+}
+
+.fileDropBadge {
+  @apply px-2.5 py-1 rounded-md font-bold text-xs font-mono;
+}
+
+.fileCount {
+  @apply text-xs text-slate-500 font-mono;
+}
+
+.fileDropLabel {
+  @apply flex flex-col items-center justify-center p-6 bg-white/80 rounded-xl cursor-pointer hover:bg-white transition-colors border shadow-sm;
+}
+
+.fileDropText {
+  @apply text-xs font-semibold;
+}
+
+.fileList {
+  @apply mt-3 divide-y text-xs max-h-32 overflow-y-auto;
+}
+
+.fileListItem {
+  @apply py-1.5 flex items-center justify-between text-slate-800 font-mono text-[11px];
+}
+
+.fileListItemVersion {
+  @apply font-bold;
+}
+
+.teacherNotesContainer {
+  @apply space-y-2;
+}
+
+.label {
+  @apply block text-xs font-bold text-slate-800;
+}
+
+.textarea {
+  @apply w-full p-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-sky-400;
+}
+
+.statementHeader {
+  @apply flex items-center justify-between;
+}
+
+.statementLabel {
+  @apply text-xs font-bold text-slate-800 flex items-center gap-1.5;
+}
+
+.statementTag {
+  @apply text-[10px] text-indigo-700 font-mono font-bold;
+}
+
+.statementTextarea {
+  @apply w-full p-4 bg-slate-50 border border-indigo-200 rounded-2xl text-xs text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-400 leading-relaxed font-mono;
+}
+
+.optionsContainer {
+  @apply p-4 rounded-2xl space-y-3;
+}
+
+.optionsTitle {
+  @apply text-xs font-bold block;
+}
+
+.optionsGrid {
+  @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-xs;
+}
+
+.checkboxLabel {
+  @apply flex items-center gap-2 cursor-pointer text-slate-800 font-medium;
+}
+
+.checkbox {
+  @apply rounded;
+}
+
+.selectContainer {
+  @apply flex items-center gap-2;
+}
+
+.selectLabel {
+  @apply text-slate-600;
+}
+
+.select {
+  @apply bg-white border border-slate-300 rounded-lg px-2 py-1 text-xs font-bold text-slate-900;
+}
+
+.zipDropZone {
+  @apply p-6 rounded-2xl border-2 border-dashed transition-all text-center;
+}
+
+.zipDropTitle {
+  @apply text-sm font-bold text-slate-900 mb-1;
+}
+
+.zipDropDescription {
+  @apply text-xs text-slate-600 mb-4 max-w-md mx-auto;
+}
+
+.zipDropButton {
+  @apply inline-flex items-center gap-2 px-5 py-2.5 text-white font-bold text-xs rounded-xl cursor-pointer shadow-md transition-all font-mono;
+}
+
+.zipFileListContainer {
+  @apply mt-4 p-3.5 bg-white border rounded-xl text-xs text-left max-w-md mx-auto shadow-sm;
+}
+
+.zipFileListTitle {
+  @apply font-bold block mb-1;
+}
+
+.zipFileList {
+  @apply divide-y max-h-28 overflow-y-auto font-mono text-[11px];
+}
+
+.zipFileListItem {
+  @apply py-1 truncate;
+}
+
+.executeCtaContainer {
+  @apply pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200;
+}
+
+.executeCtaLabel {
+  @apply text-xs text-slate-500 font-mono font-bold flex items-center gap-2;
+}
+
+.faqSection {
+  @apply py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto border-b border-slate-200/80 space-y-6;
+}
+
+.faqHeader {
+  @apply flex items-center justify-between border-b border-slate-200 pb-4;
+}
+
+.faqTitle {
+  @apply font-serif text-2xl text-slate-900;
+}
+
+.faqAskButton {
+  @apply px-3.5 py-2 rounded-xl bg-amber-100 text-amber-900 border border-amber-300 text-xs font-mono font-bold hover:bg-amber-200 transition-all flex items-center gap-1.5 shadow-sm;
+}
+
+.faqAccordion {
+  @apply space-y-3;
+}
+
+.faqItem {
+  @apply bg-white rounded-2xl border border-slate-200/90 overflow-hidden transition-all shadow-sm;
+}
+
+.faqQuestion {
+  @apply w-full text-left p-4 font-bold text-xs sm:text-sm text-slate-900 flex items-center justify-between gap-4 hover:text-sky-800 transition-colors;
+}
+
+.faqQuestionContent {
+  @apply flex items-center gap-2;
+}
+
+.faqNumber {
+  @apply w-5 h-5 rounded-md bg-gradient-to-tr from-pink-500 to-purple-600 text-white flex items-center justify-center text-[10px] shrink-0 font-mono font-black border border-pink-400;
+}
+
+.faqChevron {
+  @apply w-4 h-4 shrink-0;
+}
+
+.faqAnswer {
+  @apply px-4 pb-4 text-xs text-slate-600 leading-relaxed border-t border-slate-100 pt-3;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.finalCtaSection {
+  @apply py-20 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto text-center space-y-6;
+}
+
+.finalCtaBadge {
+  @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-50 border border-pink-200 text-xs font-mono text-pink-700 shadow-sm mb-2;
+}
+
+.finalCtaTitle {
+  @apply font-serif text-3xl sm:text-5xl text-slate-900 leading-tight;
+}
+
+.finalCtaSubtitle {
+  @apply text-xs sm:text-sm text-slate-600 max-w-lg mx-auto;
+}
+
+.finalCtaActions {
+  @apply pt-4 flex items-center justify-center gap-3;
+}
+
+.communityLink {
+  @apply inline-flex items-center gap-2 font-mono text-xs sm:text-sm font-bold px-5 py-3 rounded-xl border border-purple-200 bg-purple-50 hover:bg-purple-100 text-purple-900 transition-all shadow-sm;
+}
+
+.footer {
+  @apply bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900 text-slate-100 overflow-hidden border-t border-pink-500/30 pt-16 pb-8 relative;
+}
+
+.footerGlow1 {
+  @apply absolute top-0 left-1/4 w-96 h-96 bg-pink-600/10 blur-[120px] pointer-events-none rounded-full;
+}
+
+.footerGlow2 {
+  @apply absolute bottom-0 right-1/4 w-96 h-96 bg-purple-600/10 blur-[120px] pointer-events-none rounded-full;
+}
+
+.footerContent {
+  @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10 space-y-10;
+}
+
+.megaMenuBanner {
+  @apply p-6 rounded-3xl bg-gradient-to-r from-pink-500/15 via-purple-500/15 to-indigo-500/15 border border-pink-500/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl;
+}
+
+.megaMenuBannerContent {
+  @apply flex items-center gap-4;
+}
+
+.megaMenuIcon {
+  @apply w-12 h-12 rounded-2xl bg-gradient-to-tr from-pink-500 to-purple-600 flex items-center justify-center text-white shrink-0 shadow-lg shadow-pink-500/20 font-serif font-black text-xl;
+}
+
+.megaMenuTitle {
+  @apply font-serif text-lg sm:text-xl font-bold text-white flex items-center gap-2;
+}
+
+.megaMenuSubtitle {
+  @apply text-xs text-slate-300 font-sans;
+}
+
+.megaMenuActions {
+  @apply flex items-center gap-3 shrink-0;
+}
+
+.toggleMegaMenuButton {
+  @apply px-4 py-2.5 rounded-xl bg-slate-900/80 hover:bg-slate-800 text-slate-200 border border-slate-700 font-mono text-xs font-bold transition-all flex items-center gap-2 cursor-pointer;
+}
+
+.toggleMegaMenuChevron {
+  @apply w-4 h-4 text-pink-400 transition-transform duration-200;
+}
+
+.communityButton {
+  @apply px-5 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 via-purple-600 to-indigo-600 hover:from-pink-600 hover:to-purple-700 text-white font-mono text-xs font-bold transition-all shadow-md flex items-center gap-2;
+}
+
+.megaMenuGridContainer {
+  @apply space-y-8;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.megaMenuGridHeader {
+  @apply flex items-center justify-between border-b border-slate-800/80 pb-3;
+}
+
+.megaMenuGridTitle {
+  @apply font-mono text-xs font-bold uppercase tracking-wider text-pink-400 flex items-center gap-2;
+}
+
+.megaMenuGridSubtitle {
+  @apply text-[10px] font-mono text-slate-400;
+}
+
+.megaMenuGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 text-xs font-sans border-b border-slate-800 pb-12;
+}
+
+.megaMenuColumn {
+  @apply space-y-4 bg-slate-900/40 p-5 rounded-2xl border border-slate-800/80 hover:border-pink-500/30 transition-all;
+}
+
+.megaMenuColTitle {
+  @apply flex items-center gap-2 font-mono font-bold text-xs uppercase tracking-wider pb-2 border-b border-slate-800;
+}
+
+.megaMenuColDescription {
+  @apply text-[11px] text-slate-400 leading-relaxed;
+}
+
+.megaMenuColList {
+  @apply space-y-2.5 text-slate-300 font-mono text-[11px];
+}
+
+.megaMenuColLink {
+  @apply hover:text-pink-300 transition-colors text-left flex items-center gap-2;
+}
+
+.megaMenuColLinkDot {
+  @apply w-1.5 h-1.5 rounded-full transition-transform;
+}
+
+.megaMenuColListSans {
+  @apply space-y-2 text-slate-300 font-sans text-[12px];
+}
+
+.megaMenuColLinkSpecial {
+  @apply hover:text-purple-300 transition-colors text-left font-medium text-pink-300 flex items-center gap-1.5;
+}
+
+.megaMenuColLinkSans {
+  @apply hover:text-purple-300 transition-colors text-left;
+}
+
+.communityInfo {
+  @apply space-y-2 pt-1;
+}
+
+.communitySiteLink {
+  @apply inline-flex items-center gap-1.5 text-[12px] font-mono text-emerald-400 hover:text-emerald-300 font-bold hover:underline;
+}
+
+.communityDescription {
+  @apply text-[10px] text-slate-400 pt-1;
+}
+
+.footerBottom {
+  @apply flex flex-col sm:flex-row items-center justify-between gap-4 font-mono text-xs text-slate-400 pt-2;
+}
+
+.footerLink {
+  @apply text-pink-400 font-bold hover:underline inline-flex items-center gap-1;
+}
+
+.footerBadges {
+  @apply flex flex-wrap items-center gap-3 text-[10px];
+}
+
+.footerBadge {
+  @apply px-2.5 py-1 rounded-md bg-slate-900 border border-slate-800 text-slate-400;
+}
+
+.footerWordmarkContainer {
+  @apply pt-8 -mb-6 leading-none text-center select-none overflow-hidden opacity-10;
+}
+
+.footerWordmark {
+  @apply font-serif font-black text-[11vw] tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-indigo-400 block leading-none uppercase;
+}
+
+.footerModalBackdrop {
+  @apply fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-md flex items-center justify-center p-4;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.footerModalContent {
+  @apply bg-white rounded-3xl border border-slate-200 shadow-2xl max-w-2xl w-full max-h-[85vh] flex flex-col overflow-hidden text-slate-900;
+}
+
+.footerModalHeader {
+  @apply px-6 py-5 border-b border-slate-100 flex items-center justify-between bg-gradient-to-r from-slate-50 to-pink-50/30;
+}
+
+.footerModalCategory {
+  @apply text-[10px] font-mono font-bold uppercase tracking-wider text-pink-600 block mb-0.5;
+}
+
+.footerModalTitle {
+  @apply font-serif text-xl font-bold text-slate-900;
+}
+
+.footerModalCloseButton {
+  @apply p-2 rounded-full hover:bg-slate-200/80 text-slate-500 hover:text-slate-900 transition-colors;
+}
+
+.footerModalBody {
+  @apply p-6 overflow-y-auto space-y-4 font-sans text-sm;
+}
+
+.footerModalFooter {
+  @apply px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between text-xs font-mono;
+}
+
+.footerModalLink {
+  @apply text-pink-600 font-bold hover:underline inline-flex items-center gap-1;
+}
+
+.footerModalCloseButton2 {
+  @apply px-4 py-2 rounded-xl bg-slate-900 text-white font-bold hover:bg-slate-800 transition-colors;
+}

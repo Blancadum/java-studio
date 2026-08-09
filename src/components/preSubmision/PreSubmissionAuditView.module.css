@@ -1,0 +1,74 @@
+@reference "../../index.css";
+.container { @apply max-w-6xl mx-auto px-4 py-8 space-y-8; }
+
+/* ── Banner ─────────────────────────────────────── */
+.banner { @apply flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 bg-slate-900 text-white rounded-3xl border border-slate-800 shadow-xl; }
+.bannerBadges { @apply flex items-center gap-2; }
+.badgeEmerald { @apply text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30; }
+.badgeAmberWarn { @apply text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30; }
+.bannerTitle { @apply text-xl sm:text-2xl font-black text-white flex items-center gap-3; }
+.bannerScore { @apply text-emerald-400 font-mono; }
+.bannerSubtitle { @apply text-xs text-slate-300 max-w-2xl; }
+.bannerActions { @apply flex flex-wrap items-center gap-2 shrink-0; }
+.btnEmerald { @apply py-2.5 px-4 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs rounded-xl shadow-md transition-all flex items-center gap-2; }
+.btnAmber   { @apply py-2.5 px-3 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-1.5; }
+.btnSlate   { @apply py-2.5 px-3 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold rounded-xl border border-slate-700 transition-all flex items-center gap-1; }
+
+/* ── Feedback box ───────────────────────────────── */
+.feedbackBox { @apply p-6 bg-gradient-to-r from-emerald-950/80 via-slate-900 to-slate-900 border border-emerald-500/30 rounded-3xl text-white space-y-4 shadow-lg; }
+.feedbackHeader { @apply flex flex-col sm:flex-row sm:items-center justify-between gap-3; }
+.feedbackTitle { @apply flex items-center gap-2; }
+.feedbackTitleText { @apply text-sm font-extrabold uppercase tracking-wider text-emerald-300; }
+.feedbackActions { @apply flex items-center gap-2; }
+.feedbackCopyBtn { @apply px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-emerald-200 text-xs font-semibold rounded-xl border border-slate-700 transition-all flex items-center gap-1.5; }
+.feedbackAskBtn  { @apply px-4 py-1.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs rounded-xl shadow-md transition-all flex items-center gap-1.5; }
+.feedbackQuote { @apply text-xs text-emerald-100/90 leading-relaxed bg-emerald-900/30 p-4 rounded-2xl border border-emerald-500/20; }
+
+/* ── Card ───────────────────────────────────────── */
+.card { @apply p-6 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-sm space-y-4; }
+.cardHeader { @apply flex items-center justify-between; }
+.sectionTitle { @apply text-sm font-bold text-slate-900 dark:text-white uppercase tracking-wider flex items-center gap-2; }
+.statusBadge { @apply text-[11px] font-bold text-amber-600 dark:text-amber-400 bg-amber-500/10 px-2.5 py-1 rounded-full border border-amber-500/20; }
+.cardText { @apply text-xs text-slate-500 dark:text-slate-400; }
+
+/* ── Junk files grid ────────────────────────────── */
+.junkGrid { @apply grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3; }
+.junkItem { @apply p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs; }
+.junkName { @apply font-mono font-bold text-rose-600 dark:text-rose-400 block; }
+.junkDesc { @apply text-[11px] text-slate-500; }
+.junkBadgeDetected { @apply text-[10px] font-bold px-2 py-0.5 rounded bg-rose-500/10 text-rose-600; }
+.junkBadgePurged   { @apply text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400; }
+.cardActions { @apply flex flex-wrap items-center gap-3 pt-2; }
+
+/* ── AI comment card ────────────────────────────── */
+.aiCommentCard { @apply p-4 bg-slate-50 dark:bg-slate-950 rounded-2xl border border-amber-300 dark:border-amber-900/60 space-y-2; }
+.aiCommentTop { @apply flex items-center justify-between text-xs; }
+.aiCommentFile { @apply font-mono text-slate-500; }
+.aiCommentBadgeDone    { @apply text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20; }
+.aiCommentBadgePending { @apply text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 border border-amber-500/20; }
+.aiCommentCode { @apply p-3 bg-amber-500/10 text-amber-950 dark:text-amber-200 font-mono text-xs sm:text-sm rounded-xl border border-amber-500/20 overflow-x-auto whitespace-pre; }
+.aiCommentBtns { @apply flex flex-wrap items-center gap-2 pt-1; }
+.btnJavadoc { @apply px-3 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-[11px] rounded-lg transition-colors flex items-center gap-1; }
+.btnDelete  { @apply px-3 py-1.5 bg-rose-500 hover:bg-rose-600 text-white font-bold text-[11px] rounded-lg transition-colors flex items-center gap-1; }
+
+/* ── Preview code ───────────────────────────────── */
+.previewCode { @apply p-4 bg-slate-950 text-slate-200 rounded-2xl border border-slate-800 font-mono text-xs overflow-x-auto whitespace-pre-wrap max-h-96 overflow-y-auto leading-relaxed; }
+.previewBtn  { @apply px-3 py-1.5 bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 text-slate-700 dark:text-slate-300 text-xs font-bold rounded-xl transition-all flex items-center gap-1.5; }
+
+/* ── Rubric checks ──────────────────────────────── */
+.rubricList  { @apply space-y-2; }
+.rubricItem  { @apply p-3 bg-slate-50 dark:bg-slate-950 rounded-xl border border-slate-200 dark:border-slate-800 flex items-center justify-between text-xs; }
+.rubricLeft  { @apply flex items-center gap-3; }
+.rubricLabel { @apply font-semibold text-slate-800 dark:text-slate-200; }
+.rubricNote  { @apply text-[11px] text-slate-500 max-w-sm text-right; }
+
+/* ── Issues ─────────────────────────────────────── */
+.issueCard { @apply p-5 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm space-y-2; }
+.issueTop  { @apply flex items-center justify-between; }
+.issueSeverityHigh   { @apply text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-red-500/10 text-red-600 border border-red-500/20; }
+.issueSeverityMedium { @apply text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-amber-500/10 text-amber-600 border border-amber-500/20; }
+.issueType     { @apply text-[10px] uppercase font-bold text-slate-400; }
+.issueLocation { @apply text-[10px] font-mono text-slate-400; }
+.issueTitle    { @apply text-xs font-bold text-slate-900 dark:text-white; }
+.issueSnippet  { @apply p-3 bg-slate-50 dark:bg-slate-950 text-xs sm:text-sm font-mono text-slate-700 dark:text-slate-300 rounded-xl overflow-x-auto border border-slate-200 dark:border-slate-800; }
+.issueFix      { @apply p-2.5 bg-emerald-50 dark:bg-emerald-950/20 text-emerald-800 dark:text-emerald-300 rounded-xl text-xs border border-emerald-200 dark:border-emerald-900; }

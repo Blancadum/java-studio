@@ -1,0 +1,125 @@
+@reference "../../index.css";
+.backdrop {
+  @apply fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4;
+}
+.modal {
+  @apply bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 w-full max-w-4xl max-h-[90vh] flex flex-col overflow-hidden;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.header {
+  @apply p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-900/50;
+}
+.headerIcon {
+  @apply w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center;
+}
+.headerTitle {
+  @apply text-lg font-bold text-slate-900 dark:text-white;
+}
+.headerSubtitle {
+  @apply text-xs text-slate-500 dark:text-slate-400;
+}
+.closeBtn {
+  @apply p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-lg;
+}
+
+/* ── Selection bar ──────────────────────────────── */
+.selectionBar {
+  @apply bg-slate-100 dark:bg-slate-800/80 p-3 border-b border-slate-200 dark:border-slate-700/60 grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs;
+}
+.selectionSlot {
+  @apply flex items-center gap-2 p-2 rounded-lg bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800;
+}
+.selectionLabelNo    { @apply font-semibold text-rose-600 dark:text-rose-400; }
+.selectionLabelFixed { @apply font-semibold text-emerald-600 dark:text-emerald-400; }
+.selectionLabelDoc   { @apply font-semibold text-amber-600 dark:text-amber-400; }
+.selectionName {
+  @apply truncate text-slate-700 dark:text-slate-300;
+}
+.clearBtn {
+  @apply ml-auto text-slate-400 hover:text-rose-500;
+}
+
+/* ── Toolbar ────────────────────────────────────── */
+.toolbar {
+  @apply p-4 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-white dark:bg-slate-900;
+}
+.breadcrumbs {
+  @apply flex items-center gap-1.5 overflow-x-auto text-sm text-slate-600 dark:text-slate-300;
+}
+.breadcrumbSep { @apply text-slate-400; }
+.breadcrumbBtn {
+  @apply px-2 py-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 font-medium;
+}
+.breadcrumbActive {
+  @apply text-blue-600 dark:text-blue-400 font-semibold;
+}
+.searchWrapper {
+  @apply relative w-full sm:w-64;
+}
+.searchIcon {
+  @apply w-4 h-4 absolute left-3 top-2.5 text-slate-400;
+}
+.searchInput {
+  @apply w-full pl-9 pr-3 py-1.5 text-xs rounded-lg border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500;
+}
+
+/* ── File browser ───────────────────────────────── */
+.browser {
+  @apply flex-1 overflow-y-auto p-4 space-y-2;
+}
+.emptyState {
+  @apply py-12 text-center text-slate-400 text-sm;
+}
+.loadingState {
+  @apply py-12 flex flex-col items-center justify-center text-slate-400 gap-2;
+}
+.filesGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-2;
+}
+.fileItem {
+  @apply p-3 rounded-xl border flex items-center justify-between transition-all border-slate-200 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700 bg-white dark:bg-slate-900;
+}
+.fileItemSelected {
+  @apply border-blue-500 bg-blue-50/50 dark:bg-blue-950/30;
+}
+.fileIconFolder {
+  @apply w-9 h-9 rounded-lg flex items-center justify-center shrink-0 bg-amber-100 text-amber-600 dark:bg-amber-950 dark:text-amber-400;
+}
+.fileIconFile {
+  @apply w-9 h-9 rounded-lg flex items-center justify-center shrink-0 bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300;
+}
+.fileName {
+  @apply text-xs font-semibold text-slate-800 dark:text-slate-200 truncate;
+}
+.fileMeta {
+  @apply text-[10px] text-slate-400 truncate;
+}
+.tagBtns {
+  @apply flex items-center gap-1 ml-2;
+}
+.tagNo {
+  @apply px-2 py-1 rounded text-[10px] font-bold transition-colors bg-rose-100 dark:bg-rose-950/60 text-rose-700 dark:text-rose-300 hover:bg-rose-200;
+}
+.tagNoActive    { @apply bg-rose-600 text-white; }
+.tagFixed       { @apply px-2 py-1 rounded text-[10px] font-bold transition-colors bg-emerald-100 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-200; }
+.tagFixedActive { @apply bg-emerald-600 text-white; }
+.tagDoc         { @apply px-2 py-1 rounded text-[10px] font-bold transition-colors bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300 hover:bg-amber-200; }
+.tagDocActive   { @apply bg-amber-600 text-white; }
+
+/* ── Footer ─────────────────────────────────────── */
+.footer {
+  @apply p-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 flex items-center justify-between;
+}
+.footerHint {
+  @apply text-xs text-slate-500 dark:text-slate-400;
+}
+.footerActions {
+  @apply flex items-center gap-3;
+}
+.cancelBtn {
+  @apply px-4 py-2 text-xs font-semibold text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-xl transition-colors;
+}
+.importBtn {
+  @apply inline-flex items-center gap-2 px-5 py-2 text-xs font-bold rounded-xl bg-blue-600 hover:bg-blue-500 text-white shadow-md disabled:opacity-50 transition-all;
+}

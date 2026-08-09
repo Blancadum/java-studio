@@ -1,0 +1,61 @@
+@reference "../../index.css";
+.backdrop {
+  @apply fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4;
+}
+.modal {
+  @apply bg-white dark:bg-slate-900 rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 w-full max-w-2xl overflow-hidden flex flex-col;
+}
+
+/* ── Header ─────────────────────────────────────── */
+.header {
+  @apply p-5 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between bg-slate-50 dark:bg-slate-950/50;
+}
+.headerIcon {
+  @apply w-10 h-10 rounded-xl bg-amber-500/10 text-amber-500 flex items-center justify-center;
+}
+.headerTitle {
+  @apply text-base font-bold text-slate-900 dark:text-white;
+}
+.headerSubtitle {
+  @apply text-xs text-slate-500 dark:text-slate-400;
+}
+.closeBtn {
+  @apply p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200;
+}
+
+/* ── Body ───────────────────────────────────────── */
+.body {
+  @apply p-6 space-y-6;
+}
+.infoBox {
+  @apply bg-amber-50 dark:bg-amber-950/30 p-4 rounded-xl border border-amber-200 dark:border-amber-900 text-xs text-amber-900 dark:text-amber-200 flex items-start gap-3;
+}
+.infoBoxIcon {
+  @apply w-5 h-5 text-amber-500 shrink-0 mt-0.5;
+}
+.filesLabel {
+  @apply text-xs font-bold uppercase tracking-wider text-slate-400;
+}
+.filesList {
+  @apply max-h-48 overflow-y-auto divide-y divide-slate-100 dark:divide-slate-800 border border-slate-200 dark:border-slate-800 rounded-xl p-3 text-xs bg-slate-50 dark:bg-slate-950;
+}
+.filesListReport {
+  @apply py-1 font-bold text-amber-600 dark:text-amber-400 flex items-center gap-2;
+}
+.filesListItem {
+  @apply py-1 flex items-center justify-between text-slate-700 dark:text-slate-300 font-mono text-[11px];
+}
+.filesListBadge {
+  @apply text-emerald-500 font-bold;
+}
+
+/* ── Footer ─────────────────────────────────────── */
+.footer {
+  @apply p-5 border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-950/50 flex flex-col sm:flex-row items-center justify-between gap-3;
+}
+.copyBtn {
+  @apply w-full sm:w-auto px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-800 text-xs font-semibold text-slate-700 dark:text-slate-300 transition-colors flex items-center justify-center gap-2;
+}
+.downloadBtn {
+  @apply w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-xs shadow-lg shadow-amber-500/20 disabled:opacity-50 transition-all;
+}
