@@ -2,22 +2,6 @@
   "buildCommand": "vite build",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/api/auth/google/url", "destination": "/api/auth/google/index" },
-    { "source": "/api/auth/google/callback", "destination": "/api/auth/google/index" },
-    { "source": "/api/auth/login", "destination": "/api/auth/index" },
-    { "source": "/api/auth/register", "destination": "/api/auth/index" },
-    { "source": "/api/auth/user", "destination": "/api/auth/index" },
-    { "source": "/api/user/api-config", "destination": "/api/user/index" },
-    { "source": "/api/user/sessions/save", "destination": "/api/user/index" },
-    { "source": "/api/user/2fa/toggle", "destination": "/api/user/index" },
-    { "source": "/api/drive/files", "destination": "/api/drive/index" },
-    { "source": "/api/drive/file/:fileId", "destination": "/api/drive/index" },
-    { "source": "/api/analyze/java-project", "destination": "/api/analyze/feedback" },
-    { "source": "/api/analyze/noob-architecture", "destination": "/api/analyze/architecture" },
-    { "source": "/api/analyze/pre-submission-audit", "destination": "/api/analyze/audit" },
-    { "source": "/api/analyze/sonar-quality", "destination": "/api/analyze/sonar" },
-    { "source": "/api/chat/tutor", "destination": "/api/chat/index" },
-    { "source": "/api/generate/improved-file", "destination": "/api/generate/index" },
     { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
