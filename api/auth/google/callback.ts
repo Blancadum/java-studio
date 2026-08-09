@@ -1,12 +1,16 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getOAuth2Client } from '../../_lib/oauth.ts';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const code = req.query.code as string;
   if (!code) return res.status(400).send('No authorization code');
   const appUrl = process.env.APP_URL || 'http://localhost:3000';
   try {
-    const oauth2Client = getOAuth2Client();
+    const { google } = await import('googleapis');
+    const oauth2Client = new google.auth.OAuth2(
+      process.env.OAUTH_CLIENT_ID,
+      process.env.OAUTH_CLIENT_SECRET,
+      `${appUrl}/api/auth/google/callback`
+    );
     const { tokens } = await oauth2Client.getToken(code);
     return res.send(`<!DOCTYPE html>
 <html>
