@@ -28,7 +28,7 @@ import {
 import JSZip from 'jszip';
 import { JavaFile, StudentPersonaMode } from '../../data/types';
 import { Reveal } from '../reveal/Reveal';
-import { ChipButton } from '../ChipButton/ChipButton';
+import { ChipButton } from '../chipbutton/ChipButton';
 import styles from './Home.module.css';
 
 interface HomeProps {

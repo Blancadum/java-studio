@@ -339,13 +339,13 @@ public class ReservaNotFoundException extends Exception {
   const handleLoadSavedSession = (saved: SavedSession) => {
     setActiveMode(saved.personaMode);
     if (saved.personaMode === 'FEEDBACK_REVISION') {
-      setAnalysisResult(saved.payload);
+      setAnalysisResult(saved.payload as AnalysisResult);
     } else if (saved.personaMode === 'ARCHITECTURE_NOOB') {
-      setArchitectureGuide(saved.payload);
+      setArchitectureGuide(saved.payload as ArchitectureGuideResult);
     } else if (saved.personaMode === 'PRE_SUBMISSION_AUDIT') {
-      setPreSubmissionAudit(saved.payload);
+      setPreSubmissionAudit(saved.payload as PreSubmissionAuditResult);
     } else if (saved.personaMode === 'SONAR_QUALITY') {
-      setSonarQuality(saved.payload);
+      setSonarQuality(saved.payload as SonarQualityResult);
     }
   };
 
