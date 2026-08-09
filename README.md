@@ -3,9 +3,7 @@
 > Evaluador inteligente de proyectos Java II para estudiantes universitarios — powered by Gemini AI
 
 <p align="center">
-  <img src="./src/assets/javastudio_readme_banner.svg" alt="Java Studio banner" width="100%">
-  <img src="./src/assets/javastudio_readme_banner.png" alt="Java Studio banner" width="100%">
-
+  <img src="./assets/javastudio-project.png" alt="Java Studio banner" width="100%">
 </p>
 
 [![Deploy](https://img.shields.io/badge/Deployed%20on-Vercel-black?logo=vercel)](https://javastudio.vercel.app)
