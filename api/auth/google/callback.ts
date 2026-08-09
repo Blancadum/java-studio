@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getOAuth2Client } from '../../../_lib/oauth';
+import { getOAuth2Client } from '../_lib/oauth';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const code = req.query.code as string;
