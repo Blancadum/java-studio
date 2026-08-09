@@ -9,18 +9,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       const response = await ai.models.generateContent({
         model: 'gemini-2.0-flash',
         contents: `Aplica estas propuestas al archivo Java "${fileTarget}".
-
 CÓDIGO ACTUAL:
 \`\`\`java
 ${currentCode}
 \`\`\`
-
-PROPUESTAS:
-${JSON.stringify(proposalsToApply, null, 2)}
-
-INDICACIONES PROFESORA:
-${teacherDoc}
-
+PROPUESTAS: ${JSON.stringify(proposalsToApply)}
+INDICACIONES PROFESORA: ${teacherDoc}
 Devuelve SOLO el código Java final limpio sin bloques markdown.`
       });
       return (response.text || '').replace(/^```java\n?/, '').replace(/\n?```$/, '').trim();
