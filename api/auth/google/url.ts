@@ -1,5 +1,5 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import { getOAuth2Client } from './_lib/oauth';
+import { getOAuth2Client } from '../../_lib/oauth.ts';
 
 export default function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'GET') return res.status(405).end();
