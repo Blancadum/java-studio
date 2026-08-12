@@ -70,8 +70,16 @@ app.post('/api/auth/login', (req, res) => {
   }
 });
 
-app.get('/api/user/profile', (req, res) => {
-  const email = (req.query.email as string) || 'blanca@estudiante.edu';
+/*
+ * TODO: Implementar un middleware de autenticación (ej. authMiddleware)
+ * que verifique un token y adjunte el usuario al objeto `req`.
+ */
+app.get('/api/user/profile', /* authMiddleware, */ (req, res) => {
+  // const email = (req as any).user?.email; // El email se obtiene del usuario autenticado
+  const email = 'blanca@estudiante.edu'; // Manteniendo el hardcodeo temporalmente para no romper la demo
+  if (!email) {
+    return res.status(401).json({ error: 'No autenticado o email no encontrado en el token.' });
+  }
   try {
     const user = getUserProfile(email);
     res.json(user);
@@ -81,7 +89,8 @@ app.get('/api/user/profile', (req, res) => {
 });
 
 app.post('/api/user/api-config', (req, res) => {
-  const { email, config } = req.body;
+  const { config } = req.body;
+  const email = 'blanca@estudiante.edu'; // TODO: Obtener del usuario autenticado
   try {
     const updatedUser = updateUserApiConfig(email || 'blanca@estudiante.edu', config);
     res.json({ success: true, user: updatedUser });
@@ -91,7 +100,8 @@ app.post('/api/user/api-config', (req, res) => {
 });
 
 app.post('/api/user/2fa/toggle', (req, res) => {
-  const { email, enabled } = req.body;
+  const { enabled } = req.body;
+  const email = 'blanca@estudiante.edu'; // TODO: Obtener del usuario autenticado
   try {
     const updatedUser = toggleUser2FA(email || 'blanca@estudiante.edu', enabled);
     res.json({ success: true, user: updatedUser });
@@ -101,7 +111,8 @@ app.post('/api/user/2fa/toggle', (req, res) => {
 });
 
 app.post('/api/user/sessions/save', (req, res) => {
-  const { email, session, sessionData } = req.body;
+  const { session, sessionData } = req.body;
+  const email = 'blanca@estudiante.edu'; // TODO: Obtener del usuario autenticado
   const sessionPayload = session || sessionData;
   try {
     const saved = saveUserSession(email || 'blanca@estudiante.edu', sessionPayload);

@@ -26,10 +26,15 @@ import {
   Globe
 } from 'lucide-react';
 import JSZip from 'jszip';
+import { nanoid } from 'nanoid';
 import { JavaFile, StudentPersonaMode } from '../../data/types';
 import { Reveal } from '../reveal/Reveal';
 import { ChipButton } from '../chipbutton/ChipButton';
 import styles from './Home.module.css';
+import { FAQ_DATA, getBlogArticles, getDocsContent, getLegalContent } from '../../data/constants'; // Importa el contenido estático
+import { MODES_CONFIG } from '../../data/modes'; // Import MODES_CONFIG
+import { useWorkspace } from './WorkspaceContext';
+import { ModeNavBar } from './ModeNavBar';
 
 interface HomeProps {
   activeMode: StudentPersonaMode;
@@ -45,35 +50,6 @@ interface HomeProps {
   isAnalyzing: boolean;
   onOpenAuth?: () => void;
   onOpenTutorWithQuery?: (query: string) => void;
-  // State from App
-  noFiles: JavaFile[];
-  setNoFiles: React.Dispatch<React.SetStateAction<JavaFile[]>>;
-  fixedFiles: JavaFile[];
-  setFixedFiles: React.Dispatch<React.SetStateAction<JavaFile[]>>;
-  teacherDoc: string;
-  setTeacherDoc: React.Dispatch<React.SetStateAction<string>>;
-  statementText: string;
-  setStatementText: React.Dispatch<React.SetStateAction<string>>;
-  includeInterfaces: boolean;
-  setIncludeInterfaces: React.Dispatch<React.SetStateAction<boolean>>;
-  useLombok: boolean;
-  setUseLombok: React.Dispatch<React.SetStateAction<boolean>>;
-  generateTodoComments: boolean;
-  setGenerateTodoComments: React.Dispatch<React.SetStateAction<boolean>>;
-  javaVersion: '17' | '21' | '11';
-  setJavaVersion: React.Dispatch<React.SetStateAction<'17' | '21' | '11'>>;
-  purgeFolders: boolean;
-  setPurgeFolders: React.Dispatch<React.SetStateAction<boolean>>;
-  sanitizeAiComments: boolean;
-  setSanitizeAiComments: React.Dispatch<React.SetStateAction<boolean>>;
-  checkRubric: boolean;
-  setCheckRubric: React.Dispatch<React.SetStateAction<boolean>>;
-  evalS3776: boolean;
-  setEvalS3776: React.Dispatch<React.SetStateAction<boolean>>;
-  evalStringConcat: boolean;
-  setEvalStringConcat: React.Dispatch<React.SetStateAction<boolean>>;
-  generateJunit5: boolean;
-  setGenerateJunit5: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 export const Home: React.FC<HomeProps> = ({
@@ -85,35 +61,38 @@ export const Home: React.FC<HomeProps> = ({
   isAnalyzing,
   onOpenAuth,
   onOpenTutorWithQuery,
-  noFiles,
-  setNoFiles,
-  fixedFiles,
-  setFixedFiles,
-  teacherDoc,
-  setTeacherDoc,
-  statementText,
-  setStatementText,
-  includeInterfaces,
-  setIncludeInterfaces,
-  useLombok,
-  setUseLombok,
-  generateTodoComments,
-  setGenerateTodoComments,
-  javaVersion,
-  setJavaVersion,
-  purgeFolders,
-  setPurgeFolders,
-  sanitizeAiComments,
-  setSanitizeAiComments,
-  checkRubric,
-  setCheckRubric,
-  evalS3776,
-  setEvalS3776,
-  evalStringConcat,
-  setEvalStringConcat,
-  generateJunit5,
-  setGenerateJunit5
 }) => {
+  const {
+    statementText,
+    setStatementText,
+    includeInterfaces,
+    setIncludeInterfaces,
+    useLombok,
+    setUseLombok,
+    generateTodoComments,
+    setGenerateTodoComments,
+    javaVersion,
+    setJavaVersion,
+    purgeFolders,
+    setPurgeFolders,
+    sanitizeAiComments,
+    setSanitizeAiComments,
+    checkRubric,
+    setCheckRubric,
+    evalS3776,
+    setEvalS3776,
+    evalStringConcat,
+    setEvalStringConcat,
+    generateJunit5,
+    setGenerateJunit5,
+    // File state from context
+    noFiles,
+    setNoFiles,
+    fixedFiles,
+    setFixedFiles,
+    teacherDoc,
+    setTeacherDoc,
+  } = useWorkspace();
   // Footer Mega Menu State
   const [isMegaMenuOpen, setIsMegaMenuOpen] = useState<boolean>(true);
 
@@ -126,279 +105,32 @@ export const Home: React.FC<HomeProps> = ({
 
   // Legal & Blog Modals Handlers
   const handleOpenPrivacyPolicy = () => {
-    setFooterModalContent({
-      title: 'Política de Privacidad',
-      category: 'Aspectos Legales · Requerido por Google API',
-      content: (
-        <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
-          <p className="font-semibold text-slate-900">
-            Última actualización: 8 de Agosto de 2026.
-          </p>
-          <p>
-            En <strong>Java Studio</strong> (impulsado por la comunidad <strong>Fullstack Web Dev Lovers</strong> - <a href="https://fullstack-dev-lovers.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-pink-600 font-bold hover:underline">fullstack-dev-lovers.vercel.app</a>), nos tomamos muy en serio la privacidad de nuestros usuarios y estudiantes universitarios.
-          </p>
-
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            1. Recopilación de Datos y Permisos de Google API
-          </h4>
-          <p>
-            Nuestra aplicación utiliza la API de Google Drive (alcance <code>https://www.googleapis.com/auth/drive.readonly</code>) únicamente para permitir a los estudiantes seleccionar proyectos Java, archivos <code>.java</code> o comprimidos <code>.zip</code> almacenados en su Google Drive.
-          </p>
-
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            2. Requisitos de Uso Limitado de la API de Google (Google Limited Use Disclosure)
-          </h4>
-          <p className="bg-purple-50 p-3.5 rounded-xl border border-purple-200 text-purple-900 font-mono text-xs leading-normal">
-            El uso y la transferencia a cualquier otra aplicación de la información recibida de las API de Google se adherirán a la <strong>Política de Datos de Usuario de los Servicios de API de Google (Google API Service User Data Policy)</strong>, incluidos los requisitos de <strong>Uso Limitado (Limited Use Requirements)</strong>.
-          </p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>No compartimos, vendemos ni alquilamos datos de usuarios a ningún tercero.</li>
-            <li>No utilizamos los datos obtenidos de Google Drive para entrenar modelos de inteligencia artificial públicos ni comerciales.</li>
-            <li>El procesamiento de código Java se realiza estrictamente durante la sesión activa del usuario para generar diagnósticos de rúbrica y SonarQube S3776.</li>
-          </ul>
-
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            3. Almacenamiento Local y Cookies
-          </h4>
-          <p>
-            No almacenamos tus códigos en bases de datos remotas sin tu consentimiento expreso. El estado de la sesión y las preferencias de análisis se guardan exclusivamente en el almacenamiento local de tu navegador (<code>localStorage</code>).
-          </p>
-
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            4. Derechos de los Usuarios (GDPR / ARCO)
-          </h4>
-          <p>
-            Tienes derecho a revocar el acceso a tu cuenta de Google en cualquier momento desde la configuración de seguridad de tu cuenta de Google. Puedes eliminar todos tus datos guardados en el navegador haciendo clic en "Nuevo Análisis" en la barra superior.
-          </p>
-
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            5. Contacto y Comunidad
-          </h4>
-          <p>
-            Para consultas relacionadas con la privacidad, contáctanos a través de la comunidad en <a href="https://fullstack-dev-lovers.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-600 font-bold hover:underline">https://fullstack-dev-lovers.vercel.app/</a>.
-          </p>
-        </div>
-      )
-    });
+    const legalContent = getLegalContent();
+    setFooterModalContent(legalContent['privacy-policy']);
   };
 
   const handleOpenTermsOfService = () => {
-    setFooterModalContent({
-      title: 'Términos de Servicio',
-      category: 'Aspectos Legales · Condiciones de Uso',
-      content: (
-        <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
-          <p className="font-semibold text-slate-900">
-            Bienvenido a Java Studio por Fullstack Web Dev Lovers.
-          </p>
-          <p>
-            Al utilizar esta plataforma, aceptas cumplir con los siguientes Términos de Servicio académicos y legales.
-          </p>
-
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            1. Propósito Educativo
-          </h4>
-          <p>
-            Java Studio es una herramienta de tutoría y auditoría de código orientada al aprendizaje de Java II, Programación Orientada a Objetos (POO), arquitectura de software y reglas de calidad como SonarQube S3776.
-          </p>
-
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            2. Propiedad Intelectual del Código
-          </h4>
-          <p>
-            El código fuente subido y las correcciones resultantes son propiedad exclusiva del estudiante. Java Studio no reclama derechos de autor sobre las entregas del usuario.
-          </p>
-
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            3. Responsabilidad del Estudiante
-          </h4>
-          <p>
-            El estudiante es responsable de revisar y comprender el código generado antes de presentarlo en sus evaluaciones universitarias. La plataforma promueve el aprendizaje genuino y la erradicación de malas prácticas.
-          </p>
-
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            4. Comunidad y Enlaces
-          </h4>
-          <p>
-            Esta plataforma enlaza a <a href="https://fullstack-dev-lovers.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-pink-600 font-bold hover:underline">Fullstack Web Dev Lovers</a> para dar soporte a la comunidad de desarrolladores de software.
-          </p>
-        </div>
-      )
-    });
+    const legalContent = getLegalContent();
+    setFooterModalContent(legalContent['terms-of-service']);
   };
 
   const handleOpenCookiePolicy = () => {
-    setFooterModalContent({
-      title: 'Política de Cookies y Almacenamiento Local',
-      category: 'Aspectos Legales · Cookies',
-      content: (
-        <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
-          <p>
-            Esta plataforma utiliza tecnologías de almacenamiento web estándar para garantizar el correcto funcionamiento del copiloto.
-          </p>
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            1. Cookies Técnicas e Imprescindibles
-          </h4>
-          <p>
-            Utilizamos tokens de sesión temporales gestionados por el SDK oficial de Google Auth para mantener la conexión segura con Google Drive cuando el usuario autoriza la lectura de sus archivos.
-          </p>
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            2. Almacenamiento Local (Local Storage)
-          </h4>
-          <p>
-            Guardamos en tu navegador:
-          </p>
-          <ul className="list-disc pl-5 space-y-1">
-            <li>Preferencias del modelo de IA seleccionado (Gemini / Claude / OpenAI).</li>
-            <li>Historial local de análisis de entregas para que no pierdas tu trabajo al refrescar.</li>
-            <li>Modo de trabajo seleccionado (Subsanación, Guía POO, Pre-entrega, SonarQube).</li>
-          </ul>
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            3. Sin Cookies de Rastreo Comercial
-          </h4>
-          <p>
-            No utilizamos cookies de publicidad dirigida, píxeles de redes sociales ni rastreadores entre sitios.
-          </p>
-        </div>
-      )
-    });
+    const legalContent = getLegalContent();
+    setFooterModalContent(legalContent['cookie-policy']);
   };
 
   const handleOpenGoogleDataPolicy = () => {
-    setFooterModalContent({
-      title: 'Declaración de Uso de Datos de Usuario de Google',
-      category: 'Obligatorio para Verificación OAuth de Google Workspace',
-      content: (
-        <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
-          <div className="p-4 rounded-xl bg-pink-50 border border-pink-200 text-pink-950 font-mono text-xs">
-            <strong>Declaración Transparente de Permisos de Google:</strong>
-            <p className="mt-1">
-              Java Studio accede a los datos de la cuenta de Google únicamente previa solicitud explícita del usuario mediante la ventana oficial de autenticación de Google.
-            </p>
-          </div>
-
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            Alcance de Permisos Solicitados
-          </h4>
-          <ul className="list-disc pl-5 space-y-2">
-            <li>
-              <code>https://www.googleapis.com/auth/drive.readonly</code>: Permite abrir el selector de archivos oficial de Google Drive (Google Picker) para seleccionar carpetas con código Java de tareas.
-            </li>
-            <li>
-              <code>email</code> & <code>profile</code>: Muestra el correo del alumno en la barra superior para confirmar qué cuenta está conectada.
-            </li>
-          </ul>
-
-          <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1 mt-4">
-            Cumplimiento Estricto de Limited Use
-          </h4>
-          <p>
-            Confirmamos solemnemente que la aplicación cumple en su totalidad con las políticas de datos de usuario de las API de Google, incluyendo la regla de Uso Limitado. Los datos del usuario nunca se transfieren a terceros ni se usan para publicidad o entrenamiento de modelos de lenguaje generalistas.
-          </p>
-        </div>
-      )
-    });
+    const legalContent = getLegalContent();
+    setFooterModalContent(legalContent['google-data-policy']);
   };
 
   const handleOpenLegalNotice = () => {
-    setFooterModalContent({
-      title: 'Aviso Legal y Propiedad Intelectual',
-      category: 'Aspectos Legales · Derechos de Autor',
-      content: (
-        <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
-          <p>
-            <strong>Java Studio</strong> es un copiloto académico desarrollado para la comunidad <strong>Fullstack Web Dev Lovers</strong> (<a href="https://fullstack-dev-lovers.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-pink-600 font-bold hover:underline">fullstack-dev-lovers.vercel.app</a>).
-          </p>
-          <p>
-            Marcas registradas como Java, Oracle, Google, SonarQube, JUnit y GitHub pertenecen a sus respectivos propietarios y se citan únicamente con fines descriptivos e ilustrativos para la formación técnica en ingeniería de software.
-          </p>
-        </div>
-      )
-    });
+    const legalContent = getLegalContent();
+    setFooterModalContent(legalContent['legal-notice']);
   };
 
   const handleOpenBlogArticle = (articleId: string) => {
-    const articles: Record<string, { title: string; category: string; content: React.ReactNode }> = {
-      '38-to-98': {
-        title: 'Caso de Estudio: De un 3.8 a un 9.8 en Java II',
-        category: 'Blog Académico · Refactorización',
-        content: (
-          <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
-            <p className="font-serif italic text-base text-purple-900 bg-purple-50 p-3.5 rounded-xl border border-purple-200">
-              "El profesor suspendió la primera entrega porque todo estaba dentro del método main() y las variables tenían nombres genéricos como x1, a y temp."
-            </p>
-            <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1">
-              Las 3 claves de la refactorización
-            </h4>
-            <ol className="list-decimal pl-5 space-y-2">
-              <li>
-                <strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.
-              </li>
-              <li>
-                <strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.
-              </li>
-              <li>
-                <strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.
-              </li>
-            </ol>
-            <p className="text-xs font-mono text-slate-500 pt-2">
-              Escrde Fullstack Web Dev Lovers.
-            </p>
-          </div>
-        )
-      },
-      'sonarqube-s3776': {
-        title: 'Cómo superar la regla SonarQube S3776 de Complejidad Cognitiva',
-        category: 'Blog Académico · Calidad de Código',
-        content: (
-          <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
-            <p>
-              La regla <strong>S3776 de SonarQube</strong> mide la dificultad humana para leer y entender un método. Cuando la complejidad supera 15 puntos, SonarQube marca el código como fallo grave.
-            </p>
-            <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1">
-              Solución Quirúrgica
-            </h4>
-            <p>
-              Usa cláusulas de guarda (<em>early exit</em>) para retornar inmediatamente cuando las condiciones no se cumplan, eliminando los bloques <code>if / else</code> anidados profundamente.
-            </p>
-            <div className="p-3 bg-slate-900 text-slate-100 rounded-xl font-mono text-xs overflow-x-auto">
-              <code>{`// ANTES (Complejidad Cognitive = 18)\nif (usuario != null) {\n  if (usuario.isActivo()) {\n    if (pedido != null) {\n      // procesar...\n    }\n  }\n}\n\n// DESPUÉS (Complejidad Cognitive = 3)\nif (usuario == null || !usuario.isActivo() || pedido == null) return;\n// procesar directamente...`}</code>
-            </div>
-          </div>
-        )
-      },
-      'anti-ai-cleanup': {
-        title: 'Guía Anti-Plagio IA: Limpieza Quirúrgica de Comentarios de ChatGPT',
-        category: 'Blog Académico · Auditoría Anti-IA',
-        content: (
-          <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
-            <p>
-              Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:
-            </p>
-            <ul className="list-disc pl-5 space-y-1 font-mono text-xs text-rose-700">
-              <li><code>// Here is the implementation of the requested method</code></li>
-              <li><code>// Note: Remember to handle NullPointerException</code></li>
-              <li><code>// Created by OpenAI ChatGPT</code></li>
-            </ul>
-            <p>
-              El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.
-            </p>
-          </div>
-        )
-      },
-      'solid-university': {
-        title: 'Principios SOLID aplicados a Exámenes Universitarios',
-        category: 'Blog Académico · Arquitectura',
-        content: (
-          <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
-            <p>
-              Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.
-            </p>
-          </div>
-        )
-      }
-    };
-
+    const articles = getBlogArticles();
     const art = articles[articleId] || {
       title: 'Artículo del Blog Académico',
       category: 'Blog · Fullstack Web Dev Lovers',
@@ -409,43 +141,11 @@ export const Home: React.FC<HomeProps> = ({
   };
 
   const handleOpenDocDoc = (docId: string) => {
-    const docs: Record<string, { title: string; category: string; content: React.ReactNode }> = {
-      'rubrica-java2': {
-        title: 'Guía de Evaluación y Rúbricas de Java II',
-        category: 'Documentación Oficial · Rúbrica Universitaria',
-        content: (
-          <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
-            <p>
-              Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:
-            </p>
-            <ul className="list-disc pl-5 space-y-2">
-              <li><strong>Estructura de Paquetes:</strong> Separación en <code>model</code>, <code>service</code>, <code>repository</code> y <code>exception</code>.</li>
-              <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
-              <li><strong>Pruebas JUnit 5:</strong> Cobertura mínima del 80% en clases del paquete service.</li>
-            </ul>
-          </div>
-        )
-      },
-      'junit5-cheat': {
-        title: 'JUnit 5 & Cobertura de Pruebas Unitarias',
-        category: 'Documentación Técnica · Testing',
-        content: (
-          <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
-            <p>
-              Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:
-            </p>
-            <div className="p-3 bg-slate-900 text-slate-100 rounded-xl font-mono text-xs overflow-x-auto">
-              <code>{`@Test\n@DisplayName("Debe lanzar excepcion cuando el saldo es insuficiente")\nvoid testSaldoInsuficiente() {\n  assertThrows(SaldoInsuficienteException.class, () -> {\n    cuenta.retirar(1000.0);\n  });\n}`}</code>
-            </div>
-          </div>
-        )
-      }
-    };
-
+    const docs = getDocsContent();
     const doc = docs[docId] || {
       title: 'Documentación del Sistema',
       category: 'Documentación Técnica',
-      content: <p>Manuales y especificaciones técnicas para el desarrollo con Java II y SonarQube en <a href="https://fullstack-dev-lovers.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-600 font-bold hover:underline">Fullstack Web Dev Lovers</a>.</p>
+      content: <p>Manuales y especificaciones técnicas para el desarrollo con Java II y SonarQube en <a href="https://fullstack-dev-lovers.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-600 font-bold hover:underline">Fullstack Web Dev Lovers</a>.</p>,
     };
 
     setFooterModalContent(doc);
@@ -470,7 +170,7 @@ export const Home: React.FC<HomeProps> = ({
             if (!zipEntry.dir && (relativePath.endsWith('.java') || relativePath.endsWith('.txt'))) {
               const text = await zipEntry.async('string');
               loadedFiles.push({
-                id: Math.random().toString(36).substring(7),
+                id: nanoid(),
                 name: zipEntry.name.split('/').pop() || zipEntry.name,
                 path: relativePath,
                 content: text,
@@ -484,7 +184,7 @@ export const Home: React.FC<HomeProps> = ({
       } else if (file.name.endsWith('.java') || file.name.endsWith('.txt') || file.name.endsWith('.md')) {
         const text = await file.text();
         loadedFiles.push({
-          id: Math.random().toString(36).substring(7),
+          id: nanoid(),
           name: file.name,
           path: file.name,
           content: text,
@@ -514,7 +214,7 @@ export const Home: React.FC<HomeProps> = ({
       modeSpecificOptions.generateTodoComments = generateTodoComments;
       modeSpecificOptions.javaVersion = javaVersion;
     } else if (activeMode === 'PRE_SUBMISSION_AUDIT') {
-      if (finalNo.length === 0 && finalFixed.length === 0) {
+      if (noFiles.length === 0) {
         alert('Por favor sube el archivo .ZIP o tus archivos Java para la auditoría pre-entrega.');
         return;
       }
@@ -530,7 +230,7 @@ export const Home: React.FC<HomeProps> = ({
       modeSpecificOptions.evalStringConcat = evalStringConcat;
       modeSpecificOptions.generateJunit5 = generateJunit5;
     } else { // FEEDBACK_REVISION
-      if (finalNo.length === 0 && finalFixed.length === 0 && !finalTeacherDoc.trim()) {
+      if (noFiles.length === 0 && !teacherDoc.trim()) {
         alert('Por favor agrega archivos o pega notas de tu profesora para analizar la subsanación.');
         return;
       }
@@ -539,58 +239,19 @@ export const Home: React.FC<HomeProps> = ({
     onStartAnalysis(noFiles, fixedFiles, teacherDoc || statementText, modeSpecificOptions);
   };
 
-  const modesList = [
-    {
-      id: 'FEEDBACK_REVISION' as StudentPersonaMode,
-      num: '001',
-      title: 'Track / Subsanación Feedback',
-      subtitle: 'Post-Suspenso & Comparativa AST',
-      desc: 'Compara tu borrador o entrega inicial contra las observaciones de tu profe o las correcciones. Detecta discrepancias de firmas, visibilidad y cumplimiento de rúbrica.',
-      icon: <FileText className="w-5 h-5 text-amber-600" />,
-      color: 'amber'
-    },
-    {
-      id: 'ARCHITECTURE_NOOB' as StudentPersonaMode,
-      num: '002',
-      title: 'Model / Guía POO (Enunciados)',
-      subtitle: 'Iniciación & Cero Parálisis',
-      desc: 'Desglosa enunciados complejos de examen o prácticas en esqueletos POO con clases, atributos privados, interfaces y marcas // TODO para programar autónomamente.',
-      icon: <Compass className="w-5 h-5 text-indigo-600" />,
-      color: 'indigo'
-    },
-    {
-      id: 'PRE_SUBMISSION_AUDIT' as StudentPersonaMode,
-      num: '003',
-      title: 'Report / Pre-Entrega & Anti-IA',
-      subtitle: 'Higiene de Proyecto & Rúbrica',
-      desc: 'Sube tu .ZIP antes de entregar. Purga carpetas temporales de IDE (.idea, target), desinfecta comentarios con huellas delatadoras de IA y valida tu score académico.',
-      icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
-      color: 'emerald'
-    },
-    {
-      id: 'SONAR_QUALITY' as StudentPersonaMode,
-      num: '004',
-      title: 'Act / SonarQube & SOLID',
-      subtitle: 'Calidad Industrial & JUnit 5',
-      desc: 'Mide la Complejidad Cognitiva (S3776 < 15), elimina duplicaciones, valida principios SOLID y autogenera suites completas de pruebas unitarias con JUnit 5.',
-      icon: <Award className="w-5 h-5 text-sky-600" />,
-      color: 'sky'
-    }
-  ];
-
   return (
     <div className={styles.container}>
-      
+
       {/* 1. HERO SECTION (Serene Zen Cloud & Nebula Palette) */}
       <section className={styles.heroSection}>
-        
+
         {/* Soft floating nebula color clouds */}
         <div className={styles.heroGlow1} />
         <div className={styles.heroGlow2} />
         <div className={styles.heroGlow3} />
 
         <div className={styles.heroContent}>
-          
+
           {/* Top Monospaced Tag */}
           <Reveal delay={0}>
             <div className={styles.heroTag}>
@@ -697,7 +358,7 @@ export const Home: React.FC<HomeProps> = ({
                   </div>
                   <pre className={`${styles.codeContent} text-emerald-200`}>
 <span className="text-slate-500 mr-2">1</span><span className="text-purple-300">public double</span> <span className="text-emerald-300">calcularTotal</span>() &#123;<br/>
-<span className="text-slate-500 mr-2">2</span>  <span className="text-emerald-400">// Stream API + Invariantes limpias</span><br/>
+<span className="text-slate-500 mr-2">2</span>  <span className="text-emerald-400"></span><br/>
 <span className="text-slate-500 mr-2">3</span>  <span className="text-purple-300">return</span> items.stream()<br/>
 <span className="text-slate-500 mr-2">4</span>    .filter(Item::valido)<br/>
 <span className="text-slate-500 mr-2">5</span>    .mapToDouble(<span className="text-purple-300">this</span>::procesarPrecioSeguro)<br/>
@@ -730,7 +391,7 @@ export const Home: React.FC<HomeProps> = ({
         </div>
 
         <div className={styles.modesGrid}>
-          {modesList.map((mode, i) => (
+          {MODES_CONFIG.map((mode, i) => (
             <Reveal key={mode.id} delay={i * 80}>
               <div
                 onClick={() => {
@@ -749,11 +410,11 @@ export const Home: React.FC<HomeProps> = ({
                     <span className={styles.modeCardNumber}>
                       {mode.num}
                     </span>
-                    <div className={styles.modeCardIconContainer}>
+                    <div className={`${styles.modeCardIconContainer} text-${mode.colorClass}-600`}>
                       {mode.icon}
                     </div>
                   </div>
-
+                  
                   <div>
                     <h3 className={styles.modeCardTitle}>
                       {mode.title}
@@ -1148,33 +809,12 @@ export const Home: React.FC<HomeProps> = ({
           </p>
         </div>
 
-        {/* Mode Navigation Tabs Bar - Strict Container Layout */}
-        <div className={styles.modeNavBar}>
-          <div className={styles.modeNavGrid}>
-            {modesList.map(m => (
-              <button
-                key={m.id}
-                onClick={() => onSelectMode(m.id)}
-                className={`${styles.modeNavButton} ${
-                  activeMode === m.id
-                    ? styles.active
-                    : styles.inactive
-                }`}
-              >
-                <span className={styles.modeNavButtonNumber}>▪ {m.num}</span>
-                <span className={styles.modeNavButtonTitle}>{m.title.split('/')[1] || m.title}</span>
-              </button>
-            ))}
-          </div>
-
-          <button
-            onClick={onLoadSample}
-            className={styles.loadDemoButton}
-          >
-            <Sparkles className="w-3.5 h-3.5 text-purple-600" />
-            <span>Cargar Demo</span>
-          </button>
-        </div>
+      <ModeNavBar
+        activeMode={activeMode}
+        onSelectMode={onSelectMode}
+        onLoadSample={onLoadSample}
+        showLoadSample
+      />
 
         {/* WORKSPACE CONTENT PER ACTIVE MODE */}
         <div className={styles.workspaceContent}>
@@ -1560,20 +1200,7 @@ export const Home: React.FC<HomeProps> = ({
         </div>
 
         <div className={styles.faqAccordion}>
-          {[
-            {
-              q: '¿Cómo garantiza Java Studio que el código refactorizado respete mi trabajo original?',
-              a: 'El motor respeta la estructura y nombres de variables originales de tu entrega o borrador aplicando cambios quirúrgicos únicamente en las firmas y patrones requeridos por la rúbrica del profesor.'
-            },
-            {
-              q: '¿Qué hago si no tengo el código corregido sino sólo un documento PDF con comentarios?',
-              a: 'Puedes pegar directamente los comentarios de tu profe en el cuadro de texto. La IA interpretará las correcciones solicitadas y adaptará tu código.'
-            },
-            {
-              q: '¿Puedo descargar las clases corregidas y los tests JUnit 5 en un archivo .ZIP?',
-              a: 'Sí, una vez finalizado el análisis podrás descargar todos los parches y archivos .java listos para empaquetar y entregar.'
-            }
-          ].map((faq, idx) => {
+          {FAQ_DATA.map((faq, idx) => {
             const isExpanded = expandedFaqIndex === idx;
             return (
               <div

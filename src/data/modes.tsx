@@ -6,6 +6,7 @@ export const MODES_CONFIG: {
   id: StudentPersonaMode; 
   num: string;
   title: string; 
+  subtitle: string;
   shortTitle: string;
   badge: string; 
   desc: string;
@@ -19,6 +20,7 @@ export const MODES_CONFIG: {
     id: 'FEEDBACK_REVISION',
     num: '001',
     title: 'Track / Subsanación Feedback',
+    subtitle: 'Post-Suspenso & Comparativa AST',
     shortTitle: 'Subsanación',
     badge: 'Post-Suspenso',
     desc: 'Compara tu borrador o entrega inicial contra las observaciones de tu profesora o las correcciones. Detecta discrepancias de firmas, visibilidad y cumplimiento de rúbrica.',
@@ -32,6 +34,7 @@ export const MODES_CONFIG: {
     id: 'ARCHITECTURE_NOOB',
     num: '002',
     title: 'Model / Guía POO (Enunciados)',
+    subtitle: 'Iniciación & Cero Parálisis',
     shortTitle: 'Guía POO',
     badge: 'Iniciación',
     desc: 'Desglosa enunciados complejos de examen o prácticas en esqueletos POO con clases, atributos privados, interfaces y marcas // TODO para programar autónomamente.',
@@ -45,6 +48,7 @@ export const MODES_CONFIG: {
     id: 'PRE_SUBMISSION_AUDIT',
     num: '003',
     title: 'Report / Pre-Entrega & Anti-IA',
+    subtitle: 'Higiene de Proyecto & Rúbrica',
     shortTitle: 'Pre-Entrega',
     badge: 'Higiene & Rúbrica',
     desc: 'Sube tu .ZIP antes de entregar. Purga carpetas temporales de IDE (.idea, target), desinfecta comentarios con huellas delatadoras de IA y valida tu score académico.',
@@ -58,6 +62,7 @@ export const MODES_CONFIG: {
     id: 'SONAR_QUALITY',
     num: '004',
     title: 'Act / SonarQube & SOLID',
+    subtitle: 'Calidad Industrial & JUnit 5',
     shortTitle: 'SonarQube',
     badge: 'Calidad Industrial',
     desc: 'Mide la Complejidad Cognitiva (S3776 < 15), elimina duplicaciones, valida principios SOLID y autogenera suites completas de pruebas unitarias con JUnit 5.',

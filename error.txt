@@ -1,0 +1,2826 @@
+Server Java II Review Studio listening on port 3000
+admin@Blancas-MacBook-Pro java-studio % cd /Users/admin/Documents/GESTORIA/PROYECTOS/java-studio
+npm run lint
+npm run dev
+
+> javastudio@0.0.0 lint
+> tsc --noEmit
+
+src/data/constants.ts:19:21 - error TS1005: '>' expected.
+
+19     icon: <FileText className="w-5 h-5 text-amber-600" />,
+                       ~~~~~~~~~
+
+src/data/constants.ts:19:30 - error TS1005: ',' expected.
+
+19     icon: <FileText className="w-5 h-5 text-amber-600" />,
+                                ~
+
+src/data/constants.ts:19:56 - error TS1005: ':' expected.
+
+19     icon: <FileText className="w-5 h-5 text-amber-600" />,
+                                                          ~
+
+src/data/constants.ts:27:20 - error TS1005: '>' expected.
+
+27     icon: <Compass className="w-5 h-5 text-indigo-600" />,
+                      ~~~~~~~~~
+
+src/data/constants.ts:27:29 - error TS1005: ',' expected.
+
+27     icon: <Compass className="w-5 h-5 text-indigo-600" />,
+                               ~
+
+src/data/constants.ts:27:56 - error TS1005: ':' expected.
+
+27     icon: <Compass className="w-5 h-5 text-indigo-600" />,
+                                                          ~
+
+src/data/constants.ts:35:24 - error TS1005: '>' expected.
+
+35     icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
+                          ~~~~~~~~~
+
+src/data/constants.ts:35:33 - error TS1005: ',' expected.
+
+35     icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
+                                   ~
+
+src/data/constants.ts:35:61 - error TS1005: ':' expected.
+
+35     icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
+                                                               ~
+
+src/data/constants.ts:43:18 - error TS1005: '>' expected.
+
+43     icon: <Award className="w-5 h-5 text-sky-600" />,
+                    ~~~~~~~~~
+
+src/data/constants.ts:43:27 - error TS1005: ',' expected.
+
+43     icon: <Award className="w-5 h-5 text-sky-600" />,
+                             ~
+
+src/data/constants.ts:43:51 - error TS1005: ':' expected.
+
+43     icon: <Award className="w-5 h-5 text-sky-600" />,
+                                                     ~
+
+src/data/constants.ts:67:12 - error TS1005: '>' expected.
+
+67       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+              ~~~~~~~~~
+
+src/data/constants.ts:67:21 - error TS1005: ')' expected.
+
+67       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+                       ~
+
+src/data/constants.ts:68:12 - error TS1005: '>' expected.
+
+68         <p className="font-serif italic text-base text-purple-900 bg-purple-50 p-3.5 rounded-xl border border-purple-200">
+              ~~~~~~~~~
+
+src/data/constants.ts:68:21 - error TS1005: ',' expected.
+
+68         <p className="font-serif italic text-base text-purple-900 bg-purple-50 p-3.5 rounded-xl border border-purple-200">
+                       ~
+
+src/data/constants.ts:68:122 - error TS1005: ':' expected.
+
+68         <p className="font-serif italic text-base text-purple-900 bg-purple-50 p-3.5 rounded-xl border border-purple-200">
+                                                                                                                            ~
+
+src/data/constants.ts:70:10 - error TS1161: Unterminated regular expression literal.
+
+70         </p>
+            ~~~
+
+src/data/constants.ts:71:13 - error TS1005: ',' expected.
+
+71         <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1">
+               ~~~~~~~~~
+
+src/data/constants.ts:72:15 - error TS1005: ',' expected.
+
+72           Las 3 claves de la refactorización
+                 ~
+
+src/data/constants.ts:72:17 - error TS1005: ':' expected.
+
+72           Las 3 claves de la refactorización
+                   ~~~~~~
+
+src/data/constants.ts:72:24 - error TS1005: ',' expected.
+
+72           Las 3 claves de la refactorización
+                          ~~
+
+src/data/constants.ts:72:27 - error TS1005: ',' expected.
+
+72           Las 3 claves de la refactorización
+                             ~~
+
+src/data/constants.ts:72:30 - error TS1005: ',' expected.
+
+72           Las 3 claves de la refactorización
+                                ~~~~~~~~~~~~~~~
+
+src/data/constants.ts:73:10 - error TS1139: Type parameter declaration expected.
+
+73         </h4>
+            ~
+
+src/data/constants.ts:74:13 - error TS1005: '>' expected.
+
+74         <ol className="list-decimal pl-5 space-y-2">
+               ~~~~~~~~~
+
+src/data/constants.ts:74:22 - error TS1005: ',' expected.
+
+74         <ol className="list-decimal pl-5 space-y-2">
+                        ~
+
+src/data/constants.ts:74:52 - error TS1005: ':' expected.
+
+74         <ol className="list-decimal pl-5 space-y-2">
+                                                      ~
+
+src/data/constants.ts:75:39 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                         ~
+
+src/data/constants.ts:75:41 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                           ~~~~~~~~~~~~~
+
+src/data/constants.ts:75:56 - error TS1110: Type expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                          ~
+
+src/data/constants.ts:75:122 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                            ~
+
+src/data/constants.ts:75:124 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                              ~~~~~~~
+
+src/data/constants.ts:75:132 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                      ~~~~~~~~~~~
+
+src/data/constants.ts:75:144 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                                  ~~
+
+src/data/constants.ts:75:147 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                                     ~~
+
+src/data/constants.ts:75:150 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                                        ~~~~~~~~~~~
+
+src/data/constants.ts:75:161 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                                                   ~
+
+src/data/constants.ts:75:162 - error TS1003: Identifier expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                                                    ~
+
+src/data/constants.ts:75:163 - error TS1161: Unterminated regular expression literal.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                                                     ~~~~
+
+src/data/constants.ts:76:34 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                    ~
+
+src/data/constants.ts:76:36 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                      ~~~~~~~~~~~~
+
+src/data/constants.ts:76:50 - error TS1110: Type expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                    ~
+
+src/data/constants.ts:76:109 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                               ~~~~~~~
+
+src/data/constants.ts:76:117 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                       ~~~~~~~~~~
+
+src/data/constants.ts:76:128 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                  ~~~~~~
+
+src/data/constants.ts:76:135 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                         ~~~~
+
+src/data/constants.ts:76:140 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                              ~~~
+
+src/data/constants.ts:76:144 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                                  ~~~~~~~~~~~~
+
+src/data/constants.ts:76:157 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                                               ~
+
+src/data/constants.ts:76:159 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                                                 ~~~~~~~~~
+
+src/data/constants.ts:76:168 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                                                          ~
+
+src/data/constants.ts:76:169 - error TS1003: Identifier expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                                                           ~
+
+src/data/constants.ts:76:170 - error TS1161: Unterminated regular expression literal.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                                                            ~~~~
+
+src/data/constants.ts:77:33 - error TS1005: ',' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                   ~~
+
+src/data/constants.ts:77:36 - error TS1005: ',' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                      ~~~~~~~~~~~
+
+src/data/constants.ts:77:48 - error TS1005: ',' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                  ~~~~~~~~~
+
+src/data/constants.ts:77:67 - error TS1139: Type parameter declaration expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                     ~
+
+src/data/constants.ts:77:87 - error TS1005: ')' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                         ~~~~~~
+
+src/data/constants.ts:77:94 - error TS1005: ',' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                ~~~~~~~~
+
+src/data/constants.ts:77:103 - error TS1005: ',' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                         ~~
+
+src/data/constants.ts:77:106 - error TS1005: ',' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                            ~
+
+src/data/constants.ts:77:108 - error TS1005: ';' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                              ~~~~~~~
+
+src/data/constants.ts:77:116 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                      ~~~
+
+src/data/constants.ts:77:120 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                          ~~~~~~~
+
+src/data/constants.ts:77:128 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                  ~~~~~~~~~~
+
+src/data/constants.ts:77:139 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                             ~~~~~~~~
+
+src/data/constants.ts:77:148 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                                      ~
+
+src/data/constants.ts:77:150 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                                        ~~~~~~~
+
+src/data/constants.ts:77:158 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                                                ~~~~
+
+src/data/constants.ts:77:176 - error TS1003: Identifier expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                                                                  ~
+
+src/data/constants.ts:77:177 - error TS1161: Unterminated regular expression literal.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                                                                   ~~~~
+
+src/data/constants.ts:78:10 - error TS1161: Unterminated regular expression literal.
+
+78         </ol>
+            ~~~~
+
+src/data/constants.ts:79:12 - error TS1005: ';' expected.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+              ~~~~~~~~~
+
+src/data/constants.ts:79:70 - error TS1005: ';' expected.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+                                                                        ~~~
+
+src/data/constants.ts:79:74 - error TS1434: Unexpected keyword or identifier.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+                                                                            ~~~~~~~~~
+
+src/data/constants.ts:79:84 - error TS1434: Unexpected keyword or identifier.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+                                                                                      ~~~
+
+src/data/constants.ts:79:88 - error TS1434: Unexpected keyword or identifier.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+                                                                                          ~~~
+
+src/data/constants.ts:79:99 - error TS1003: Identifier expected.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+                                                                                                     ~
+
+src/data/constants.ts:79:100 - error TS1161: Unterminated regular expression literal.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+                                                                                                      ~~~
+
+src/data/constants.ts:80:8 - error TS1161: Unterminated regular expression literal.
+
+80       </div>
+          ~~~~~
+
+src/data/constants.ts:81:5 - error TS1128: Declaration or statement expected.
+
+81     )
+       ~
+
+src/data/constants.ts:82:3 - error TS1128: Declaration or statement expected.
+
+82   },
+     ~
+
+src/data/constants.ts:82:4 - error TS1128: Declaration or statement expected.
+
+82   },
+      ~
+
+src/data/constants.ts:83:20 - error TS1005: ';' expected.
+
+83   'sonarqube-s3776': {
+                      ~
+
+src/data/constants.ts:85:13 - error TS1005: ';' expected.
+
+85     category: 'Blog Académico · Calidad de Código',
+               ~
+
+src/data/constants.ts:86:12 - error TS1005: ';' expected.
+
+86     content: (
+              ~
+
+src/data/constants.ts:87:12 - error TS1005: '>' expected.
+
+87       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+              ~~~~~~~~~
+
+src/data/constants.ts:87:21 - error TS1005: ')' expected.
+
+87       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+                       ~
+
+src/data/constants.ts:88:15 - error TS1005: ';' expected.
+
+88         <p>La regla <strong>S3776 de SonarQube</strong> mide la dificultad humana para leer y entender un método. Cuando la complejidad supera 15 puntos, SonarQube marca el código como fallo grave.</p>
+                 ~~~~~
+
+src/data/constants.ts:88:35 - error TS1005: ';' expected.
+
+88         <p>La regla <strong>S3776 de SonarQube</strong> mide la dificultad humana para leer y entender un método. Cuando la complejidad supera 15 puntos, SonarQube marca el código como fallo grave.</p>
+                                     ~~
+
+src/data/constants.ts:89:13 - error TS1005: '>' expected.
+
+89         <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1">Solución Quirúrgica</h4>
+               ~~~~~~~~~
+
+src/data/constants.ts:89:22 - error TS1005: ';' expected.
+
+89         <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1">Solución Quirúrgica</h4>
+                        ~
+
+src/data/constants.ts:89:100 - error TS1005: ';' expected.
+
+89         <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1">Solución Quirúrgica</h4>
+                                                                                                      ~~~~~~~~~~
+
+src/data/constants.ts:89:111 - error TS1161: Unterminated regular expression literal.
+
+89         <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1">Solución Quirúrgica</h4>
+                                                                                                                 ~~~~
+
+src/data/constants.ts:90:16 - error TS1005: ';' expected.
+
+90         <p>Usa cláusulas de guarda (<em>early exit</em>) para retornar inmediatamente cuando las condiciones no se cumplan, eliminando los bloques <code>if / else</code> anidados profundamente.</p>
+                  ~~~~~~~~~
+
+src/data/constants.ts:90:26 - error TS1434: Unexpected keyword or identifier.
+
+90         <p>Usa cláusulas de guarda (<em>early exit</em>) para retornar inmediatamente cuando las condiciones no se cumplan, eliminando los bloques <code>if / else</code> anidados profundamente.</p>
+                            ~~
+
+src/data/constants.ts:90:47 - error TS1005: ',' expected.
+
+90         <p>Usa cláusulas de guarda (<em>early exit</em>) para retornar inmediatamente cuando las condiciones no se cumplan, eliminando los bloques <code>if / else</code> anidados profundamente.</p>
+                                                 ~~~~
+
+src/data/constants.ts:90:159 - error TS1005: ',' expected.
+
+90         <p>Usa cláusulas de guarda (<em>early exit</em>) para retornar inmediatamente cuando las condiciones no se cumplan, eliminando los bloques <code>if / else</code> anidados profundamente.</p>
+                                                                                                                                                                 ~~~~
+
+src/data/constants.ts:90:164 - error TS1110: Type expected.
+
+90         <p>Usa cláusulas de guarda (<em>early exit</em>) para retornar inmediatamente cuando las condiciones no se cumplan, eliminando los bloques <code>if / else</code> anidados profundamente.</p>
+                                                                                                                                                                      ~
+
+src/data/constants.ts:91:14 - error TS1005: '>' expected.
+
+91         <div className="p-3 bg-slate-900 text-slate-100 rounded-xl font-mono text-xs overflow-x-auto">
+                ~~~~~~~~~
+
+src/data/constants.ts:91:23 - error TS1005: ',' expected.
+
+91         <div className="p-3 bg-slate-900 text-slate-100 rounded-xl font-mono text-xs overflow-x-auto">
+                         ~
+
+src/data/constants.ts:92:18 - error TS1136: Property assignment expected.
+
+92           <code>{`// ANTES (Complejidad Cognitive = 18)\nif (usuario != null) {\n  if (usuario.isActivo()) {\n    if (pedido != null) {\n      // procesar...\n    }\n  }\n}\n\n// DESPUÉS (Complejidad Cognitive = 3)\nif (usuario == null || !usuario.isActivo() || pedido == null) return;\n// procesar directamente...`}</code>
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/data/constants.ts:92:316 - error TS1005: ',' expected.
+
+92           <code>{`// ANTES (Complejidad Cognitive = 18)\nif (usuario != null) {\n  if (usuario.isActivo()) {\n    if (pedido != null) {\n      // procesar...\n    }\n  }\n}\n\n// DESPUÉS (Complejidad Cognitive = 3)\nif (usuario == null || !usuario.isActivo() || pedido == null) return;\n// procesar directamente...`}</code>
+                                                                                                                                                                                                                                                                                                                              ~
+
+src/data/constants.ts:92:318 - error TS1110: Type expected.
+
+92           <code>{`// ANTES (Complejidad Cognitive = 18)\nif (usuario != null) {\n  if (usuario.isActivo()) {\n    if (pedido != null) {\n      // procesar...\n    }\n  }\n}\n\n// DESPUÉS (Complejidad Cognitive = 3)\nif (usuario == null || !usuario.isActivo() || pedido == null) return;\n// procesar directamente...`}</code>
+                                                                                                                                                                                                                                                                                                                                ~
+
+src/data/constants.ts:93:10 - error TS1161: Unterminated regular expression literal.
+
+93         </div>
+            ~~~~~
+
+src/data/constants.ts:94:8 - error TS1161: Unterminated regular expression literal.
+
+94       </div>
+          ~~~~~
+
+src/data/constants.ts:95:5 - error TS1128: Declaration or statement expected.
+
+95     )
+       ~
+
+src/data/constants.ts:96:3 - error TS1128: Declaration or statement expected.
+
+96   },
+     ~
+
+src/data/constants.ts:96:4 - error TS1128: Declaration or statement expected.
+
+96   },
+      ~
+
+src/data/constants.ts:97:20 - error TS1005: ';' expected.
+
+97   'anti-ai-cleanup': {
+                      ~
+
+src/data/constants.ts:99:13 - error TS1005: ';' expected.
+
+99     category: 'Blog Académico · Auditoría Anti-IA',
+               ~
+
+src/data/constants.ts:100:12 - error TS1005: ';' expected.
+
+100     content: (
+               ~
+
+src/data/constants.ts:101:12 - error TS1005: '>' expected.
+
+101       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+               ~~~~~~~~~
+
+src/data/constants.ts:101:21 - error TS1005: ')' expected.
+
+101       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+                        ~
+
+src/data/constants.ts:102:19 - error TS1005: ';' expected.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                      ~~~~~~~~~~
+
+src/data/constants.ts:102:30 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                 ~~~~~~~~
+
+src/data/constants.ts:102:39 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                          ~~~~~~~~~~
+
+src/data/constants.ts:102:50 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                     ~~
+
+src/data/constants.ts:102:53 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                        ~~~~~~
+
+src/data/constants.ts:102:60 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                               ~~~~~~~~
+
+src/data/constants.ts:102:69 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                        ~~~
+
+src/data/constants.ts:102:73 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                            ~~
+
+src/data/constants.ts:102:76 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                               ~~~
+
+src/data/constants.ts:102:80 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                   ~~~~~~
+
+src/data/constants.ts:102:87 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                          ~~~~~~
+
+src/data/constants.ts:102:94 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                 ~~
+
+src/data/constants.ts:102:97 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                    ~~~~
+
+src/data/constants.ts:102:102 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                         ~~~~~~~~~
+
+src/data/constants.ts:102:112 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                                   ~~~~~~~
+
+src/data/constants.ts:102:120 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                                           ~~
+
+src/data/constants.ts:102:123 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                                              ~~~~~~~
+
+src/data/constants.ts:102:131 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                                                      ~
+
+src/data/constants.ts:102:133 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                                                        ~~~~~~~
+
+src/data/constants.ts:102:147 - error TS1110: Type expected.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                                                                      ~
+
+src/data/constants.ts:103:13 - error TS1005: ';' expected.
+
+103         <ul className="list-disc pl-5 space-y-1 font-mono text-xs text-rose-700">
+                ~~~~~~~~~
+
+src/data/constants.ts:107:10 - error TS1110: Type expected.
+
+107         </ul>
+             ~
+
+src/data/constants.ts:108:15 - error TS1005: ';' expected.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                  ~~~~~
+
+src/data/constants.ts:108:21 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                        ~~
+
+src/data/constants.ts:108:24 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                           ~~~~~~~~~
+
+src/data/constants.ts:108:34 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                     ~~
+
+src/data/constants.ts:108:37 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                        ~~~~
+
+src/data/constants.ts:108:42 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                             ~~~~~~
+
+src/data/constants.ts:108:49 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                    ~~~~~~~
+
+src/data/constants.ts:108:57 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                            ~~~~~~~~~~~~~~~
+
+src/data/constants.ts:108:73 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                            ~~~~~
+
+src/data/constants.ts:108:79 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                  ~~~~~~
+
+src/data/constants.ts:108:86 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                         ~~~~~~~~~~~
+
+src/data/constants.ts:108:98 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                                     ~~~~~~~~
+
+src/data/constants.ts:108:107 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                                              ~~~
+
+src/data/constants.ts:108:111 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                                                  ~~~~~~~~~~~
+
+src/data/constants.ts:108:123 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                                                              ~~~~~~~
+
+src/data/constants.ts:108:141 - error TS1003: Identifier expected.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                                                                                ~
+
+src/data/constants.ts:108:142 - error TS1161: Unterminated regular expression literal.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                                                                                 ~~~
+
+src/data/constants.ts:109:8 - error TS1161: Unterminated regular expression literal.
+
+109       </div>
+           ~~~~~
+
+src/data/constants.ts:110:5 - error TS1128: Declaration or statement expected.
+
+110     )
+        ~
+
+src/data/constants.ts:111:4 - error TS1128: Declaration or statement expected.
+
+111   },
+       ~
+
+src/data/constants.ts:112:21 - error TS1005: ';' expected.
+
+112   'solid-university': {
+                        ~
+
+src/data/constants.ts:114:13 - error TS1005: ';' expected.
+
+114     category: 'Blog Académico · Arquitectura',
+                ~
+
+src/data/constants.ts:115:12 - error TS1005: ';' expected.
+
+115     content: (
+               ~
+
+src/data/constants.ts:116:12 - error TS1005: '>' expected.
+
+116       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+               ~~~~~~~~~
+
+src/data/constants.ts:116:21 - error TS1005: ')' expected.
+
+116       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+                        ~
+
+src/data/constants.ts:117:20 - error TS1005: ';' expected.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                       ~~~~~
+
+src/data/constants.ts:117:26 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                             ~~
+
+src/data/constants.ts:117:29 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                ~~
+
+src/data/constants.ts:117:32 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                   ~~~~~~
+
+src/data/constants.ts:117:39 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                          ~~
+
+src/data/constants.ts:117:42 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                             ~~~~
+
+src/data/constants.ts:117:47 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                  ~~
+
+src/data/constants.ts:117:50 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                     ~~
+
+src/data/constants.ts:117:53 - error TS1435: Unknown keyword or identifier. Did you mean 'require'?
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                        ~~~~~~~~
+
+src/data/constants.ts:117:62 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                 ~~~~~~~
+
+src/data/constants.ts:117:70 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                         ~~
+
+src/data/constants.ts:117:87 - error TS1005: ';' expected.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                          ~~~
+
+src/data/constants.ts:117:91 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                              ~~~~~~~~
+
+src/data/constants.ts:117:100 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                       ~~
+
+src/data/constants.ts:117:103 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                          ~~~~~~~~~
+
+src/data/constants.ts:117:113 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                    ~~
+
+src/data/constants.ts:117:116 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                       ~~~~~~~~~~~~~~~
+
+src/data/constants.ts:117:144 - error TS1005: ';' expected.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                   ~~
+
+src/data/constants.ts:117:147 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                      ~~~~
+
+src/data/constants.ts:117:152 - error TS1435: Unknown keyword or identifier. Did you mean 'case'?
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                           ~~~~~
+
+src/data/constants.ts:117:158 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                 ~
+
+src/data/constants.ts:117:160 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                   ~~~~~~~~
+
+src/data/constants.ts:117:169 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                            ~~~
+
+src/data/constants.ts:117:173 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                ~~~
+
+src/data/constants.ts:117:177 - error TS1435: Unknown keyword or identifier. Did you mean 'class'?
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                    ~~~~~~
+
+src/data/constants.ts:117:184 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                           ~~~~~~~~
+
+src/data/constants.ts:117:193 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                    ~~
+
+src/data/constants.ts:117:223 - error TS1005: ';' expected.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                                                  ~
+
+src/data/constants.ts:117:225 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                                                    ~~
+
+src/data/constants.ts:117:228 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                                                       ~~
+
+src/data/constants.ts:117:231 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                                                          ~~~~~~~~~~~~~~~~
+
+src/data/constants.ts:117:258 - error TS1003: Identifier expected.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                                                                                     ~
+
+src/data/constants.ts:117:259 - error TS1161: Unterminated regular expression literal.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                                                                                      ~~~
+
+src/data/constants.ts:118:8 - error TS1161: Unterminated regular expression literal.
+
+118       </div>
+           ~~~~~
+
+src/data/constants.ts:119:5 - error TS1128: Declaration or statement expected.
+
+119     )
+        ~
+
+src/data/constants.ts:121:1 - error TS1128: Declaration or statement expected.
+
+121 });
+    ~
+
+src/data/constants.ts:121:2 - error TS1128: Declaration or statement expected.
+
+121 });
+     ~
+
+src/data/constants.ts:128:12 - error TS1005: '>' expected.
+
+128       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+               ~~~~~~~~~
+
+src/data/constants.ts:128:21 - error TS1005: ')' expected.
+
+128       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+                        ~
+
+src/data/constants.ts:129:22 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                         ~~~~
+
+src/data/constants.ts:129:27 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                              ~~~~~
+
+src/data/constants.ts:129:33 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                    ~~~
+
+src/data/constants.ts:129:37 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                        ~~~~~~~~~
+
+src/data/constants.ts:129:47 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                  ~~~~~~~~~~
+
+src/data/constants.ts:129:58 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                             ~~
+
+src/data/constants.ts:129:61 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                ~~~~~~~~~~
+
+src/data/constants.ts:129:72 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                           ~~
+
+src/data/constants.ts:129:75 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                              ~~~~~~~~~~~
+
+src/data/constants.ts:129:87 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                          ~~~~~~~~~~~~~~
+
+src/data/constants.ts:129:102 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                                         ~~
+
+src/data/constants.ts:129:105 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                                            ~~~~~~~~~~~~
+
+src/data/constants.ts:129:118 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                                                         ~~
+
+src/data/constants.ts:129:121 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                                                            ~
+
+src/data/constants.ts:129:128 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                                                                   ~~
+
+src/data/constants.ts:129:132 - error TS1110: Type expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                                                                       ~
+
+src/data/constants.ts:130:13 - error TS1005: ',' expected.
+
+130         <ul className="list-disc pl-5 space-y-2">
+                ~~~~~~~~~
+
+src/data/constants.ts:131:34 - error TS1005: ',' expected.
+
+131           <li><strong>Estructura de Paquetes:</strong> Separación en <code>model</code>, <code>service</code>, <code>repository</code> y <code>exception</code>.</li>
+                                     ~~
+
+src/data/constants.ts:131:37 - error TS1005: ',' expected.
+
+131           <li><strong>Estructura de Paquetes:</strong> Separación en <code>model</code>, <code>service</code>, <code>repository</code> y <code>exception</code>.</li>
+                                        ~~~~~~~~
+
+src/data/constants.ts:131:47 - error TS1110: Type expected.
+
+131           <li><strong>Estructura de Paquetes:</strong> Separación en <code>model</code>, <code>service</code>, <code>repository</code> y <code>exception</code>.</li>
+                                                  ~
+
+src/data/constants.ts:131:88 - error TS1109: Expression expected.
+
+131           <li><strong>Estructura de Paquetes:</strong> Separación en <code>model</code>, <code>service</code>, <code>repository</code> y <code>exception</code>.</li>
+                                                                                           ~
+
+src/data/constants.ts:131:90 - error TS1136: Property assignment expected.
+
+131           <li><strong>Estructura de Paquetes:</strong> Separación en <code>model</code>, <code>service</code>, <code>repository</code> y <code>exception</code>.</li>
+                                                                                             ~
+
+src/data/constants.ts:132:35 - error TS1005: ')' expected.
+
+132           <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
+                                      ~~
+
+src/data/constants.ts:132:38 - error TS1005: ',' expected.
+
+132           <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
+                                         ~~~~~~~~~~~
+
+src/data/constants.ts:132:51 - error TS1139: Type parameter declaration expected.
+
+132           <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
+                                                      ~
+
+src/data/constants.ts:132:141 - error TS1109: Expression expected.
+
+132           <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
+                                                                                                                                                ~
+
+src/data/constants.ts:132:142 - error TS1003: Identifier expected.
+
+132           <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
+                                                                                                                                                 ~
+
+src/data/constants.ts:132:143 - error TS1161: Unterminated regular expression literal.
+
+132           <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
+                                                                                                                                                  ~~~~
+
+src/data/constants.ts:133:31 - error TS1005: ';' expected.
+
+133           <li><strong>Pruebas JUnit 5:</strong> Cobertura mínima del 80% en clases del paquete service.</li>
+                                  ~~~~~
+
+src/data/constants.ts:133:38 - error TS1005: ';' expected.
+
+133           <li><strong>Pruebas JUnit 5:</strong> Cobertura mínima del 80% en clases del paquete service.</li>
+                                         ~
+
+src/data/constants.ts:133:40 - error TS1110: Type expected.
+
+133           <li><strong>Pruebas JUnit 5:</strong> Cobertura mínima del 80% en clases del paquete service.</li>
+                                           ~
+
+src/data/constants.ts:134:10 - error TS1110: Type expected.
+
+134         </ul>
+             ~
+
+src/data/constants.ts:135:8 - error TS1161: Unterminated regular expression literal.
+
+135       </div>
+           ~~~~~
+
+src/data/constants.ts:136:5 - error TS1128: Declaration or statement expected.
+
+136     )
+        ~
+
+src/data/constants.ts:137:3 - error TS1128: Declaration or statement expected.
+
+137   },
+      ~
+
+src/data/constants.ts:137:4 - error TS1128: Declaration or statement expected.
+
+137   },
+       ~
+
+src/data/constants.ts:138:17 - error TS1005: ';' expected.
+
+138   'junit5-cheat': {
+                    ~
+
+src/data/constants.ts:140:13 - error TS1005: ';' expected.
+
+140     category: 'Documentación Técnica · Testing',
+                ~
+
+src/data/constants.ts:141:12 - error TS1005: ';' expected.
+
+141     content: (
+               ~
+
+src/data/constants.ts:142:12 - error TS1005: '>' expected.
+
+142       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+               ~~~~~~~~~
+
+src/data/constants.ts:142:21 - error TS1005: ')' expected.
+
+142       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+                        ~
+
+src/data/constants.ts:143:21 - error TS1005: ';' expected.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                        ~~
+
+src/data/constants.ts:143:24 - error TS1435: Unknown keyword or identifier. Did you mean 'asserts'?
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                           ~~~~~~~~~~
+
+src/data/constants.ts:143:35 - error TS1434: Unexpected keyword or identifier.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                      ~~
+
+src/data/constants.ts:143:38 - error TS1434: Unexpected keyword or identifier.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                         ~~~~~
+
+src/data/constants.ts:143:46 - error TS1005: ';' expected.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                 ~~~~
+
+src/data/constants.ts:143:51 - error TS1434: Unexpected keyword or identifier.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                      ~~~~~~~
+
+src/data/constants.ts:143:59 - error TS1434: Unexpected keyword or identifier.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                              ~~~~~~~~~~~~~~~
+
+src/data/constants.ts:143:75 - error TS1434: Unexpected keyword or identifier.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                                              ~~~~~~~~~
+
+src/data/constants.ts:143:85 - error TS1434: Unexpected keyword or identifier.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                                                        ~~
+
+src/data/constants.ts:143:88 - error TS1435: Unknown keyword or identifier. Did you mean 'class'?
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                                                           ~~~~~~
+
+src/data/constants.ts:143:101 - error TS1110: Type expected.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                                                                        ~
+
+src/data/constants.ts:144:14 - error TS1005: ';' expected.
+
+144         <div className="p-3 bg-slate-900 text-slate-100 rounded-xl font-mono text-xs overflow-x-auto">
+                 ~~~~~~~~~
+
+src/data/constants.ts:145:18 - error TS1136: Property assignment expected.
+
+145           <code>{`@Test\n@DisplayName("Debe lanzar excepcion cuando el saldo es insuficiente")\nvoid testSaldoInsuficiente() {\n  assertThrows(SaldoInsuficienteException.class, () -> {\n    cuenta.retirar(1000.0);\n  });\n}`}</code>
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/data/constants.ts:145:227 - error TS1110: Type expected.
+
+145           <code>{`@Test\n@DisplayName("Debe lanzar excepcion cuando el saldo es insuficiente")\nvoid testSaldoInsuficiente() {\n  assertThrows(SaldoInsuficienteException.class, () -> {\n    cuenta.retirar(1000.0);\n  });\n}`}</code>
+                                                                                                                                                                                                                                      ~
+
+src/data/constants.ts:146:10 - error TS1161: Unterminated regular expression literal.
+
+146         </div>
+             ~~~~~
+
+src/data/constants.ts:147:8 - error TS1161: Unterminated regular expression literal.
+
+147       </div>
+           ~~~~~
+
+src/data/constants.ts:148:5 - error TS1128: Declaration or statement expected.
+
+148     )
+        ~
+
+src/data/constants.ts:149:3 - error TS1128: Declaration or statement expected.
+
+149   }
+      ~
+
+src/data/constants.ts:150:1 - error TS1128: Declaration or statement expected.
+
+150 });
+    ~
+
+src/data/constants.ts:150:2 - error TS1128: Declaration or statement expected.
+
+150 });
+     ~
+
+src/data/modes.ts:25:21 - error TS1005: '>' expected.
+
+25     icon: <FileText className="w-5 h-5 text-amber-600" />,
+                       ~~~~~~~~~
+
+src/data/modes.ts:25:30 - error TS1005: ',' expected.
+
+25     icon: <FileText className="w-5 h-5 text-amber-600" />,
+                                ~
+
+src/data/modes.ts:25:56 - error TS1005: ':' expected.
+
+25     icon: <FileText className="w-5 h-5 text-amber-600" />,
+                                                          ~
+
+src/data/modes.ts:26:5 - error TS1005: ',' expected.
+
+26     colorClass: 'amber',
+       ~~~~~~~~~~
+
+src/data/modes.ts:38:20 - error TS1005: '>' expected.
+
+38     icon: <Compass className="w-5 h-5 text-indigo-600" />,
+                      ~~~~~~~~~
+
+src/data/modes.ts:38:29 - error TS1005: ',' expected.
+
+38     icon: <Compass className="w-5 h-5 text-indigo-600" />,
+                               ~
+
+src/data/modes.ts:38:56 - error TS1005: ':' expected.
+
+38     icon: <Compass className="w-5 h-5 text-indigo-600" />,
+                                                          ~
+
+src/data/modes.ts:39:5 - error TS1005: ',' expected.
+
+39     colorClass: 'indigo',
+       ~~~~~~~~~~
+
+src/data/modes.ts:51:24 - error TS1005: '>' expected.
+
+51     icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
+                          ~~~~~~~~~
+
+src/data/modes.ts:51:33 - error TS1005: ',' expected.
+
+51     icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
+                                   ~
+
+src/data/modes.ts:51:61 - error TS1005: ':' expected.
+
+51     icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
+                                                               ~
+
+src/data/modes.ts:52:5 - error TS1005: ',' expected.
+
+52     colorClass: 'emerald',
+       ~~~~~~~~~~
+
+src/data/modes.ts:64:18 - error TS1005: '>' expected.
+
+64     icon: <Award className="w-5 h-5 text-sky-600" />,
+                    ~~~~~~~~~
+
+src/data/modes.ts:64:27 - error TS1005: ',' expected.
+
+64     icon: <Award className="w-5 h-5 text-sky-600" />,
+                             ~
+
+src/data/modes.ts:64:51 - error TS1005: ':' expected.
+
+64     icon: <Award className="w-5 h-5 text-sky-600" />,
+                                                     ~
+
+src/data/modes.ts:65:5 - error TS1005: ',' expected.
+
+65     colorClass: 'sky',
+       ~~~~~~~~~~
+
+
+Found 278 errors in 2 files.
+
+Errors  Files
+   262  src/data/constants.ts:19
+    16  src/data/modes.ts:25
+
+> javastudio@0.0.0 dev
+> tsx server.ts
+
+Server Java II Review Studio listening on port 3000
+admin@Blancas-MacBook-Pro java-studio % cd /Users/admin/Documents/GESTORIA/PROYECTOS/java-studio
+npm run dev
+
+> javastudio@0.0.0 dev
+> tsx server.ts
+
+Server Java II Review Studio listening on port 3000
+admin@Blancas-MacBook-Pro java-studio % npm run lint 2>&1 | grep "api/user"
+admin@Blancas-MacBook-Pro java-studio % npm run dev
+
+> javastudio@0.0.0 dev
+> tsx server.ts
+
+Server Java II Review Studio listening on port 3000
+admin@Blancas-MacBook-Pro java-studio % npm run lint
+
+
+> javastudio@0.0.0 lint
+> tsc --noEmit
+
+src/data/constants.ts:19:21 - error TS1005: '>' expected.
+
+19     icon: <FileText className="w-5 h-5 text-amber-600" />,
+                       ~~~~~~~~~
+
+src/data/constants.ts:19:30 - error TS1005: ',' expected.
+
+19     icon: <FileText className="w-5 h-5 text-amber-600" />,
+                                ~
+
+src/data/constants.ts:19:56 - error TS1005: ':' expected.
+
+19     icon: <FileText className="w-5 h-5 text-amber-600" />,
+                                                          ~
+
+src/data/constants.ts:27:20 - error TS1005: '>' expected.
+
+27     icon: <Compass className="w-5 h-5 text-indigo-600" />,
+                      ~~~~~~~~~
+
+src/data/constants.ts:27:29 - error TS1005: ',' expected.
+
+27     icon: <Compass className="w-5 h-5 text-indigo-600" />,
+                               ~
+
+src/data/constants.ts:27:56 - error TS1005: ':' expected.
+
+27     icon: <Compass className="w-5 h-5 text-indigo-600" />,
+                                                          ~
+
+src/data/constants.ts:35:24 - error TS1005: '>' expected.
+
+35     icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
+                          ~~~~~~~~~
+
+src/data/constants.ts:35:33 - error TS1005: ',' expected.
+
+35     icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
+                                   ~
+
+src/data/constants.ts:35:61 - error TS1005: ':' expected.
+
+35     icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
+                                                               ~
+
+src/data/constants.ts:43:18 - error TS1005: '>' expected.
+
+43     icon: <Award className="w-5 h-5 text-sky-600" />,
+                    ~~~~~~~~~
+
+src/data/constants.ts:43:27 - error TS1005: ',' expected.
+
+43     icon: <Award className="w-5 h-5 text-sky-600" />,
+                             ~
+
+src/data/constants.ts:43:51 - error TS1005: ':' expected.
+
+43     icon: <Award className="w-5 h-5 text-sky-600" />,
+                                                     ~
+
+src/data/constants.ts:67:12 - error TS1005: '>' expected.
+
+67       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+              ~~~~~~~~~
+
+src/data/constants.ts:67:21 - error TS1005: ')' expected.
+
+67       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+                       ~
+
+src/data/constants.ts:68:12 - error TS1005: '>' expected.
+
+68         <p className="font-serif italic text-base text-purple-900 bg-purple-50 p-3.5 rounded-xl border border-purple-200">
+              ~~~~~~~~~
+
+src/data/constants.ts:68:21 - error TS1005: ',' expected.
+
+68         <p className="font-serif italic text-base text-purple-900 bg-purple-50 p-3.5 rounded-xl border border-purple-200">
+                       ~
+
+src/data/constants.ts:68:122 - error TS1005: ':' expected.
+
+68         <p className="font-serif italic text-base text-purple-900 bg-purple-50 p-3.5 rounded-xl border border-purple-200">
+                                                                                                                            ~
+
+src/data/constants.ts:70:10 - error TS1161: Unterminated regular expression literal.
+
+70         </p>
+            ~~~
+
+src/data/constants.ts:71:13 - error TS1005: ',' expected.
+
+71         <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1">
+               ~~~~~~~~~
+
+src/data/constants.ts:72:15 - error TS1005: ',' expected.
+
+72           Las 3 claves de la refactorización
+                 ~
+
+src/data/constants.ts:72:17 - error TS1005: ':' expected.
+
+72           Las 3 claves de la refactorización
+                   ~~~~~~
+
+src/data/constants.ts:72:24 - error TS1005: ',' expected.
+
+72           Las 3 claves de la refactorización
+                          ~~
+
+src/data/constants.ts:72:27 - error TS1005: ',' expected.
+
+72           Las 3 claves de la refactorización
+                             ~~
+
+src/data/constants.ts:72:30 - error TS1005: ',' expected.
+
+72           Las 3 claves de la refactorización
+                                ~~~~~~~~~~~~~~~
+
+src/data/constants.ts:73:10 - error TS1139: Type parameter declaration expected.
+
+73         </h4>
+            ~
+
+src/data/constants.ts:74:13 - error TS1005: '>' expected.
+
+74         <ol className="list-decimal pl-5 space-y-2">
+               ~~~~~~~~~
+
+src/data/constants.ts:74:22 - error TS1005: ',' expected.
+
+74         <ol className="list-decimal pl-5 space-y-2">
+                        ~
+
+src/data/constants.ts:74:52 - error TS1005: ':' expected.
+
+74         <ol className="list-decimal pl-5 space-y-2">
+                                                      ~
+
+src/data/constants.ts:75:39 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                         ~
+
+src/data/constants.ts:75:41 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                           ~~~~~~~~~~~~~
+
+src/data/constants.ts:75:56 - error TS1110: Type expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                          ~
+
+src/data/constants.ts:75:122 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                            ~
+
+src/data/constants.ts:75:124 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                              ~~~~~~~
+
+src/data/constants.ts:75:132 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                      ~~~~~~~~~~~
+
+src/data/constants.ts:75:144 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                                  ~~
+
+src/data/constants.ts:75:147 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                                     ~~
+
+src/data/constants.ts:75:150 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                                        ~~~~~~~~~~~
+
+src/data/constants.ts:75:161 - error TS1005: ',' expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                                                   ~
+
+src/data/constants.ts:75:162 - error TS1003: Identifier expected.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                                                    ~
+
+src/data/constants.ts:75:163 - error TS1161: Unterminated regular expression literal.
+
+75           <li><strong>Encapsulamiento e Inmutabilidad:</strong> Convertir campos públicos a privados con getters/setters y validar invariantes en el constructor.</li>
+                                                                                                                                                                     ~~~~
+
+src/data/constants.ts:76:34 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                    ~
+
+src/data/constants.ts:76:36 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                      ~~~~~~~~~~~~
+
+src/data/constants.ts:76:50 - error TS1110: Type expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                    ~
+
+src/data/constants.ts:76:109 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                               ~~~~~~~
+
+src/data/constants.ts:76:117 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                       ~~~~~~~~~~
+
+src/data/constants.ts:76:128 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                  ~~~~~~
+
+src/data/constants.ts:76:135 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                         ~~~~
+
+src/data/constants.ts:76:140 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                              ~~~
+
+src/data/constants.ts:76:144 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                                  ~~~~~~~~~~~~
+
+src/data/constants.ts:76:157 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                                               ~
+
+src/data/constants.ts:76:159 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                                                 ~~~~~~~~~
+
+src/data/constants.ts:76:168 - error TS1005: ',' expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                                                          ~
+
+src/data/constants.ts:76:169 - error TS1003: Identifier expected.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                                                           ~
+
+src/data/constants.ts:76:170 - error TS1161: Unterminated regular expression literal.
+
+76           <li><strong>Interfaces y Polimorfismo:</strong> Separar la lógica de negocio de la entrada/salida creando interfaces claras para los repositorios y servicios.</li>
+                                                                                                                                                                            ~~~~
+
+src/data/constants.ts:77:33 - error TS1005: ',' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                   ~~
+
+src/data/constants.ts:77:36 - error TS1005: ',' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                      ~~~~~~~~~~~
+
+src/data/constants.ts:77:48 - error TS1005: ',' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                  ~~~~~~~~~
+
+src/data/constants.ts:77:67 - error TS1139: Type parameter declaration expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                     ~
+
+src/data/constants.ts:77:87 - error TS1005: ')' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                         ~~~~~~
+
+src/data/constants.ts:77:94 - error TS1005: ',' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                ~~~~~~~~
+
+src/data/constants.ts:77:103 - error TS1005: ',' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                         ~~
+
+src/data/constants.ts:77:106 - error TS1005: ',' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                            ~
+
+src/data/constants.ts:77:108 - error TS1005: ';' expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                              ~~~~~~~
+
+src/data/constants.ts:77:116 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                      ~~~
+
+src/data/constants.ts:77:120 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                          ~~~~~~~
+
+src/data/constants.ts:77:128 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                  ~~~~~~~~~~
+
+src/data/constants.ts:77:139 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                             ~~~~~~~~
+
+src/data/constants.ts:77:148 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                                      ~
+
+src/data/constants.ts:77:150 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                                        ~~~~~~~
+
+src/data/constants.ts:77:158 - error TS1434: Unexpected keyword or identifier.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                                                ~~~~
+
+src/data/constants.ts:77:176 - error TS1003: Identifier expected.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                                                                  ~
+
+src/data/constants.ts:77:177 - error TS1161: Unterminated regular expression literal.
+
+77           <li><strong>Reducción de Complejidad SonarQube (S3776):</strong> Reemplazar bucles anidados de 4 niveles por métodos auxiliares privados y Streams bien documentados.</li>
+                                                                                                                                                                                   ~~~~
+
+src/data/constants.ts:78:10 - error TS1161: Unterminated regular expression literal.
+
+78         </ol>
+            ~~~~
+
+src/data/constants.ts:79:12 - error TS1005: ';' expected.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+              ~~~~~~~~~
+
+src/data/constants.ts:79:70 - error TS1005: ';' expected.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+                                                                        ~~~
+
+src/data/constants.ts:79:74 - error TS1434: Unexpected keyword or identifier.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+                                                                            ~~~~~~~~~
+
+src/data/constants.ts:79:84 - error TS1434: Unexpected keyword or identifier.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+                                                                                      ~~~
+
+src/data/constants.ts:79:88 - error TS1434: Unexpected keyword or identifier.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+                                                                                          ~~~
+
+src/data/constants.ts:79:99 - error TS1003: Identifier expected.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+                                                                                                     ~
+
+src/data/constants.ts:79:100 - error TS1161: Unterminated regular expression literal.
+
+79         <p className="text-xs font-mono text-slate-500 pt-2">Escrito por Fullstack Web Dev Lovers.</p>
+                                                                                                      ~~~
+
+src/data/constants.ts:80:8 - error TS1161: Unterminated regular expression literal.
+
+80       </div>
+          ~~~~~
+
+src/data/constants.ts:81:5 - error TS1128: Declaration or statement expected.
+
+81     )
+       ~
+
+src/data/constants.ts:82:3 - error TS1128: Declaration or statement expected.
+
+82   },
+     ~
+
+src/data/constants.ts:82:4 - error TS1128: Declaration or statement expected.
+
+82   },
+      ~
+
+src/data/constants.ts:83:20 - error TS1005: ';' expected.
+
+83   'sonarqube-s3776': {
+                      ~
+
+src/data/constants.ts:85:13 - error TS1005: ';' expected.
+
+85     category: 'Blog Académico · Calidad de Código',
+               ~
+
+src/data/constants.ts:86:12 - error TS1005: ';' expected.
+
+86     content: (
+              ~
+
+src/data/constants.ts:87:12 - error TS1005: '>' expected.
+
+87       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+              ~~~~~~~~~
+
+src/data/constants.ts:87:21 - error TS1005: ')' expected.
+
+87       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+                       ~
+
+src/data/constants.ts:88:15 - error TS1005: ';' expected.
+
+88         <p>La regla <strong>S3776 de SonarQube</strong> mide la dificultad humana para leer y entender un método. Cuando la complejidad supera 15 puntos, SonarQube marca el código como fallo grave.</p>
+                 ~~~~~
+
+src/data/constants.ts:88:35 - error TS1005: ';' expected.
+
+88         <p>La regla <strong>S3776 de SonarQube</strong> mide la dificultad humana para leer y entender un método. Cuando la complejidad supera 15 puntos, SonarQube marca el código como fallo grave.</p>
+                                     ~~
+
+src/data/constants.ts:89:13 - error TS1005: '>' expected.
+
+89         <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1">Solución Quirúrgica</h4>
+               ~~~~~~~~~
+
+src/data/constants.ts:89:22 - error TS1005: ';' expected.
+
+89         <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1">Solución Quirúrgica</h4>
+                        ~
+
+src/data/constants.ts:89:100 - error TS1005: ';' expected.
+
+89         <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1">Solución Quirúrgica</h4>
+                                                                                                      ~~~~~~~~~~
+
+src/data/constants.ts:89:111 - error TS1161: Unterminated regular expression literal.
+
+89         <h4 className="font-bold text-slate-900 text-base border-b border-slate-200 pb-1">Solución Quirúrgica</h4>
+                                                                                                                 ~~~~
+
+src/data/constants.ts:90:16 - error TS1005: ';' expected.
+
+90         <p>Usa cláusulas de guarda (<em>early exit</em>) para retornar inmediatamente cuando las condiciones no se cumplan, eliminando los bloques <code>if / else</code> anidados profundamente.</p>
+                  ~~~~~~~~~
+
+src/data/constants.ts:90:26 - error TS1434: Unexpected keyword or identifier.
+
+90         <p>Usa cláusulas de guarda (<em>early exit</em>) para retornar inmediatamente cuando las condiciones no se cumplan, eliminando los bloques <code>if / else</code> anidados profundamente.</p>
+                            ~~
+
+src/data/constants.ts:90:47 - error TS1005: ',' expected.
+
+90         <p>Usa cláusulas de guarda (<em>early exit</em>) para retornar inmediatamente cuando las condiciones no se cumplan, eliminando los bloques <code>if / else</code> anidados profundamente.</p>
+                                                 ~~~~
+
+src/data/constants.ts:90:159 - error TS1005: ',' expected.
+
+90         <p>Usa cláusulas de guarda (<em>early exit</em>) para retornar inmediatamente cuando las condiciones no se cumplan, eliminando los bloques <code>if / else</code> anidados profundamente.</p>
+                                                                                                                                                                 ~~~~
+
+src/data/constants.ts:90:164 - error TS1110: Type expected.
+
+90         <p>Usa cláusulas de guarda (<em>early exit</em>) para retornar inmediatamente cuando las condiciones no se cumplan, eliminando los bloques <code>if / else</code> anidados profundamente.</p>
+                                                                                                                                                                      ~
+
+src/data/constants.ts:91:14 - error TS1005: '>' expected.
+
+91         <div className="p-3 bg-slate-900 text-slate-100 rounded-xl font-mono text-xs overflow-x-auto">
+                ~~~~~~~~~
+
+src/data/constants.ts:91:23 - error TS1005: ',' expected.
+
+91         <div className="p-3 bg-slate-900 text-slate-100 rounded-xl font-mono text-xs overflow-x-auto">
+                         ~
+
+src/data/constants.ts:92:18 - error TS1136: Property assignment expected.
+
+92           <code>{`// ANTES (Complejidad Cognitive = 18)\nif (usuario != null) {\n  if (usuario.isActivo()) {\n    if (pedido != null) {\n      // procesar...\n    }\n  }\n}\n\n// DESPUÉS (Complejidad Cognitive = 3)\nif (usuario == null || !usuario.isActivo() || pedido == null) return;\n// procesar directamente...`}</code>
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/data/constants.ts:92:316 - error TS1005: ',' expected.
+
+92           <code>{`// ANTES (Complejidad Cognitive = 18)\nif (usuario != null) {\n  if (usuario.isActivo()) {\n    if (pedido != null) {\n      // procesar...\n    }\n  }\n}\n\n// DESPUÉS (Complejidad Cognitive = 3)\nif (usuario == null || !usuario.isActivo() || pedido == null) return;\n// procesar directamente...`}</code>
+                                                                                                                                                                                                                                                                                                                              ~
+
+src/data/constants.ts:92:318 - error TS1110: Type expected.
+
+92           <code>{`// ANTES (Complejidad Cognitive = 18)\nif (usuario != null) {\n  if (usuario.isActivo()) {\n    if (pedido != null) {\n      // procesar...\n    }\n  }\n}\n\n// DESPUÉS (Complejidad Cognitive = 3)\nif (usuario == null || !usuario.isActivo() || pedido == null) return;\n// procesar directamente...`}</code>
+                                                                                                                                                                                                                                                                                                                                ~
+
+src/data/constants.ts:93:10 - error TS1161: Unterminated regular expression literal.
+
+93         </div>
+            ~~~~~
+
+src/data/constants.ts:94:8 - error TS1161: Unterminated regular expression literal.
+
+94       </div>
+          ~~~~~
+
+src/data/constants.ts:95:5 - error TS1128: Declaration or statement expected.
+
+95     )
+       ~
+
+src/data/constants.ts:96:3 - error TS1128: Declaration or statement expected.
+
+96   },
+     ~
+
+src/data/constants.ts:96:4 - error TS1128: Declaration or statement expected.
+
+96   },
+      ~
+
+src/data/constants.ts:97:20 - error TS1005: ';' expected.
+
+97   'anti-ai-cleanup': {
+                      ~
+
+src/data/constants.ts:99:13 - error TS1005: ';' expected.
+
+99     category: 'Blog Académico · Auditoría Anti-IA',
+               ~
+
+src/data/constants.ts:100:12 - error TS1005: ';' expected.
+
+100     content: (
+               ~
+
+src/data/constants.ts:101:12 - error TS1005: '>' expected.
+
+101       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+               ~~~~~~~~~
+
+src/data/constants.ts:101:21 - error TS1005: ')' expected.
+
+101       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+                        ~
+
+src/data/constants.ts:102:19 - error TS1005: ';' expected.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                      ~~~~~~~~~~
+
+src/data/constants.ts:102:30 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                 ~~~~~~~~
+
+src/data/constants.ts:102:39 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                          ~~~~~~~~~~
+
+src/data/constants.ts:102:50 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                     ~~
+
+src/data/constants.ts:102:53 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                        ~~~~~~
+
+src/data/constants.ts:102:60 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                               ~~~~~~~~
+
+src/data/constants.ts:102:69 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                        ~~~
+
+src/data/constants.ts:102:73 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                            ~~
+
+src/data/constants.ts:102:76 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                               ~~~
+
+src/data/constants.ts:102:80 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                   ~~~~~~
+
+src/data/constants.ts:102:87 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                          ~~~~~~
+
+src/data/constants.ts:102:94 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                 ~~
+
+src/data/constants.ts:102:97 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                    ~~~~
+
+src/data/constants.ts:102:102 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                         ~~~~~~~~~
+
+src/data/constants.ts:102:112 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                                   ~~~~~~~
+
+src/data/constants.ts:102:120 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                                           ~~
+
+src/data/constants.ts:102:123 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                                              ~~~~~~~
+
+src/data/constants.ts:102:131 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                                                      ~
+
+src/data/constants.ts:102:133 - error TS1434: Unexpected keyword or identifier.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                                                        ~~~~~~~
+
+src/data/constants.ts:102:147 - error TS1110: Type expected.
+
+102         <p>Muchos profesores utilizan detectores de código generado por IA que buscan marcas de agua textuales típicas de ChatGPT y Copilot como:</p>
+                                                                                                                                                      ~
+
+src/data/constants.ts:103:13 - error TS1005: ';' expected.
+
+103         <ul className="list-disc pl-5 space-y-1 font-mono text-xs text-rose-700">
+                ~~~~~~~~~
+
+src/data/constants.ts:107:10 - error TS1110: Type expected.
+
+107         </ul>
+             ~
+
+src/data/constants.ts:108:15 - error TS1005: ';' expected.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                  ~~~~~
+
+src/data/constants.ts:108:21 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                        ~~
+
+src/data/constants.ts:108:24 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                           ~~~~~~~~~
+
+src/data/constants.ts:108:34 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                     ~~
+
+src/data/constants.ts:108:37 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                        ~~~~
+
+src/data/constants.ts:108:42 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                             ~~~~~~
+
+src/data/constants.ts:108:49 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                    ~~~~~~~
+
+src/data/constants.ts:108:57 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                            ~~~~~~~~~~~~~~~
+
+src/data/constants.ts:108:73 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                            ~~~~~
+
+src/data/constants.ts:108:79 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                  ~~~~~~
+
+src/data/constants.ts:108:86 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                         ~~~~~~~~~~~
+
+src/data/constants.ts:108:98 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                                     ~~~~~~~~
+
+src/data/constants.ts:108:107 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                                              ~~~
+
+src/data/constants.ts:108:111 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                                                  ~~~~~~~~~~~
+
+src/data/constants.ts:108:123 - error TS1434: Unexpected keyword or identifier.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                                                              ~~~~~~~
+
+src/data/constants.ts:108:141 - error TS1003: Identifier expected.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                                                                                ~
+
+src/data/constants.ts:108:142 - error TS1161: Unterminated regular expression literal.
+
+108         <p>El motor de auditoría de Java Studio elimina automáticamente estas firmas manteniendo intactos tus comentarios Javadoc legítimos.</p>
+                                                                                                                                                 ~~~
+
+src/data/constants.ts:109:8 - error TS1161: Unterminated regular expression literal.
+
+109       </div>
+           ~~~~~
+
+src/data/constants.ts:110:5 - error TS1128: Declaration or statement expected.
+
+110     )
+        ~
+
+src/data/constants.ts:111:4 - error TS1128: Declaration or statement expected.
+
+111   },
+       ~
+
+src/data/constants.ts:112:21 - error TS1005: ';' expected.
+
+112   'solid-university': {
+                        ~
+
+src/data/constants.ts:114:13 - error TS1005: ';' expected.
+
+114     category: 'Blog Académico · Arquitectura',
+                ~
+
+src/data/constants.ts:115:12 - error TS1005: ';' expected.
+
+115     content: (
+               ~
+
+src/data/constants.ts:116:12 - error TS1005: '>' expected.
+
+116       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+               ~~~~~~~~~
+
+src/data/constants.ts:116:21 - error TS1005: ')' expected.
+
+116       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+                        ~
+
+src/data/constants.ts:117:20 - error TS1005: ';' expected.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                       ~~~~~
+
+src/data/constants.ts:117:26 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                             ~~
+
+src/data/constants.ts:117:29 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                ~~
+
+src/data/constants.ts:117:32 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                   ~~~~~~
+
+src/data/constants.ts:117:39 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                          ~~
+
+src/data/constants.ts:117:42 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                             ~~~~
+
+src/data/constants.ts:117:47 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                  ~~
+
+src/data/constants.ts:117:50 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                     ~~
+
+src/data/constants.ts:117:53 - error TS1435: Unknown keyword or identifier. Did you mean 'require'?
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                        ~~~~~~~~
+
+src/data/constants.ts:117:62 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                 ~~~~~~~
+
+src/data/constants.ts:117:70 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                         ~~
+
+src/data/constants.ts:117:87 - error TS1005: ';' expected.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                          ~~~
+
+src/data/constants.ts:117:91 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                              ~~~~~~~~
+
+src/data/constants.ts:117:100 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                       ~~
+
+src/data/constants.ts:117:103 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                          ~~~~~~~~~
+
+src/data/constants.ts:117:113 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                    ~~
+
+src/data/constants.ts:117:116 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                       ~~~~~~~~~~~~~~~
+
+src/data/constants.ts:117:144 - error TS1005: ';' expected.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                   ~~
+
+src/data/constants.ts:117:147 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                      ~~~~
+
+src/data/constants.ts:117:152 - error TS1435: Unknown keyword or identifier. Did you mean 'case'?
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                           ~~~~~
+
+src/data/constants.ts:117:158 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                 ~
+
+src/data/constants.ts:117:160 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                   ~~~~~~~~
+
+src/data/constants.ts:117:169 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                            ~~~
+
+src/data/constants.ts:117:173 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                ~~~
+
+src/data/constants.ts:117:177 - error TS1435: Unknown keyword or identifier. Did you mean 'class'?
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                    ~~~~~~
+
+src/data/constants.ts:117:184 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                           ~~~~~~~~
+
+src/data/constants.ts:117:193 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                    ~~
+
+src/data/constants.ts:117:223 - error TS1005: ';' expected.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                                                  ~
+
+src/data/constants.ts:117:225 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                                                    ~~
+
+src/data/constants.ts:117:228 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                                                       ~~
+
+src/data/constants.ts:117:231 - error TS1434: Unexpected keyword or identifier.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                                                          ~~~~~~~~~~~~~~~~
+
+src/data/constants.ts:117:258 - error TS1003: Identifier expected.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                                                                                     ~
+
+src/data/constants.ts:117:259 - error TS1161: Unterminated regular expression literal.
+
+117         <p>Aplicar SOLID en un examen de Java II no requiere cientos de clases. Basta con respetar el principio de Responsabilidad Única (SRP) en cada clase y asegurar que las clases dependan de abstracciones (interfaces) y no de implementaciones concretas.</p>
+                                                                                                                                                                                                                                                                      ~~~
+
+src/data/constants.ts:118:8 - error TS1161: Unterminated regular expression literal.
+
+118       </div>
+           ~~~~~
+
+src/data/constants.ts:119:5 - error TS1128: Declaration or statement expected.
+
+119     )
+        ~
+
+src/data/constants.ts:121:1 - error TS1128: Declaration or statement expected.
+
+121 });
+    ~
+
+src/data/constants.ts:121:2 - error TS1128: Declaration or statement expected.
+
+121 });
+     ~
+
+src/data/constants.ts:128:12 - error TS1005: '>' expected.
+
+128       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+               ~~~~~~~~~
+
+src/data/constants.ts:128:21 - error TS1005: ')' expected.
+
+128       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+                        ~
+
+src/data/constants.ts:129:22 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                         ~~~~
+
+src/data/constants.ts:129:27 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                              ~~~~~
+
+src/data/constants.ts:129:33 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                    ~~~
+
+src/data/constants.ts:129:37 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                        ~~~~~~~~~
+
+src/data/constants.ts:129:47 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                  ~~~~~~~~~~
+
+src/data/constants.ts:129:58 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                             ~~
+
+src/data/constants.ts:129:61 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                ~~~~~~~~~~
+
+src/data/constants.ts:129:72 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                           ~~
+
+src/data/constants.ts:129:75 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                              ~~~~~~~~~~~
+
+src/data/constants.ts:129:87 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                          ~~~~~~~~~~~~~~
+
+src/data/constants.ts:129:102 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                                         ~~
+
+src/data/constants.ts:129:105 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                                            ~~~~~~~~~~~~
+
+src/data/constants.ts:129:118 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                                                         ~~
+
+src/data/constants.ts:129:121 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                                                            ~
+
+src/data/constants.ts:129:128 - error TS1005: ',' expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                                                                   ~~
+
+src/data/constants.ts:129:132 - error TS1110: Type expected.
+
+129         <p>Documento guía sobre los criterios habituales de corrección en asignaturas universitarias de Programación II / Java II:</p>
+                                                                                                                                       ~
+
+src/data/constants.ts:130:13 - error TS1005: ',' expected.
+
+130         <ul className="list-disc pl-5 space-y-2">
+                ~~~~~~~~~
+
+src/data/constants.ts:131:34 - error TS1005: ',' expected.
+
+131           <li><strong>Estructura de Paquetes:</strong> Separación en <code>model</code>, <code>service</code>, <code>repository</code> y <code>exception</code>.</li>
+                                     ~~
+
+src/data/constants.ts:131:37 - error TS1005: ',' expected.
+
+131           <li><strong>Estructura de Paquetes:</strong> Separación en <code>model</code>, <code>service</code>, <code>repository</code> y <code>exception</code>.</li>
+                                        ~~~~~~~~
+
+src/data/constants.ts:131:47 - error TS1110: Type expected.
+
+131           <li><strong>Estructura de Paquetes:</strong> Separación en <code>model</code>, <code>service</code>, <code>repository</code> y <code>exception</code>.</li>
+                                                  ~
+
+src/data/constants.ts:131:88 - error TS1109: Expression expected.
+
+131           <li><strong>Estructura de Paquetes:</strong> Separación en <code>model</code>, <code>service</code>, <code>repository</code> y <code>exception</code>.</li>
+                                                                                           ~
+
+src/data/constants.ts:131:90 - error TS1136: Property assignment expected.
+
+131           <li><strong>Estructura de Paquetes:</strong> Separación en <code>model</code>, <code>service</code>, <code>repository</code> y <code>exception</code>.</li>
+                                                                                             ~
+
+src/data/constants.ts:132:35 - error TS1005: ')' expected.
+
+132           <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
+                                      ~~
+
+src/data/constants.ts:132:38 - error TS1005: ',' expected.
+
+132           <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
+                                         ~~~~~~~~~~~
+
+src/data/constants.ts:132:51 - error TS1139: Type parameter declaration expected.
+
+132           <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
+                                                      ~
+
+src/data/constants.ts:132:141 - error TS1109: Expression expected.
+
+132           <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
+                                                                                                                                                ~
+
+src/data/constants.ts:132:142 - error TS1003: Identifier expected.
+
+132           <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
+                                                                                                                                                 ~
+
+src/data/constants.ts:132:143 - error TS1161: Unterminated regular expression literal.
+
+132           <li><strong>Tratamiento de Excepciones:</strong> Creación de excepciones personalizadas heredando de <code>RuntimeException</code>.</li>
+                                                                                                                                                  ~~~~
+
+src/data/constants.ts:133:31 - error TS1005: ';' expected.
+
+133           <li><strong>Pruebas JUnit 5:</strong> Cobertura mínima del 80% en clases del paquete service.</li>
+                                  ~~~~~
+
+src/data/constants.ts:133:38 - error TS1005: ';' expected.
+
+133           <li><strong>Pruebas JUnit 5:</strong> Cobertura mínima del 80% en clases del paquete service.</li>
+                                         ~
+
+src/data/constants.ts:133:40 - error TS1110: Type expected.
+
+133           <li><strong>Pruebas JUnit 5:</strong> Cobertura mínima del 80% en clases del paquete service.</li>
+                                           ~
+
+src/data/constants.ts:134:10 - error TS1110: Type expected.
+
+134         </ul>
+             ~
+
+src/data/constants.ts:135:8 - error TS1161: Unterminated regular expression literal.
+
+135       </div>
+           ~~~~~
+
+src/data/constants.ts:136:5 - error TS1128: Declaration or statement expected.
+
+136     )
+        ~
+
+src/data/constants.ts:137:3 - error TS1128: Declaration or statement expected.
+
+137   },
+      ~
+
+src/data/constants.ts:137:4 - error TS1128: Declaration or statement expected.
+
+137   },
+       ~
+
+src/data/constants.ts:138:17 - error TS1005: ';' expected.
+
+138   'junit5-cheat': {
+                    ~
+
+src/data/constants.ts:140:13 - error TS1005: ';' expected.
+
+140     category: 'Documentación Técnica · Testing',
+                ~
+
+src/data/constants.ts:141:12 - error TS1005: ';' expected.
+
+141     content: (
+               ~
+
+src/data/constants.ts:142:12 - error TS1005: '>' expected.
+
+142       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+               ~~~~~~~~~
+
+src/data/constants.ts:142:21 - error TS1005: ')' expected.
+
+142       <div className="space-y-4 text-slate-700 text-sm leading-relaxed">
+                        ~
+
+src/data/constants.ts:143:21 - error TS1005: ';' expected.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                        ~~
+
+src/data/constants.ts:143:24 - error TS1435: Unknown keyword or identifier. Did you mean 'asserts'?
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                           ~~~~~~~~~~
+
+src/data/constants.ts:143:35 - error TS1434: Unexpected keyword or identifier.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                      ~~
+
+src/data/constants.ts:143:38 - error TS1434: Unexpected keyword or identifier.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                         ~~~~~
+
+src/data/constants.ts:143:46 - error TS1005: ';' expected.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                 ~~~~
+
+src/data/constants.ts:143:51 - error TS1434: Unexpected keyword or identifier.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                      ~~~~~~~
+
+src/data/constants.ts:143:59 - error TS1434: Unexpected keyword or identifier.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                              ~~~~~~~~~~~~~~~
+
+src/data/constants.ts:143:75 - error TS1434: Unexpected keyword or identifier.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                                              ~~~~~~~~~
+
+src/data/constants.ts:143:85 - error TS1434: Unexpected keyword or identifier.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                                                        ~~
+
+src/data/constants.ts:143:88 - error TS1435: Unknown keyword or identifier. Did you mean 'class'?
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                                                           ~~~~~~
+
+src/data/constants.ts:143:101 - error TS1110: Type expected.
+
+143         <p>Ejemplos de assertions de JUnit 5 para validar comportamientos esperados en clases Java:</p>
+                                                                                                        ~
+
+src/data/constants.ts:144:14 - error TS1005: ';' expected.
+
+144         <div className="p-3 bg-slate-900 text-slate-100 rounded-xl font-mono text-xs overflow-x-auto">
+                 ~~~~~~~~~
+
+src/data/constants.ts:145:18 - error TS1136: Property assignment expected.
+
+145           <code>{`@Test\n@DisplayName("Debe lanzar excepcion cuando el saldo es insuficiente")\nvoid testSaldoInsuficiente() {\n  assertThrows(SaldoInsuficienteException.class, () -> {\n    cuenta.retirar(1000.0);\n  });\n}`}</code>
+                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/data/constants.ts:145:227 - error TS1110: Type expected.
+
+145           <code>{`@Test\n@DisplayName("Debe lanzar excepcion cuando el saldo es insuficiente")\nvoid testSaldoInsuficiente() {\n  assertThrows(SaldoInsuficienteException.class, () -> {\n    cuenta.retirar(1000.0);\n  });\n}`}</code>
+                                                                                                                                                                                                                                      ~
+
+src/data/constants.ts:146:10 - error TS1161: Unterminated regular expression literal.
+
+146         </div>
+             ~~~~~
+
+src/data/constants.ts:147:8 - error TS1161: Unterminated regular expression literal.
+
+147       </div>
+           ~~~~~
+
+src/data/constants.ts:148:5 - error TS1128: Declaration or statement expected.
+
+148     )
+        ~
+
+src/data/constants.ts:149:3 - error TS1128: Declaration or statement expected.
+
+149   }
+      ~
+
+src/data/constants.ts:150:1 - error TS1128: Declaration or statement expected.
+
+150 });
+    ~
+
+src/data/constants.ts:150:2 - error TS1128: Declaration or statement expected.
+
+150 });
+     ~
+
+src/data/modes.ts:25:21 - error TS1005: '>' expected.
+
+25     icon: <FileText className="w-5 h-5 text-amber-600" />,
+                       ~~~~~~~~~
+
+src/data/modes.ts:25:30 - error TS1005: ',' expected.
+
+25     icon: <FileText className="w-5 h-5 text-amber-600" />,
+                                ~
+
+src/data/modes.ts:25:56 - error TS1005: ':' expected.
+
+25     icon: <FileText className="w-5 h-5 text-amber-600" />,
+                                                          ~
+
+src/data/modes.ts:26:5 - error TS1005: ',' expected.
+
+26     colorClass: 'amber',
+       ~~~~~~~~~~
+
+src/data/modes.ts:38:20 - error TS1005: '>' expected.
+
+38     icon: <Compass className="w-5 h-5 text-indigo-600" />,
+                      ~~~~~~~~~
+
+src/data/modes.ts:38:29 - error TS1005: ',' expected.
+
+38     icon: <Compass className="w-5 h-5 text-indigo-600" />,
+                               ~
+
+src/data/modes.ts:38:56 - error TS1005: ':' expected.
+
+38     icon: <Compass className="w-5 h-5 text-indigo-600" />,
+                                                          ~
+
+src/data/modes.ts:39:5 - error TS1005: ',' expected.
+
+39     colorClass: 'indigo',
+       ~~~~~~~~~~
+
+src/data/modes.ts:51:24 - error TS1005: '>' expected.
+
+51     icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
+                          ~~~~~~~~~
+
+src/data/modes.ts:51:33 - error TS1005: ',' expected.
+
+51     icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
+                                   ~
+
+src/data/modes.ts:51:61 - error TS1005: ':' expected.
+
+51     icon: <ShieldCheck className="w-5 h-5 text-emerald-600" />,
+                                                               ~
+
+src/data/modes.ts:52:5 - error TS1005: ',' expected.
+
+52     colorClass: 'emerald',
+       ~~~~~~~~~~
+
+src/data/modes.ts:64:18 - error TS1005: '>' expected.
+
+64     icon: <Award className="w-5 h-5 text-sky-600" />,
+                    ~~~~~~~~~
+
+src/data/modes.ts:64:27 - error TS1005: ',' expected.
+
+64     icon: <Award className="w-5 h-5 text-sky-600" />,
+                             ~
+
+src/data/modes.ts:64:51 - error TS1005: ':' expected.
+
+64     icon: <Award className="w-5 h-5 text-sky-600" />,
+                                                     ~
+
+src/data/modes.ts:65:5 - error TS1005: ',' expected.
+
+65     colorClass: 'sky',
+       ~~~~~~~~~~
+
+
+Found 278 errors in 2 files.
+
+Errors  Files
+   262  src/data/constants.ts:19
+    16  src/data/modes.ts:25
+admin@Blancas-MacBook-Pro java-studio % 
