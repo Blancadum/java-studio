@@ -1,4 +1,4 @@
-export type FileVersion = 'JAVAII_NO' | 'JAVAII-FIXED' | 'PROPOSED';
+export type FileVersion = 'Zip_original' | 'Zip_fixed' | 'PROPOSED';
 
 export type StudentPersonaMode = 
   | 'FEEDBACK_REVISION'   // Subsanación post-suspenso / Notas del Profesor
@@ -193,4 +193,3 @@ export interface UserProfile {
   };
   sessions: SavedSession[];
 }
-

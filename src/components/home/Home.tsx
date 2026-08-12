@@ -457,7 +457,7 @@ export const Home: React.FC<HomeProps> = ({
   // Unzip and file loading helper
   const processFiles = async (
     files: FileList | File[],
-    targetVersion: 'JAVAII_NO' | 'JAVAII-FIXED'
+    targetVersion: 'Zip_original' | 'Zip_fixed'
   ) => {
     const loadedFiles: JavaFile[] = [];
 
@@ -493,7 +493,7 @@ export const Home: React.FC<HomeProps> = ({
       }
     }
 
-    if (targetVersion === 'JAVAII_NO') {
+    if (targetVersion === 'Zip_original') {
       setNoFiles(prev => [...prev, ...loadedFiles]);
     } else {
       setFixedFiles(prev => [...prev, ...loadedFiles]);
@@ -545,7 +545,7 @@ export const Home: React.FC<HomeProps> = ({
       num: '001',
       title: 'Track / Subsanación Feedback',
       subtitle: 'Post-Suspenso & Comparativa AST',
-      desc: 'Compara tu borrador o entrega inicial contra las observaciones de tu profesora o las correcciones. Detecta discrepancias de firmas, visibilidad y cumplimiento de rúbrica.',
+      desc: 'Compara tu borrador o entrega inicial contra las observaciones de tu profe o las correcciones. Detecta discrepancias de firmas, visibilidad y cumplimiento de rúbrica.',
       icon: <FileText className="w-5 h-5 text-amber-600" />,
       color: 'amber'
     },
@@ -899,10 +899,10 @@ export const Home: React.FC<HomeProps> = ({
                   <span className={`${styles.modeDetailTag} text-amber-700`}>Post-Suspenso</span>
                 </div>
                 <h4 className={styles.modeDetailTitle}>
-                  Corrección basada en observaciones del profesor
+                  Corrección basada en observaciones de tu profe
                 </h4>
                 <p className={styles.modeDetailDescription}>
-                  <strong>Objetivo:</strong> Revisa borradores o exámenes suspendidos cruzándolos con los comentarios escritos por el docente o la rúbrica de corrección.
+                  <strong>Objetivo:</strong> Revisa borradores o exámenes suspendidos cruzándolos con los comentarios escritos por tu profe o la rúbrica de corrección.
                 </p>
                 <div className={`${styles.modeDetailTip} border-amber-200/60 text-amber-950`}>
                   💡 <i>Ideal para:</i> Convertir correcciones ambiguas del tipo "Mejorar cohesión" en cambios exactos de código manteniendo tu estilo original.
@@ -1029,7 +1029,7 @@ export const Home: React.FC<HomeProps> = ({
                 De suspenso en la primera entrega a sobresaliente mediante subsanación de AST
               </h3>
               <p className={styles.caseStudyDescription}>
-                "Había suspendido con un 3.8 debido a acoplamiento excesivo y violaciones de la regla SonarQube S3776. Al cargar mi proyecto inicial y las notas de mi profesora en Java Studio, el sistema me generó la refactorización exacta conservando mi lógica. Aprobé con un 9.8 en la recuperación."
+                "Había suspendido con un 3.8 debido a acoplamiento excesivo y violaciones de la regla SonarQube S3776. Al cargar mi proyecto inicial y las notas de mi profe en Java Studio, el sistema me generó la refactorización exacta conservando mi lógica. Aprobé con un 9.8 en la recuperación."
               </p>
               <div className={styles.caseStudyAction}>
                 <ChipButton variant="ghost" onClick={onLoadSample}>
@@ -1224,7 +1224,7 @@ export const Home: React.FC<HomeProps> = ({
                       multiple
                       accept=".java,.zip,.txt"
                       className="hidden"
-                      onChange={(e) => e.target.files && processFiles(e.target.files, 'JAVAII_NO')}
+                      onChange={(e) => e.target.files && processFiles(e.target.files, 'Zip_original')}
                     />
                   </label>
 
@@ -1259,7 +1259,7 @@ export const Home: React.FC<HomeProps> = ({
                       multiple
                       accept=".java,.zip,.txt"
                       className="hidden"
-                      onChange={(e) => e.target.files && processFiles(e.target.files, 'JAVAII-FIXED')}
+                      onChange={(e) => e.target.files && processFiles(e.target.files, 'Zip_fixed')}
                     />
                   </label>
 
@@ -1268,7 +1268,7 @@ export const Home: React.FC<HomeProps> = ({
                       {fixedFiles.map((f, i) => (
                         <li key={i} className={styles.fileListItem}>
                           <span className="truncate">{f.name}</span>
-                          <span className={`${styles.fileListItemVersion} text-emerald-700`}>JAVAII-FIXED</span>
+                          <span className={`${styles.fileListItemVersion} text-emerald-700`}>Zip_fixed</span>
                         </li>
                       ))}
                     </ul>
@@ -1280,13 +1280,13 @@ export const Home: React.FC<HomeProps> = ({
               {/* Document / Teacher Notes textarea */}
               <div className={styles.teacherNotesContainer}>
                 <label className={styles.label}>
-                  Notas / Correcciones por escrito de la Profesora (Opcional):
+                  Notas / Correcciones por escrito de tu profe (Opcional):
                 </label>
                 <textarea
                   rows={3}
                   value={teacherDoc}
                   onChange={(e) => setTeacherDoc(e.target.value)}
-                  placeholder="Pega aquí los comentarios en texto que te envió tu profesora por email o la intranet..."
+                  placeholder="Pega aquí los comentarios en texto que te envió tu profe por email o la intranet..."
                   className={styles.textarea}
                 />
               </div>
@@ -1384,7 +1384,7 @@ export const Home: React.FC<HomeProps> = ({
                     multiple
                     accept=".zip,.java"
                     className="hidden"
-                    onChange={(e) => e.target.files && processFiles(e.target.files, 'JAVAII_NO')}
+                    onChange={(e) => e.target.files && processFiles(e.target.files, 'Zip_original')}
                   />
                 </label>
 
@@ -1457,7 +1457,7 @@ export const Home: React.FC<HomeProps> = ({
                     multiple
                     accept=".java,.zip"
                     className="hidden"
-                    onChange={(e) => e.target.files && processFiles(e.target.files, 'JAVAII_NO')}
+                    onChange={(e) => e.target.files && processFiles(e.target.files, 'Zip_original')}
                   />
                 </label>
 
@@ -1567,7 +1567,7 @@ export const Home: React.FC<HomeProps> = ({
             },
             {
               q: '¿Qué hago si no tengo el código corregido sino sólo un documento PDF con comentarios?',
-              a: 'Puedes pegar directamente los comentarios de tu profesora en el cuadro de texto. La IA interpretará las correcciones solicitadas y adaptará tu código.'
+              a: 'Puedes pegar directamente los comentarios de tu profe en el cuadro de texto. La IA interpretará las correcciones solicitadas y adaptará tu código.'
             },
             {
               q: '¿Puedo descargar las clases corregidas y los tests JUnit 5 en un archivo .ZIP?',

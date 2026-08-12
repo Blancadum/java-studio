@@ -1,7 +1,7 @@
 import { JavaFile, AnalysisResult } from './types';
 
 export const SAMPLE_TEACHER_DOC = `# INFORME DE EVALUACIÓN - PROYECTO JAVA II
-**Profesora:** Dra. María Carmen Rodríguez
+**Profe:** Dra. María Carmen Rodríguez
 **Asignatura:** Programación Orientada a Objetos y Java II
 **Estado actual del proyecto:** REPROBADO (SUSPENDIDO - Requiere Subsanación)
 
@@ -32,7 +32,7 @@ export const SAMPLE_NO_FILES: JavaFile[] = [
     id: 'no-1',
     name: 'Vehiculo.java',
     path: 'com/universidad/modelo/Vehiculo.java',
-    version: 'JAVAII_NO',
+    version: 'Zip_original',
     content: `package com.universidad.modelo;
 
 public class Vehiculo {
@@ -54,7 +54,7 @@ public class Vehiculo {
     id: 'no-2',
     name: 'ReservaService.java',
     path: 'com/universidad/servicio/ReservaService.java',
-    version: 'JAVAII_NO',
+    version: 'Zip_original',
     content: `package com.universidad.servicio;
 
 import com.universidad.modelo.Vehiculo;
@@ -99,7 +99,7 @@ export const SAMPLE_FIXED_FILES: JavaFile[] = [
     id: 'fixed-1',
     name: 'Vehiculo.java',
     path: 'com/universidad/modelo/Vehiculo.java',
-    version: 'JAVAII-FIXED',
+    version: 'Zip_fixed',
     content: `package com.universidad.modelo;
 
 public class Vehiculo {
@@ -127,7 +127,7 @@ public class Vehiculo {
     id: 'fixed-2',
     name: 'ReservaService.java',
     path: 'com/universidad/servicio/ReservaService.java',
-    version: 'JAVAII-FIXED',
+    version: 'Zip_fixed',
     content: `package com.universidad.servicio;
 
 import com.universidad.modelo.Vehiculo;
@@ -166,7 +166,7 @@ export const INITIAL_SAMPLE_ANALYSIS: AnalysisResult = {
   overallScore: 72,
   passLikelihood: 'MEDIA',
   teacherComplianceScore: 68,
-  summary: 'Se observan mejoras importantes en la versión JAVAII-FIXED (encapsulamiento en Vehiculo y uso de genéricos List<Vehiculo>). Sin embargo, aún quedan requisitos clave indicados por la profesora sin cumplir del todo (falta jerarquía de excepciones personalizadas, uso de Java Streams y Pruebas JUnit 5).',
+  summary: 'Se observan mejoras importantes en la versión Zip_fixed (encapsulamiento en Vehiculo y uso de genéricos List<Vehiculo>). Sin embargo, aún quedan requisitos clave indicados por tu profe sin cumplir del todo (falta jerarquía de excepciones personalizadas, uso de Java Streams y Pruebas JUnit 5).',
   keyStrengths: [
     'Atributos encapsulados correctamente con getters/setters en Vehiculo.java.',
     'Uso de genéricos List<Vehiculo> reemplazando ArrayList sin tipo.',
@@ -236,7 +236,7 @@ export const INITIAL_SAMPLE_ANALYSIS: AnalysisResult = {
       fileTarget: 'com/universidad/excepcion/ReservaNotFoundException.java',
       issueTitle: 'Crear Excepción Personalizada ReservaNotFoundException',
       category: 'EXCEPTIONS',
-      description: 'Satisface el requisito número 1 de la profesora sobre jerarquía de excepciones propias.',
+      description: 'Satisface el requisito número 1 de tu profe sobre jerarquía de excepciones propias.',
       originalCode: '// No existía esta clase',
       proposedCode: `package com.universidad.excepcion;
 
@@ -288,7 +288,7 @@ public Vehiculo buscarPorMatricula(String mat) throws ReservaNotFoundException {
       fileTarget: 'src/test/java/com/universidad/servicio/ReservaServiceTest.java',
       issueTitle: 'Añadir Suite de Pruebas Unitarias JUnit 5',
       category: 'TESTS',
-      description: 'Crea la clase de pruebas unitarias requerida por la profesora para garantizar el aprobado.',
+      description: 'Crea la clase de pruebas unitarias requerida por tu profe para garantizar el aprobado.',
       originalCode: '// No existen pruebas unitarias',
       proposedCode: `package com.universidad.servicio;
 
@@ -332,7 +332,7 @@ public class ReservaServiceTest {
   ],
   generalAdvice: [
     'Asegúrate de adjuntar los archivos .java actualizados en el ZIP final de entrega.',
-    'Añade un archivo README.md o InformeJustificacion.pdf explicando cómo has atendido cada recomendación de la profesora.',
+    'Añade un archivo README.md o InformeJustificacion.pdf explicando cómo has atendido cada recomendación de tu profe.',
     'Verifica que la versión de Java utilizada en la configuración del proyecto (pom.xml o build.gradle) sea Java 17 o superior.'
   ]
 };

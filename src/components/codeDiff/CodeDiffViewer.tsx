@@ -17,7 +17,7 @@ export const CodeDiffViewer: React.FC<CodeDiffViewerProps> = ({
 
   const tabs: { id: Tab; label: string; count: number }[] = [
     { id: 'no',       label: 'Borrador inicial',   count: noFiles.length },
-    { id: 'fixed',    label: 'JAVAII-FIXED',        count: fixedFiles.length },
+    { id: 'fixed',    label: 'Zip_fixed',        count: fixedFiles.length },
     { id: 'proposed', label: 'Con propuestas',      count: proposedFiles.length },
   ];
 

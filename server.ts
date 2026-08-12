@@ -33,6 +33,11 @@ function getOAuth2Client() {
   return new google.auth.OAuth2(clientId, clientSecret, redirectUri);
 }
 
+// Get APP_URL with fallback
+function getAppUrl() {
+  return process.env.APP_URL || 'http://localhost:3000';
+}
+
 // ----------------------------------------------------
 // 1. HEALTH CHECK & AUTH USER ENDPOINTS
 // ----------------------------------------------------
@@ -41,7 +46,7 @@ app.get('/api/health', (req, res) => {
     status: 'ok',
     hasGeminiKey: !!process.env.GEMINI_API_KEY,
     hasOAuthClient: !!process.env.OAUTH_CLIENT_ID,
-    appUrl: process.env.APP_URL || 'http://localhost:3000'
+    appUrl: getAppUrl()
   });
 });
 
@@ -133,6 +138,8 @@ app.get('/api/auth/google/url', (req, res) => {
 
 app.get('/api/auth/google/callback', async (req, res) => {
   const code = req.query.code as string;
+  const appUrl = getAppUrl();
+  
   if (!code) {
     return res.status(400).send('No authorization code provided');
   }
