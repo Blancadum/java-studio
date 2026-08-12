@@ -38,15 +38,28 @@ Auditoría estática con reglas reales de SonarQube (`java:S106`, `java:S112`, `
 
 ---
 
+## Refactorización y Mejoras Recientes (Último Commit)
+
+Se ha realizado una refactorización arquitectónica significativa en el frontend y se han corregido errores críticos de compilación para mejorar la mantenibilidad y robustez del proyecto.
+
+*   **Centralización del Estado con React Context:** Se introdujo `WorkspaceContext` para gestionar el estado global de la aplicación, incluyendo los archivos del proyecto (`noFiles`, `fixedFiles`, `teacherDoc`) y las opciones de configuración de cada modo.
+    *   Esto elimina el "prop drilling" (paso de propiedades a través de múltiples niveles), simplificando componentes como `App`, `Home` y `Navbar`.
+*   **Reestructuración de Componentes:** El componente `App.tsx` se dividió en `App.tsx` (que ahora solo actúa como proveedor del contexto) y `AppContent.tsx` (que contiene la lógica principal de la aplicación). Se ha extraído la barra de navegación de modos a un componente reutilizable `ModeNavBar.tsx`.
+*   **Corrección de Errores de TypeScript:** Se resolvieron los errores de compilación relacionados con el uso de JSX en archivos `.ts` (renombrándolos a `.tsx`) y se añadió la configuración necesaria (`vite-env.d.ts`) para que TypeScript reconozca las importaciones de módulos CSS.
+*   **Limpieza de Código:** Contenido estático (modales, FAQs) se centralizó en `src/data/constants.tsx`, y se mejoró el tipado en `src/data/modes.tsx`.
+*   **Autenticación JWT en Backend (Setup Inicial):** Se ha configurado el servidor Express para usar JSON Web Tokens (JWT) para la autenticación, añadiendo un `authMiddleware` y modificando el endpoint de login para emitir tokens.
+
+---
+
 ## Stack técnico
 
 | Capa | Tecnología |
 |---|---|
 | Frontend | React 19 + TypeScript + Tailwind CSS v4 |
-| Backend | Express (local) / Vercel Serverless Functions (producción) |
+| Backend | Express (local) / Vercel Serverless Functions (producción) + **jsonwebtoken** |
 | IA | Google Gemini 2.0 Flash con structured outputs |
 | Base de datos | Upstash Redis (sesiones y perfiles de usuario) |
-| Auth | Google OAuth 2.0 + autenticación propia con email/contraseña |
+| Auth | Google OAuth 2.0 + autenticación propia con email/contraseña + **JWT** |
 | Drive | Google Drive API v3 (importación de proyectos) |
 | Deploy | Vercel |
 
@@ -69,6 +82,7 @@ OAUTH_CLIENT_ID=tu-client-id.apps.googleusercontent.com
 OAUTH_CLIENT_SECRET=tu-client-secret
 UPSTASH_REDIS_REST_URL=https://xxxx.upstash.io
 UPSTASH_REDIS_REST_TOKEN=tu-token
+JWT_SECRET=un-secreto-muy-largo-y-dificil-de-adivinar-12345!
 ```
 
 ```bash

@@ -3,6 +3,8 @@ import express from 'express';
 import path from 'path';
 import { createServer as createViteServer } from 'vite';
 import { google } from 'googleapis';
+import jwt from 'jsonwebtoken';
+import { Request, Response, NextFunction } from 'express';
 import { Type } from '@google/genai';
 import { executeWithAiFallback, getGenAIClient } from './server/aiService';
 import {
@@ -13,6 +15,15 @@ import {
   saveUserSession,
   toggleUser2FA
 } from './server/userStore';
+
+// Extender la interfaz Request de Express para incluir la propiedad `user`
+interface AuthenticatedRequest extends Request {
+  user?: {
+    email: string;
+  };
+}
+
+const JWT_SECRET = process.env.JWT_SECRET || 'default_secret';
 
 const app = express();
 const PORT = 3000;
@@ -65,20 +76,37 @@ app.post('/api/auth/login', (req, res) => {
   try {
     const user = loginUser(email, password);
     res.json({ success: true, user });
+    // Generar un token JWT al iniciar sesión
+    const token = jwt.sign({ email: user.email }, JWT_SECRET, { expiresIn: '1d' });
+    res.json({ success: true, user, token });
   } catch (err: any) {
     res.status(401).json({ error: err.message });
   }
 });
 
-/*
- * TODO: Implementar un middleware de autenticación (ej. authMiddleware)
- * que verifique un token y adjunte el usuario al objeto `req`.
- */
-app.get('/api/user/profile', /* authMiddleware, */ (req, res) => {
-  // const email = (req as any).user?.email; // El email se obtiene del usuario autenticado
-  const email = 'blanca@estudiante.edu'; // Manteniendo el hardcodeo temporalmente para no romper la demo
+// Middleware de autenticación para verificar el token JWT
+const authMiddleware = (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
+  const authHeader = req.headers.authorization;
+
+  if (!authHeader || !authHeader.startsWith('Bearer ')) {
+    return res.status(401).json({ error: 'Acceso denegado. No se proporcionó token.' });
+  }
+
+  const token = authHeader.split(' ')[1];
+
+  try {
+    const decoded = jwt.verify(token, JWT_SECRET) as { email: string };
+    req.user = { email: decoded.email };
+    next();
+  } catch (err) {
+    res.status(401).json({ error: 'Token inválido o expirado.' });
+  }
+};
+
+app.get('/api/user/profile', authMiddleware, (req: AuthenticatedRequest, res: Response) => {
+  const email = req.user?.email;
   if (!email) {
-    return res.status(401).json({ error: 'No autenticado o email no encontrado en el token.' });
+    return res.status(401).json({ error: 'No autenticado.' });
   }
   try {
     const user = getUserProfile(email);
@@ -88,34 +116,43 @@ app.get('/api/user/profile', /* authMiddleware, */ (req, res) => {
   }
 });
 
-app.post('/api/user/api-config', (req, res) => {
+app.post('/api/user/api-config', authMiddleware, (req: AuthenticatedRequest, res: Response) => {
   const { config } = req.body;
-  const email = 'blanca@estudiante.edu'; // TODO: Obtener del usuario autenticado
+  const email = req.user?.email;
+  if (!email) {
+    return res.status(401).json({ error: 'No autenticado.' });
+  }
   try {
-    const updatedUser = updateUserApiConfig(email || 'blanca@estudiante.edu', config);
+    const updatedUser = updateUserApiConfig(email, config);
     res.json({ success: true, user: updatedUser });
   } catch (err: any) {
     res.status(400).json({ error: err.message });
   }
 });
 
-app.post('/api/user/2fa/toggle', (req, res) => {
+app.post('/api/user/2fa/toggle', authMiddleware, (req: AuthenticatedRequest, res: Response) => {
   const { enabled } = req.body;
-  const email = 'blanca@estudiante.edu'; // TODO: Obtener del usuario autenticado
+  const email = req.user?.email;
+  if (!email) {
+    return res.status(401).json({ error: 'No autenticado.' });
+  }
   try {
-    const updatedUser = toggleUser2FA(email || 'blanca@estudiante.edu', enabled);
+    const updatedUser = toggleUser2FA(email, enabled);
     res.json({ success: true, user: updatedUser });
   } catch (err: any) {
     res.status(400).json({ error: err.message });
   }
 });
 
-app.post('/api/user/sessions/save', (req, res) => {
+app.post('/api/user/sessions/save', authMiddleware, (req: AuthenticatedRequest, res: Response) => {
   const { session, sessionData } = req.body;
-  const email = 'blanca@estudiante.edu'; // TODO: Obtener del usuario autenticado
+  const email = req.user?.email;
+  if (!email) {
+    return res.status(401).json({ error: 'No autenticado.' });
+  }
   const sessionPayload = session || sessionData;
   try {
-    const saved = saveUserSession(email || 'blanca@estudiante.edu', sessionPayload);
+    const saved = saveUserSession(email, sessionPayload);
     res.json({ success: true, session: saved });
   } catch (err: any) {
     res.status(400).json({ error: err.message });

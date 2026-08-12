@@ -3,8 +3,8 @@ import { UserProfile, SavedSession, UserApiConfig } from '../src/data/types';
 // In-memory user database with default demo user
 const usersDatabase: Map<string, { passwordHash: string; profile: UserProfile }> = new Map();
 
-// Initialize default student account
-const defaultUserEmail = 'blanca@estudiante.edu';
+// Initialize default author account
+const defaultUserEmail = 'blancadum@gmail.com';
 usersDatabase.set(defaultUserEmail, {
   passwordHash: 'java2026', // Simple demo hash
   profile: {
