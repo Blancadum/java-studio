@@ -8,7 +8,12 @@ import { PreSubmissionAuditView } from './components/preSubmision/PreSubmissionA
 import { SonarQualityView } from './components/sonar/SonarQualityView';
 import { JavaTutorChat } from './components/javaTutor/JavaTutorChat';
 import { JavaBotOnboardingWidget } from './components/javaBot/JavaBotOnboardingWidget';
-import { Home } from './components/home/Home';
+import { HomePage } from './pages/HomePage';
+import { ModesPage } from './pages/ModesPage'; // FASE 2 - nuevas modalities
+import { DesdeCeroPage } from './pages/modalidades/DesdeCeroPage';
+import { AntesDeEntregarPage } from './pages/modalidades/AntesDeEntregarPage';
+import { CorregirConFeedbackPage } from './pages/modalidades/CorregirConFeedbackPage';
+import { BuenasPracticasPage } from './pages/modalidades/BuenasPracticasPage';
 import { useWorkspace } from './components/home/WorkspaceContext';
 
 import { UserProfileModal } from './components/userProfile/UserProfileModal';
@@ -27,6 +32,8 @@ export function AppContent() {
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState<boolean>(false);
   const [isProfileModalOpen, setIsProfileModalOpen] = useState<boolean>(false);
+  const [showModalitiesPage, setShowModalitiesPage] = useState<boolean>(false);
+  const [currentModalitySlug, setCurrentModalitySlug] = useState<string | null>(null);
 
   // Active Student Persona Mode
   const [activeMode, setActiveMode] = useState<StudentPersonaMode>('FEEDBACK_REVISION');
@@ -354,7 +361,7 @@ public class ReservaNotFoundException extends Exception {
   const hasAnyResults = analysisResult || architectureGuide || preSubmissionAudit || sonarQuality;
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased selection:bg-amber-500 selection:text-slate-950">
+    <div className="min-h-screen bg-white text-black font-sans antialiased selection:bg-black selection:text-white">
       
       {/* Navbar */}
       <Navbar
@@ -372,17 +379,17 @@ public class ReservaNotFoundException extends Exception {
       />
 
       {/* Main Content Area */}
-      <main className="pb-16">
+      <main className="pb-16 bg-white">
         
         {isAnalyzing && (
-          <div className="max-w-2xl mx-auto py-24 px-4 text-center space-y-4" aria-live="polite" aria-busy="true">
-            <div className="w-16 h-16 rounded-3xl bg-amber-500/10 border border-amber-500/30 text-amber-500 flex items-center justify-center mx-auto shadow-xl animate-pulse">
+      <div className="max-w-2xl mx-auto py-24 px-4 text-center space-y-4 bg-white" aria-live="polite" aria-busy="true">
+            <div className="w-16 h-16 rounded-3xl bg-black/10 border border-black/30 text-black flex items-center justify-center mx-auto shadow-xl animate-pulse">
               <Loader2 className="w-8 h-8 animate-spin" />
             </div>
-            <h3 className="text-xl font-bold text-slate-900 dark:text-white">
-              Ejecutando Inteligencia Artificial en Modo: <span className="text-amber-500">{activeMode}</span>
+            <h3 className="text-xl font-bold text-black">
+              Ejecutando Inteligencia Artificial en Modo: <span className="text-black">{activeMode}</span>
             </h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+            <p className="text-xs text-gray-600 max-w-md mx-auto">
               Analizando estructura de clases Java, aplicando rúbrica universitaria y generando recomendaciones en código.
             </p>
           </div>
@@ -428,19 +435,97 @@ public class ReservaNotFoundException extends Exception {
         )}
 
         {!isAnalyzing && !hasAnyResults && (
-          <Home
-            activeMode={activeMode}
-            onSelectMode={handleSelectMode}
-            onStartAnalysis={handleStartAnalysis}
-            onOpenDriveModal={() => {
-              if (!driveConnected) handleConnectDrive();
-              else setIsDriveModalOpen(true);
-            }}
-            onLoadSample={handleLoadSample}
-            isAnalyzing={isAnalyzing}
-            onOpenAuth={() => setIsAuthModalOpen(true)}
-            onOpenTutorWithQuery={(query) => setTutorModalQuery(query)}
-          />
+          <>
+            {currentModalitySlug === 'desde-cero' && activeMode === 'ARCHITECTURE_NOOB' && (
+              <DesdeCeroPage
+                onBack={() => {
+                  setActiveMode('FEEDBACK_REVISION');
+                  setCurrentModalitySlug(null);
+                  setShowModalitiesPage(true);
+                }}
+                onStartAnalysis={handleStartAnalysis}
+                isAnalyzing={isAnalyzing}
+              />
+            )}
+
+            {currentModalitySlug === 'antes-de-entregar' && activeMode === 'PRE_SUBMISSION_AUDIT' && (
+              <AntesDeEntregarPage
+                onBack={() => {
+                  setActiveMode('FEEDBACK_REVISION');
+                  setCurrentModalitySlug(null);
+                  setShowModalitiesPage(true);
+                }}
+                onStartAnalysis={handleStartAnalysis}
+                isAnalyzing={isAnalyzing}
+              />
+            )}
+
+            {currentModalitySlug === 'corregir-con-feedback' && activeMode === 'FEEDBACK_REVISION' && (
+              <CorregirConFeedbackPage
+                onBack={() => {
+                  setActiveMode('FEEDBACK_REVISION');
+                  setCurrentModalitySlug(null);
+                  setShowModalitiesPage(true);
+                }}
+                onStartAnalysis={(files, refinementValues) =>
+                  handleStartAnalysis(
+                    files, // Corresponds to inputNo for FEEDBACK_REVISION
+                    refinementValues.fixedFiles, // Corresponds to inputFixed
+                    refinementValues.teacherDoc, // Corresponds to inputTeacher
+                    {} // No additional mode-specific options for FEEDBACK_REVISION
+                  )
+                }
+                isAnalyzing={isAnalyzing}
+              />
+            )}
+
+            {currentModalitySlug === 'buenas-practicas' && activeMode === 'SONAR_QUALITY' && (
+              <BuenasPracticasPage
+                onBack={() => {
+                  setActiveMode('FEEDBACK_REVISION');
+                  setCurrentModalitySlug(null);
+                  setShowModalitiesPage(true);
+                }}
+                onStartAnalysis={handleStartAnalysis}
+                isAnalyzing={isAnalyzing}
+              />
+            )}
+
+            {showModalitiesPage && !currentModalitySlug && (
+              <ModesPage
+                onSelectMode={handleSelectMode}
+                onNavigateToMode={(modeSlug) => {
+                  // FASE 3: Route to ModeDetailPage
+                  // For now, just set active mode
+                  const modeMap: Record<string, StudentPersonaMode> = {
+                    'feedback-revision': 'FEEDBACK_REVISION',
+                    'architecture-noob': 'ARCHITECTURE_NOOB',
+                    'pre-submission-audit': 'PRE_SUBMISSION_AUDIT',
+                    'sonar-quality': 'SONAR_QUALITY',
+                  };
+                  if (modeMap[modeSlug]) {
+                    handleSelectMode(modeMap[modeSlug]);
+                  }
+                }}
+              />
+            )}
+
+            {!showModalitiesPage && !currentModalitySlug && (
+              <HomePage
+                activeMode={activeMode}
+                onSelectMode={handleSelectMode}
+                onStartAnalysis={handleStartAnalysis}
+                onOpenDriveModal={() => {
+                  if (!driveConnected) handleConnectDrive();
+                  else setIsDriveModalOpen(true);
+                }}
+                onLoadSample={handleLoadSample}
+                isAnalyzing={isAnalyzing}
+                onOpenAuth={() => setIsAuthModalOpen(true)}
+                onOpenTutorWithQuery={(query) => setTutorModalQuery(query)}
+              />
+            )}
+          </>
         )}
       </main>
 
@@ -488,7 +573,7 @@ public class ReservaNotFoundException extends Exception {
 
       {/* Profe Virtual Chat Modal Overlay */}
       {tutorModalQuery !== null && (
-        <div className="fixed inset-0 bg-slate-950/80 backdrop-blur-md z-50 flex items-center justify-center p-4 animate-fadeIn">
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4 animate-fadeIn">
           <div className="w-full max-w-3xl">
             <JavaTutorChat
               analysis={analysisResult}
@@ -497,7 +582,7 @@ public class ReservaNotFoundException extends Exception {
               onClose={() => setTutorModalQuery(null)}
             />
           </div>
-        </div>
+            </div>
       )}
 
     </div>

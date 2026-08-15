@@ -13,7 +13,6 @@ export const ChipButton: React.FC<{
 
   return (
     <button type="button" onClick={onClick} disabled={disabled} className={`${styles.base} ${variantClass} ${className}`}>
-      <span aria-hidden="true" className={styles.bullet}>▪</span>
       {children}
     </button>
   );

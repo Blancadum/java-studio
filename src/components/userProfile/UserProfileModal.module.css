@@ -1,11 +1,11 @@
 @reference "../../index.css";
 
 .modalBackdrop {
-  @apply fixed inset-0 z-50 flex items-center justify-center bg-slate-950/70 backdrop-blur-sm p-4;
+  @apply fixed inset-0 z-50 flex items-start justify-center bg-slate-950/70 backdrop-blur-sm p-4 pt-16 overflow-y-auto;
 }
 
 .modalContent {
-  @apply bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh];
+  @apply bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden flex flex-col mb-8;
 }
 
 /* ── Header ─────────────────────────────────────── */

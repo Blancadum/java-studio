@@ -68,7 +68,7 @@ Se ha realizado una refactorización arquitectónica significativa en el fronten
 ## Instalación local
 
 ```bash
-git clone https://github.com/Blancadum/javastudio.git
+git clone https://github.com/blancadum/java-studio.git
 cd javastudio
 npm install
 ```

@@ -1,0 +1,617 @@
+.container {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Hero Section */
+.hero {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 6rem 1.5rem 8rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroDecor {
+  display: none;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.heroBadge svg {
+  animation: none;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #000;
+  line-height: 1.1;
+  max-width: 900px;
+}
+
+.gradient {
+  color: #000;
+}
+
+.heroSubtitle {
+  font-size: 1.25rem;
+  color: #666;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.heroButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.ctaButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.5rem;
+  background: #000;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.ctaButton:hover {
+  background: #333;
+}
+
+.secondaryButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.5rem;
+  background: white;
+  color: #000;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.secondaryButton:hover {
+  border-color: #000;
+  background: #f9f9f9;
+}
+
+/* Stats Section */
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto -4rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.statItem {
+  background: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e5e5;
+  text-align: center;
+  transition: none;
+}
+
+.statItem:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 0.95rem;
+  color: #666;
+  font-weight: 500;
+}
+
+/* Features Section */
+.features {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 1.5rem 6rem;
+}
+
+.featuresHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.featuresTitle {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 0.75rem;
+}
+
+.featuresSubtitle {
+  font-size: 1.125rem;
+  color: #666;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.featureCard::before {
+  display: none;
+}
+
+.featureCard:hover {
+  border-color: #ccc;
+  box-shadow: none;
+  transform: none;
+}
+
+.featureCard:hover::before {
+  opacity: 0;
+}
+
+.featureIcon {
+  width: 50px;
+  height: 50px;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f0f0 !important;
+  color: #000 !important;
+}
+
+.featureCard h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #000;
+}
+
+.featureCard p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.featureLink {
+  color: #000;
+  font-weight: 600;
+  text-decoration: none;
+  transition: gap 0.3s ease;
+  display: inline-block;
+}
+
+.featureLink:hover {
+  gap: 0.25rem;
+}
+
+.featureCTA {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+  padding-top: 3rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.featureCTAButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.875rem 2.5rem;
+  background: #000;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  white-space: nowrap;
+}
+
+.featureCTAButton:hover {
+  background: #333;
+}
+
+.featureCTAButton:active {
+  background: #000;
+}
+
+/* Value Section */
+.valueSection {
+  background: #f9f9f9;
+  padding: 6rem 1.5rem;
+  margin: 4rem 0;
+}
+
+.valueContent {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.valueContent h2 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.valueGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.valueItem {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.valueItem svg {
+  flex-shrink: 0;
+  margin-top: 0.25rem;
+}
+
+.valueItem h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.25rem;
+}
+
+.valueItem p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* CTA Section */
+.ctaSection {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 6rem 1.5rem;
+  text-align: center;
+}
+
+.ctaSectionTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.ctaSectionText {
+  font-size: 1.125rem;
+  color: #666;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.ctaSectionButton {
+  padding: 1rem 2.5rem;
+  background: #000;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.ctaSectionButton:hover {
+  background: #333;
+}
+
+/* Footer */
+.footer {
+  background: #000;
+  color: #999;
+  padding: 4rem 1.5rem 2rem;
+  margin-top: 4rem;
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footerSection h4 {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.footerSection ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerSection li {
+  margin-bottom: 0.75rem;
+}
+
+.footerSection a,
+.footerLink {
+  color: #999;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font: inherit;
+}
+
+.footerSection a:hover,
+.footerLink:hover {
+  color: #fff;
+}
+
+.footerBottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  border-top: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+.footerSocial {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footerSocial a {
+  color: #999;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.footerSocial a:hover {
+  color: #fff;
+}
+
+/* Guide Section */
+.guideSection {
+  max-width: 48rem;
+  margin: 4rem auto;
+  padding: 6rem 1.5rem;
+}
+
+.guideHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.guideHeader h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.guideHeader p {
+  font-size: 1.125rem;
+  color: #666;
+  margin: 0;
+}
+
+.stepsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  background: white;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e5e5;
+}
+
+.stepNumber {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #000;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.stepContent h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 0.75rem 0;
+}
+
+.stepContent p {
+  color: #666;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.tipsGrid {
+  background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.tipsGrid h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 1.5rem 0;
+}
+
+.tip {
+  display: flex;
+  gap: 1rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.tip:last-child {
+  margin-bottom: 0;
+}
+
+.tip svg {
+  flex-shrink: 0;
+}
+
+.tip h4 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #000;
+  margin: 0 0 0.25rem 0;
+  display: block;
+}
+
+.tip p {
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .featuresTitle {
+    font-size: 1.875rem;
+  }
+
+  .ctaSectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .featureCTAButton {
+    width: 100%;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footerSocial {
+    justify-content: center;
+  }
+}

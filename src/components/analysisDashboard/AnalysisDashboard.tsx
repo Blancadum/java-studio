@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Sparkles, CheckCircle2, AlertTriangle, FileCode, MessageSquare, Download, BarChart3 } from 'lucide-react';
+import JSZip from 'jszip';
 import { AnalysisResult, JavaFile, ImprovementProposal } from '../../data/types';
 import { TeacherChecklist } from '../teacher/TeacherChecklist';
 import { ProposalList } from '../proposalList/ProposalList';
 import { CodeDiffViewer } from '../codeDiff/CodeDiffViewer';
 import { JavaTutorChat } from '../javaTutor/JavaTutorChat';
-import { ExportModal } from '../exportModal/ExportModal';
 import styles from './AnalysisDashboard.module.css';
 
 interface AnalysisDashboardProps {
@@ -27,8 +27,7 @@ export const AnalysisDashboard: React.FC<AnalysisDashboardProps> = ({
   onApplyProposal,
   proposedFiles,
 }) => {
-  const [activeTab, setActiveTab] = useState<'checklist' | 'proposals' | 'diff' | 'chat'>('checklist');
-  const [isExportOpen, setIsExportOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState<'proposals' | 'checklist' | 'diff' | 'chat'>('proposals');
 
   const getPassLikelihoodBadge = (likelihood: AnalysisResult['passLikelihood']) => {
     switch (likelihood) {
@@ -39,6 +38,35 @@ export const AnalysisDashboard: React.FC<AnalysisDashboardProps> = ({
       default:
         return <span className={styles.badgeBaja}>Requiere revisión adicional</span>;
     }
+  };
+
+  const handleDownloadZip = async () => {
+    if (proposedFiles.length === 0) {
+      alert('No hay archivos propuestos para descargar.');
+      return;
+    }
+
+    const zip = new JSZip();
+
+    // Add a report file
+    const reportMd = `# Informe de Subsanación - Java Studio\n\n## Resumen de la IA\n${analysis.summary}\n\n## Puntos Críticos Pendientes\n- ${analysis.criticalGaps.join('\n- ')}\n\n## Indicaciones de la Profesora\n${teacherDoc || 'No se proporcionaron.'}\n`;
+    zip.file('INFORME_SUBSANACION.md', reportMd);
+
+    // Add all proposed files
+    proposedFiles.forEach(file => {
+      const cleanedPath = file.path.startsWith('/') ? file.path.substring(1) : file.path;
+      zip.file(cleanedPath, file.content);
+    });
+
+    const blob = await zip.generateAsync({ type: 'blob' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'java-studio-entrega-final.zip';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   };
 
   return (
@@ -55,7 +83,7 @@ export const AnalysisDashboard: React.FC<AnalysisDashboardProps> = ({
             <h2 className={styles.bannerTitle}>Diagnóstico y propuestas de subsanación</h2>
             <p className={styles.bannerSummary}>{analysis.summary}</p>
           </div>
-          <button onClick={() => setIsExportOpen(true)} className={styles.exportBtn}>
+          <button type="button"onClick={handleDownloadZip} className={styles.exportBtn}>
             <Download className="w-4 h-4" />
             Exportar entrega final (.zip)
           </button>
@@ -149,13 +177,6 @@ export const AnalysisDashboard: React.FC<AnalysisDashboardProps> = ({
         <JavaTutorChat analysis={analysis} teacherDoc={teacherDoc} />
       )}
 
-      <ExportModal
-        isOpen={isExportOpen}
-        onClose={() => setIsExportOpen(false)}
-        proposedFiles={proposedFiles}
-        analysis={analysis}
-        teacherDoc={teacherDoc}
-      />
     </div>
   );
 };

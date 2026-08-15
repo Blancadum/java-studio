@@ -7,15 +7,22 @@ interface JavaBotOnboardingWidgetProps {
   activeMode: StudentPersonaMode;
   onSelectMode: (mode: StudentPersonaMode) => void;
   onOpenTutorWithQuery?: (query: string) => void;
+  userProfile?: any | null;
+  onOpenAuth?: () => void;
 }
 
 export const JavaBotOnboardingWidget: React.FC<JavaBotOnboardingWidgetProps> = ({
   activeMode,
   onSelectMode,
   onOpenTutorWithQuery,
+  userProfile,
+  onOpenAuth,
 }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedRoute, setSelectedRoute] = useState<'A' | 'B' | 'C' | 'D' | null>(null);
+
+  // Si el usuario está autenticado, no mostrar el widget
+  if (userProfile) return null;
 
   const handleCTA = (mode: StudentPersonaMode, query: string) => {
     onSelectMode(mode);
@@ -141,7 +148,7 @@ export const JavaBotOnboardingWidget: React.FC<JavaBotOnboardingWidgetProps> = (
           <span className={styles.pingOuter} />
           <span className={styles.pingInner} />
         </div>
-        <span className={styles.fabLabel}>¿Dudas? Habla con <strong>JavaBot</strong></span>
+        <span className={styles.fabLabel}>¿Sin cuenta? <strong>Regístrate gratis</strong></span>
       </button>
     </div>
   );

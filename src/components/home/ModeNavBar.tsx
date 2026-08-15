@@ -25,8 +25,7 @@ export const ModeNavBar: React.FC<ModeNavBarProps> = ({ activeMode, onSelectMode
                 : styles.inactive
             }`}
           >
-            <span className={styles.modeNavButtonNumber}>▪ {m.num}</span>
-            <span className={styles.modeNavButtonTitle}>{m.title.split('/')[1]?.trim() || m.title}</span>
+            <span className={styles.modeNavButtonTitle}>{m.title}</span>
           </button>
         ))}
       </div>

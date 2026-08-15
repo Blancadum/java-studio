@@ -4,13 +4,11 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  font-family:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-    "Courier New", monospace;
-  font-size: 0.75rem; /* 12px */
-  line-height: 1rem;
-  font-weight: 700;
-  padding: 0.75rem 1.25rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  padding: 0.875rem 1.75rem;
   border-radius: 0.75rem;
   border-width: 1px;
   transition-property: all;
@@ -42,38 +40,37 @@
 }
 
 .solid {
-  background-color: #1e293b; /* slate-900 */
+  background-color: #0f172a;
   color: #ffffff;
-  border-color: #1e293b;
-  box-shadow:
-    0 4px 6px -1px rgb(0 0 0 / 0.1),
-    0 2px 4px -2px rgb(0 0 0 / 0.1);
+  border-color: #0f172a;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 .solid:hover {
-  background-color: #334155; /* slate-800 */
+  background-color: #1e293b;
 }
 
 .ghost {
-  background-color: rgba(255, 255, 255, 0.9);
-  color: #334155; /* slate-800 */
-  border-color: #e2e8f0; /* slate-200 */
-  backdrop-filter: blur(16px);
+  background-color: #ffffff;
+  color: #1a1a1a;
+  border-color: #e5e5e5;
+  backdrop-filter: none;
 }
 .ghost:hover {
-  background-color: #ffffff;
+  background-color: #f8f9fa;
+  border-color: #d1d5db;
 }
 
 .yellow {
-  background-image: linear-gradient(to right, #ec4899, #8b5cf6, #4f46e5);
-  color: #ffffff;
-  border-width: 0;
-  font-weight: 800;
-  box-shadow:
-    0 4px 6px -1px rgb(236 72 153 / 0.2),
-    0 2px 4px -2px rgb(236 72 153 / 0.2);
+  background-color: #fbbf24;
+  color: #000;
+  border-color: #fbbf24;
+  border-width: 1px;
+  font-weight: 600;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 .yellow:hover {
-  background-image: linear-gradient(to right, #db2777, #7c3aed, #4338ca);
+  background-color: #f59e0b;
+  border-color: #f59e0b;
 }
 
 .blue {
@@ -87,10 +84,12 @@
 }
 
 .zen {
-  background-image: linear-gradient(to right, #e0f2fe, #f5f3ff, #e9d5ff);
-  color: #1e293b; /* slate-900 */
-  border-color: #e0f2fe; /* sky-200 */
+  background-color: #f0f4f8;
+  color: #1e293b;
+  border-color: #d1d5db;
+  border-width: 1px;
 }
 .zen:hover {
-  background-image: linear-gradient(to right, #bae6fd, #e9d5ff);
+  background-color: #e5e7eb;
+  border-color: #c4c7ce;
 }

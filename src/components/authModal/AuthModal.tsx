@@ -6,7 +6,7 @@ import styles from './AuthModal.module.css';
 interface AuthModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onAuthSuccess: (user: UserProfile) => void;
+  onAuthSuccess: (user: UserProfile, token?: string) => void;
   onConnectDrive: () => void;
 }
 
@@ -39,8 +39,8 @@ export const AuthModal: React.FC<AuthModalProps> = ({
       });
       const data = await res.json();
       if (res.ok && data.user) {
-        onAuthSuccess(data.user);
-        onClose();
+        onAuthSuccess(data.user, data.token);
+        onClose(); // Cerrar modal automáticamente
       } else {
         setError(data.error || 'Error de autenticación.');
       }

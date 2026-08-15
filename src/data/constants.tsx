@@ -2,12 +2,52 @@ import React from 'react';
 
 export const FAQ_DATA = [
   {
-    q: '¿Cómo garantiza Java Studio que el código refactorizado respete mi trabajo original?',
-    a: 'El motor respeta la estructura y nombres de variables originales de tu entrega o borrador aplicando cambios quirúrgicos únicamente en las firmas y patrones requeridos por la rúbrica del profesor.'
+    q: '¿Qué es Java Studio?',
+    a: 'Es un copiloto académico de IA especializado en auditoría de código Java II (POO). Analiza tus entregas, detecta violaciones de arquitectura, limpia comentarios sospechosos de IA y genera refactorizaciones guiadas para que aprendas mientras mejoras tu nota.'
   },
   {
-    q: '¿Qué hago si no tengo el código corregido sino sólo un documento PDF con comentarios?',
-    a: 'Puedes pegar directamente los comentarios de tu profesora en el cuadro de texto. La IA interpretará las correcciones solicitadas y adaptará tu código.'
+    q: '¿Es seguro usar Java Studio?',
+    a: 'Totalmente. No compartimos tus archivos con terceros. Solo accedemos a Google Drive cuando tú lo autorizas, y los datos se procesan exclusivamente durante tu sesión activa. Ver Política de Privacidad en el footer.'
+  },
+  {
+    q: '¿Es totalmente gratis?',
+    a: 'Sí, 100% gratuito para estudiantes universitarios. Java Studio es impulsado por la comunidad Fullstack Web Dev Lovers sin ánimo de lucro.'
+  },
+  {
+    q: '¿Puedo usar Java Studio sin conexión a internet?',
+    a: 'No. El motor de IA requiere conexión a internet para analizar tu código. Sin embargo, puedes descargar los resultados y trabajar offline después del análisis.'
+  },
+  {
+    q: '¿Verá mi profesor que uso Java Studio?',
+    a: 'No. Java Studio es una herramienta privada de aprendizaje. Solo tú ves los resultados. El código que entregas es tuyo y tus mejoras deben ser implementadas por ti para aprender genuinamente.'
+  },
+  {
+    q: '¿Funciona con archivos .ZIP y proyectos grandes?',
+    a: 'Sí. Puedes subir archivos .java individuales o un .ZIP completo de tu proyecto. El sistema detecta automáticamente la estructura de paquetes.'
+  },
+  {
+    q: '¿Cuánto tarda el análisis?',
+    a: 'Entre 5-30 segundos según la complejidad del proyecto y el modo seleccionado. Los análisis se guardan en tu perfil para no reprocesar innecesariamente.'
+  },
+  {
+    q: '¿Cómo me paso a mí mismo los comentarios de feedback de mi profe?',
+    a: 'Puedes pegar directamente el texto del PDF de correcciones en el cuadro "Notas de tu profe" (modo Subsanación). El motor interpretará las sugerencias de refactorización.'
+  },
+  {
+    q: '¿Necesito credenciales especiales o una cuenta universitaria?',
+    a: 'No. Solo necesitas una cuenta de Google (personal o universitaria) para conectar Google Drive y guardar tus análisis en tu perfil.'
+  },
+  {
+    q: '¿Qué pasa si mi código es muy pequeño o muy grande?',
+    a: 'El sistema se adapta. Código pequeño: genera esqueletos con TODOs. Código grande: procesa por módulos y da prioridades en refactorización.'
+  },
+  {
+    q: '¿Puedo usar Java Studio en exámenes en línea supervisados?',
+    a: 'Técnicamente sí (es una web), pero violaría la integridad académica si lo usas durante el examen. Úsalo ANTES para practicar o DESPUÉS para revisar tu entrega.'
+  },
+  {
+    q: '¿Cómo garantiza Java Studio que respeta mi trabajo original?',
+    a: 'El motor respeta la estructura y nombres de variables originales aplicando cambios quirúrgicos únicamente en las firmas y patrones requeridos por la rúbrica del profesor.'
   },
   {
     q: '¿Puedo descargar las clases corregidas y los tests JUnit 5 en un archivo .ZIP?',

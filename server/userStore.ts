@@ -1,12 +1,15 @@
+import * as bcrypt from 'bcrypt';
 import { UserProfile, SavedSession, UserApiConfig } from '../src/data/types';
 
 // In-memory user database with default demo user
 const usersDatabase: Map<string, { passwordHash: string; profile: UserProfile }> = new Map();
 
+const saltRounds = 10;
+
 // Initialize default author account
 const defaultUserEmail = 'blancadum@gmail.com';
 usersDatabase.set(defaultUserEmail, {
-  passwordHash: 'java2026', // Simple demo hash
+  passwordHash: bcrypt.hashSync('java2026', saltRounds),
   profile: {
     id: 'usr_blanca_1',
     name: 'Blanca Dumont',
@@ -43,11 +46,13 @@ export function maskKey(key?: string): string {
   return `${key.slice(0, 4)}...${key.slice(-4)}`;
 }
 
-export function registerUser(email: string, name: string, password: string): UserProfile {
+export async function registerUser(email: string, name: string, password: string): Promise<UserProfile> {
   const normalizedEmail = email.toLowerCase().trim();
   if (usersDatabase.has(normalizedEmail)) {
     throw new Error('El correo electrónico ya está registrado.');
   }
+
+  const passwordHash = bcrypt.hashSync(password, saltRounds);
 
   const newUser: UserProfile = {
     id: `usr_${Date.now()}`,
@@ -69,25 +74,27 @@ export function registerUser(email: string, name: string, password: string): Use
   };
 
   usersDatabase.set(normalizedEmail, {
-    passwordHash: password,
+    passwordHash: passwordHash,
     profile: newUser
   });
 
   return newUser;
 }
 
-export function loginUser(email: string, password: string): UserProfile {
+export async function loginUser(email: string, password: string): Promise<UserProfile> {
   const normalizedEmail = email.toLowerCase().trim();
   const entry = usersDatabase.get(normalizedEmail);
 
-  if (!entry || entry.passwordHash !== password) {
+  const passwordMatches = entry ? bcrypt.compareSync(password, entry.passwordHash) : false;
+
+  if (!passwordMatches) {
     throw new Error('Credenciales incorrectas. Verifica tu email y contraseña.');
   }
 
-  return entry.profile;
+  return entry!.profile;
 }
 
-export function getUserProfile(email: string): UserProfile {
+export async function getUserProfile(email: string): Promise<UserProfile> {
   const normalizedEmail = email.toLowerCase().trim();
   const entry = usersDatabase.get(normalizedEmail);
   if (!entry) {
@@ -97,21 +104,21 @@ export function getUserProfile(email: string): UserProfile {
   return entry.profile;
 }
 
-export function updateUserApiConfig(email: string, config: Partial<UserApiConfig>): UserProfile {
+export async function updateUserApiConfig(email: string, config: Partial<UserApiConfig>): Promise<UserProfile> {
   const normalizedEmail = email.toLowerCase().trim();
   const entry = usersDatabase.get(normalizedEmail);
   if (!entry) throw new Error('Usuario no encontrado');
 
   const currentConfig = entry.profile.apiConfig;
 
-  if (config.geminiUserKey !== undefined) {
-    currentConfig.geminiUserKey = config.geminiUserKey;
-    currentConfig.maskedGeminiKey = maskKey(config.geminiUserKey);
-  }
-
-  if (config.backupUserKey !== undefined) {
-    currentConfig.backupUserKey = config.backupUserKey;
-    currentConfig.maskedBackupKey = maskKey(config.backupUserKey);
+  // Guardar clave de cualquier proveedor genéricamente
+  const providers = ['gemini', 'openai', 'claude', 'mistral', 'deepseek', 'groq', 'cohere', 'xai', 'perplexity', 'together', 'azure', 'ollama'];
+  for (const provider of providers) {
+    const keyField = `${provider}UserKey`;
+    if ((config as any)[keyField] !== undefined) {
+      (currentConfig as any)[keyField] = (config as any)[keyField];
+      (currentConfig as any)[`masked${provider.charAt(0).toUpperCase() + provider.slice(1)}Key`] = maskKey((config as any)[keyField]);
+    }
   }
 
   if (config.preferredProvider) {
@@ -129,7 +136,7 @@ export function updateUserApiConfig(email: string, config: Partial<UserApiConfig
   return entry.profile;
 }
 
-export function saveUserSession(email: string, sessionData: Omit<SavedSession, 'id' | 'createdAt'>): SavedSession {
+export async function saveUserSession(email: string, sessionData: Omit<SavedSession, 'id' | 'createdAt'>): Promise<SavedSession> {
   const normalizedEmail = email.toLowerCase().trim();
   const entry = usersDatabase.get(normalizedEmail);
   if (!entry) throw new Error('Usuario no encontrado');
@@ -146,7 +153,7 @@ export function saveUserSession(email: string, sessionData: Omit<SavedSession, '
   return newSession;
 }
 
-export function toggleUser2FA(email: string, enabled: boolean): UserProfile {
+export async function toggleUser2FA(email: string, enabled: boolean): Promise<UserProfile> {
   const normalizedEmail = email.toLowerCase().trim();
   const entry = usersDatabase.get(normalizedEmail);
   if (!entry) throw new Error('Usuario no encontrado');

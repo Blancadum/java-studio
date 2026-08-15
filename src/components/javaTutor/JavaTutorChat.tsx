@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Send, Bot, User, Sparkles, Loader2, X } from 'lucide-react';
 import { ChatMessage, AnalysisResult } from '../../data/types';
 import styles from './JavaTutorChat.module.css';
+import { api } from '../../lib/api';
+
 
 interface JavaTutorChatProps {
   analysis: AnalysisResult | null;
@@ -52,20 +54,16 @@ export const JavaTutorChat: React.FC<JavaTutorChatProps> = ({
     setLoading(true);
 
     try {
-      const res = await fetch('/api/chat/tutor', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: query, context: { analysis, teacherDoc } }),
+      const data = await api.chatWithTutor({
+        message: query,
+        context: { analysis, teacherDoc }
       });
-      const data = await res.json();
-      if (res.ok) {
-        setMessages(prev => [...prev, {
-          id: `ai-${Date.now()}`,
-          sender: 'ai',
-          text: data.text || 'Sin respuesta',
-          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-        }]);
-      } else throw new Error(data.error);
+      setMessages(prev => [...prev, {
+        id: `ai-${Date.now()}`,
+        sender: 'ai',
+        text: data.text || 'Sin respuesta',
+        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+      }]);
     } catch (err: any) {
       setMessages(prev => [...prev, {
         id: `err-${Date.now()}`,
@@ -90,14 +88,14 @@ export const JavaTutorChat: React.FC<JavaTutorChatProps> = ({
           </div>
         </div>
         {onClose && (
-          <button onClick={onClose} className={styles.closeBtn}><X className="w-5 h-5" /></button>
+          <button type="button" onClick={onClose} className={styles.closeBtn}><X className="w-5 h-5" /></button>
         )}
       </div>
 
       <div className={styles.chips}>
         <span className={styles.chipsLabel}>Sugerencias:</span>
         {SUGGESTED.map((q, i) => (
-          <button key={i} onClick={() => handleSend(q)} disabled={loading} className={styles.chip}>{q}</button>
+          <button type="button" key={i} onClick={() => handleSend(q)} disabled={loading} className={styles.chip}>{q}</button>
         ))}
       </div>
 
@@ -132,7 +130,7 @@ export const JavaTutorChat: React.FC<JavaTutorChatProps> = ({
           placeholder="Escribe tu duda sobre Java II..."
           className={styles.input}
         />
-        <button onClick={() => handleSend()} disabled={loading || !input.trim()} className={styles.sendBtn}>
+        <button type="button" onClick={() => handleSend()} disabled={loading || !input.trim()} className={styles.sendBtn}>
           <Send className="w-4 h-4" />
         </button>
       </div>

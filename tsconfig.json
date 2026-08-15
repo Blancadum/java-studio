@@ -14,8 +14,7 @@
     "paths": {
       "@/*": ["./*"]
     },
-    "allowImportingTsExtensions": true,
     "noEmit": true
   },
-  "exclude": ["api"]
+  "include": ["src", "server.ts", "api"]
 }

@@ -63,7 +63,7 @@ export const DrivePickerModal: React.FC<DrivePickerModalProps> = ({
     return data.content || '';
   };
 
-  const fetchFolderJava = async (folderId: string, version: 'JAVAII_NO' | 'JAVAII-FIXED'): Promise<JavaFile[]> => {
+  const fetchFolderJava = async (folderId: string, version: 'Zip_original' | 'Zip_fixed'): Promise<JavaFile[]> => {
     const res = await fetch(`/api/drive/files?folderId=${folderId}`, {
       headers: { Authorization: `Bearer ${accessToken}` },
     });
@@ -91,13 +91,13 @@ export const DrivePickerModal: React.FC<DrivePickerModalProps> = ({
 
       if (selectedForNo) {
         noFiles = isFolder(selectedForNo)
-          ? await fetchFolderJava(selectedForNo.id, 'JAVAII_NO')
-          : [{ id: selectedForNo.id, name: selectedForNo.name, path: selectedForNo.name, content: await downloadContent(selectedForNo.id), version: 'JAVAII_NO' }];
+          ? await fetchFolderJava(selectedForNo.id, 'Zip_original')
+          : [{ id: selectedForNo.id, name: selectedForNo.name, path: selectedForNo.name, content: await downloadContent(selectedForNo.id), version: 'Zip_original' as const }];
       }
       if (selectedForFixed) {
         fixedFiles = isFolder(selectedForFixed)
-          ? await fetchFolderJava(selectedForFixed.id, 'JAVAII-FIXED')
-          : [{ id: selectedForFixed.id, name: selectedForFixed.name, path: selectedForFixed.name, content: await downloadContent(selectedForFixed.id), version: 'JAVAII-FIXED' }];
+          ? await fetchFolderJava(selectedForFixed.id, 'Zip_fixed')
+          : [{ id: selectedForFixed.id, name: selectedForFixed.name, path: selectedForFixed.name, content: await downloadContent(selectedForFixed.id), version: 'Zip_fixed' as const }];
       }
       if (selectedTeacherDoc) {
         setStatusMessage('Cargando archivo de la profesora...');

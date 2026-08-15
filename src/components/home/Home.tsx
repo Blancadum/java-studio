@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import {
   FileText,
   Compass,
@@ -29,12 +29,14 @@ import JSZip from 'jszip';
 import { nanoid } from 'nanoid';
 import { JavaFile, StudentPersonaMode } from '../../data/types';
 import { Reveal } from '../reveal/Reveal';
-import { ChipButton } from '../chipbutton/ChipButton';
+import { ChipButton } from '../chipbutton/ChipButton'; // Ensure this import is correct if it's not already
 import styles from './Home.module.css';
-import { FAQ_DATA, getBlogArticles, getDocsContent, getLegalContent } from '../../data/constants'; // Importa el contenido estático
-import { MODES_CONFIG } from '../../data/modes'; // Import MODES_CONFIG
+import { FAQ_DATA, getBlogArticles, getDocsContent, getLegalContent } from '../../data/constants';
+
+import { MODES_CONFIG } from '../../data/modes';
 import { useWorkspace } from './WorkspaceContext';
 import { ModeNavBar } from './ModeNavBar';
+import { Campus } from './Campus';
 
 interface HomeProps {
   activeMode: StudentPersonaMode;
@@ -50,6 +52,12 @@ interface HomeProps {
   isAnalyzing: boolean;
   onOpenAuth?: () => void;
   onOpenTutorWithQuery?: (query: string) => void;
+  userProfile?: any | null;
+  onOpenProfile?: () => void;
+  driveConnected?: boolean;
+  onConnectDrive?: () => void;
+  onLoadSession?: (session: any) => void;
+  onOpenDemo?: () => void;
 }
 
 export const Home: React.FC<HomeProps> = ({
@@ -61,7 +69,31 @@ export const Home: React.FC<HomeProps> = ({
   isAnalyzing,
   onOpenAuth,
   onOpenTutorWithQuery,
+  userProfile,
+  onOpenProfile,
+  driveConnected,
+  onConnectDrive,
+  onLoadSession,
+  onOpenDemo,
 }) => {
+  // Si el usuario está autenticado, mostrar el Campus
+  if (userProfile) {
+    return (
+      <Campus
+        user={userProfile}
+        activeMode={activeMode}
+        onSelectMode={onSelectMode}
+        onOpenDriveModal={onOpenDriveModal}
+        onLoadSample={onLoadSample}
+        onOpenProfile={onOpenProfile}
+        driveConnected={driveConnected}
+        onConnectDrive={onConnectDrive}
+        onOpenTutorWithQuery={onOpenTutorWithQuery}
+        onStartAnalysis={onStartAnalysis}
+        onLoadSession={onLoadSession}
+      />
+    );
+  }
   const {
     statementText,
     setStatementText,
@@ -131,24 +163,18 @@ export const Home: React.FC<HomeProps> = ({
 
   const handleOpenBlogArticle = (articleId: string) => {
     const articles = getBlogArticles();
-    const art = articles[articleId] || {
-      title: 'Artículo del Blog Académico',
-      category: 'Blog · Fullstack Web Dev Lovers',
-      content: <p>Consulta los tutoriales y guías completas en la comunidad de Fullstack Web Dev Lovers en <a href="https://fullstack-dev-lovers.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-pink-600 font-bold hover:underline">fullstack-dev-lovers.vercel.app</a>.</p>
-    };
-
-    setFooterModalContent(art);
+    const art = articles[articleId];
+    if (art) {
+      setFooterModalContent(art);
+    }
   };
 
   const handleOpenDocDoc = (docId: string) => {
     const docs = getDocsContent();
-    const doc = docs[docId] || {
-      title: 'Documentación del Sistema',
-      category: 'Documentación Técnica',
-      content: <p>Manuales y especificaciones técnicas para el desarrollo con Java II y SonarQube en <a href="https://fullstack-dev-lovers.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-purple-600 font-bold hover:underline">Fullstack Web Dev Lovers</a>.</p>,
-    };
-
-    setFooterModalContent(doc);
+    const doc = docs[docId];
+    if (doc) {
+      setFooterModalContent(doc);
+    }
   };
 
   // FAQ Toggle
@@ -198,6 +224,12 @@ export const Home: React.FC<HomeProps> = ({
     } else {
       setFixedFiles(prev => [...prev, ...loadedFiles]);
     }
+  };
+
+  // Get readable mode name from MODES_CONFIG
+  const getModeName = (modeId: StudentPersonaMode): string => {
+    const mode = MODES_CONFIG.find(m => m.id === modeId);
+    return mode?.title || modeId;
   };
 
   const handleRunAnalysis = () => {
@@ -288,17 +320,14 @@ export const Home: React.FC<HomeProps> = ({
             </p>
           </Reveal>
 
-          {/* Action Buttons (Section 7 ChipButton) */}
+          {/* Action Buttons */}
           <Reveal delay={360}>
             <div className={styles.heroActions}>
-              <ChipButton variant="yellow" onClick={onLoadSample}>
-                Cargar Proyecto Borrador
+              <ChipButton variant="yellow" onClick={onOpenAuth}>
+                Crear cuenta gratis →
               </ChipButton>
-              <ChipButton variant="ghost" onClick={() => {
-                const el = document.getElementById('workspace-section');
-                el?.scrollIntoView({ behavior: 'smooth' });
-              }}>
-                Explorar 4 Modos
+              <ChipButton variant="ghost" onClick={onOpenDemo}>
+                Demo →
               </ChipButton>
             </div>
           </Reveal>
@@ -386,7 +415,7 @@ export const Home: React.FC<HomeProps> = ({
             </h2>
           </div>
           <p className={styles.sectionDescription}>
-            Cada modo activa un motor de IA especializado que comprende el contexto de las asignaturas de Programación II de la universidad.
+            Cada modo activa un motor de IA especializado para tu evaluación.
           </p>
         </div>
 
@@ -396,41 +425,31 @@ export const Home: React.FC<HomeProps> = ({
               <div
                 onClick={() => {
                   onSelectMode(mode.id);
-                  const el = document.getElementById('workspace-section');
-                  el?.scrollIntoView({ behavior: 'smooth' });
                 }}
                 className={`${styles.modeCard} ${
                   activeMode === mode.id
                     ? styles.active
                     : styles.inactive
-                }`}
+                } cursor-pointer hover:shadow-lg transition-shadow`}
               >
-                <div className="space-y-4">
-                  <div className={styles.modeCardHeader}>
-                    <span className={styles.modeCardNumber}>
-                      {mode.num}
-                    </span>
-                    <div className={`${styles.modeCardIconContainer} text-${mode.colorClass}-600`}>
-                      {mode.icon}
-                    </div>
+                <div className={styles.modeCardHeader}>
+                  <div className={`${styles.modeCardIconContainer} text-${mode.colorClass}-600`}>
+                    {mode.icon}
                   </div>
-                  
-                  <div>
-                    <h3 className={styles.modeCardTitle}>
-                      {mode.title}
-                    </h3>
-                    <span className={styles.modeCardSubtitle}>
-                      {mode.subtitle}
-                    </span>
-                  </div>
-
-                  <p className={styles.modeCardDescription}>
-                    {mode.desc}
-                  </p>
+                </div>
+                
+                <div>
+                  <h3 className={styles.modeCardTitle}>
+                    {mode.title}
+                  </h3>
                 </div>
 
+                <p className={styles.modeCardDescription}>
+                  {mode.desc}
+                </p>
+
                 <div className={styles.modeCardAction}>
-                  <span>Seleccionar Modo</span>
+                  <span>Explorar</span>
                   <ArrowRight className={styles.modeCardArrow} />
                 </div>
               </div>
@@ -450,7 +469,7 @@ export const Home: React.FC<HomeProps> = ({
             Creado para la claridad. Diseñado para la acción.
           </h2>
           <p className={styles.sectionDescription}>
-            Principios éticos y metodológicos que garantizan un aprendizaje sólido sin violar la honestidad académica.
+            Principios que garantizan aprendizaje honesto sin violar la integridad académica.
           </p>
         </div>
 
@@ -493,162 +512,7 @@ export const Home: React.FC<HomeProps> = ({
         </div>
       </section>
 
-      {/* DEDICATED ON-PAGE README SECTION */}
-      <section id="readme-section" className={styles.readmeSection}>
-        <div className={styles.readmeCard}>
-          
-          {/* Header Badge */}
-          <div className={styles.readmeHeader}>
-            <div className={styles.readmeIconContainer}>
-              <BookOpen className="w-6 h-6" />
-            </div>
-            <div>
-              <div className={styles.readmeEyebrow}>
-                <span>README.md</span>
-                <span className={styles.readmeBadge}>
-                  Informe Pedagógico
-                </span>
-              </div>
-              <h2 className={styles.readmeTitle}>
-                Guía del Aprendiz de Java: Objetivos & Modos de Evaluación
-              </h2>
-            </div>
-          </div>
 
-          {/* Justification Block */}
-          <div className={styles.justificationBlock}>
-            <h3 className={styles.justificationTitle}>
-              <GraduationCap className="w-5 h-5 text-purple-600" />
-              ¿Por qué Java Studio es la herramienta ideal para un estudiante de Java?
-            </h3>
-            <p className={styles.justificationText}>
-              La mayoría de los estudiantes cometen el error de pedir a un modelo generativo genérico que resuelva sus ejercicios enteros. Esto genera tres problemas graves:
-            </p>
-            <ul className={styles.justificationGrid}>
-              <li className={styles.justificationItem}>
-                <strong className={`${styles.justificationItemTitle} text-rose-600`}>1. Estilo Delatador</strong>
-                <span className={styles.justificationItemText}>Produce comentarios tipo <i>"Here is the implementation"</i> que delatan uso no autorizado de IA.</span>
-              </li>
-              <li className={styles.justificationItem}>
-                <strong className={`${styles.justificationItemTitle} text-amber-600`}>2. Complejidad innecesaria</strong>
-                <span className={styles.justificationItemText}>Aplica patrones avanzados que no corresponden al nivel universitario Java II.</span>
-              </li>
-              <li className={styles.justificationItem}>
-                <strong className={`${styles.justificationItemTitle} text-indigo-600`}>3. Nulo aprendizaje</strong>
-                <span className={styles.justificationItemText}>Copiar y pegar impide desarrollar intuición sobre orientación a objetos y refactorización.</span>
-              </li>
-            </ul>
-            <p className={styles.justificationConclusion}>
-              <strong>Java Studio actúa como un tutor pedagógico</strong>: respeta la autoría y la nomenclatura del estudiante, desinfecta el código antes de la entrega y guía paso a paso según los cuatro momentos clave del aprendizaje universitario.
-            </p>
-          </div>
-
-          {/* 4 Modes Breakdown */}
-          <div className={styles.modesBreakdown}>
-            <h3 className={styles.modesBreakdownTitle}>
-              Desglose de los 4 Modos de Trabajo
-            </h3>
-
-            <div className={styles.modesBreakdownGrid}>
-              
-              {/* Modo 01 */}
-              <div className={`${styles.modeDetailCard} bg-amber-50/50 border border-amber-200/80`}>
-                <div className={styles.modeDetailHeader}>
-                  <span className={`${styles.modeDetailBadge} text-amber-800 bg-amber-100`}>
-                    01. Subsanación Feedback
-                  </span>
-                  <span className={`${styles.modeDetailTag} text-amber-700`}>Post-Suspenso</span>
-                </div>
-                <h4 className={styles.modeDetailTitle}>
-                  Corrección basada en observaciones de tu profe
-                </h4>
-                <p className={styles.modeDetailDescription}>
-                  <strong>Objetivo:</strong> Revisa borradores o exámenes suspendidos cruzándolos con los comentarios escritos por tu profe o la rúbrica de corrección.
-                </p>
-                <div className={`${styles.modeDetailTip} border-amber-200/60 text-amber-950`}>
-                  💡 <i>Ideal para:</i> Convertir correcciones ambiguas del tipo "Mejorar cohesión" en cambios exactos de código manteniendo tu estilo original.
-                </div>
-              </div>
-
-              {/* Modo 02 */}
-              <div className={`${styles.modeDetailCard} bg-indigo-50/50 border border-indigo-200/80`}>
-                <div className={styles.modeDetailHeader}>
-                  <span className={`${styles.modeDetailBadge} text-indigo-800 bg-indigo-100`}>
-                    02. Guía POO (Enunciado)
-                  </span>
-                  <span className={`${styles.modeDetailTag} text-indigo-700`}>Iniciación</span>
-                </div>
-                <h4 className={styles.modeDetailTitle}>
-                  Generación de Esqueletos desde el Enunciado
-                </h4>
-                <p className={styles.modeDetailDescription}>
-                  <strong>Objetivo:</strong> Elimina la "parálisis frente al folio en blanco" leyendo enunciados extensos para diseñar el diagrama de clases y firmas de métodos.
-                </p>
-                <div className={`${styles.modeDetailTip} border-indigo-200/60 text-indigo-950`}>
-                  💡 <i>Ideal para:</i> Empezar una práctica desde cero con esqueletos compilables llenos de comentarios <code>// TODO</code> pedagógicos.
-                </div>
-              </div>
-
-              {/* Modo 03 */}
-              <div className={`${styles.modeDetailCard} bg-emerald-50/50 border border-emerald-200/80`}>
-                <div className={styles.modeDetailHeader}>
-                  <span className={`${styles.modeDetailBadge} text-emerald-800 bg-emerald-100`}>
-                    03. Pre-Entrega & Anti-IA
-                  </span>
-                  <span className={`${styles.modeDetailTag} text-emerald-700`}>Higiene & Rúbrica</span>
-                </div>
-                <h4 className={styles.modeDetailTitle}>
-                  Auditoría de Calidad e Higiene Académica
-                </h4>
-                <p className={styles.modeDetailDescription}>
-                  <strong>Objetivo:</strong> Desinfecta frases delatadoras de ChatGPT, elimina archivos temporales de compilación (<code>.idea/</code>, <code>target/</code>) y verifica el cumplimiento de la rúbrica.
-                </p>
-                <div className={`${styles.modeDetailTip} border-emerald-200/60 text-emerald-950`}>
-                  💡 <i>Ideal para:</i> Asegurar que tu archivo ZIP esté impecable minutos antes de la hora límite de entrega en la intranet.
-                </div>
-              </div>
-
-              {/* Modo 04 */}
-              <div className={`${styles.modeDetailCard} bg-sky-50/50 border border-sky-200/80`}>
-                <div className={styles.modeDetailHeader}>
-                  <span className={`${styles.modeDetailBadge} text-sky-800 bg-sky-100`}>
-                    04. SonarQube & SOLID
-                  </span>
-                  <span className={`${styles.modeDetailTag} text-sky-700`}>Calidad Industrial</span>
-                </div>
-                <h4 className={styles.modeDetailTitle}>
-                  Refactorización y Pruebas Unitarias JUnit 5
-                </h4>
-                <p className={styles.modeDetailDescription}>
-                  <strong>Objetivo:</strong> Reduce la complejidad cognitiva de métodos anidados y genera baterías de tests JUnit 5 desacopladas con Mocks.
-                </p>
-                <div className={`${styles.modeDetailTip} border-sky-200/60 text-sky-950`}>
-                  💡 <i>Ideal para:</i> Alcanzar la máxima nota en proyectos que exigen métricas profesionales de calidad de software.
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          {/* Call to action */}
-          <div className={styles.readmeCtaContainer}>
-            <span className={styles.readmeCtaText}>
-              Selecciona cualquiera de los 4 modos arriba para comenzar tu auditoría Java.
-            </span>
-            <button
-              onClick={() => {
-                const el = document.getElementById('workspace-section');
-                el?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className={styles.readmeCtaButton}
-            >
-              <span>Ir al Espacio de Trabajo</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-          </div>
-
-        </div>
-      </section>
 
 
       {/* 4. CASE STUDY (Ethereal Nebula Box) */}
@@ -794,18 +658,19 @@ export const Home: React.FC<HomeProps> = ({
       </section>
 
 
-      {/* 7. IN-PAGE WORKSPACE DASHBOARD */}
-      <section id="workspace-section" className={styles.workspaceSection}>
+      {/* 5. CASE STUDY MODAL (Removed detailed workspace from here - moved to ModeDetailPage in FASE 3) */}
+      {/* Placeholder comment for structure clarity */}
+      <section id="workspace-section" style={{display: 'none'}} className={styles.workspaceSection}>
         
         <div className={styles.workspaceHeader}>
           <span className={styles.sectionEyebrow}>
-            ▪ CONSOLA OPERATIVA DE TRABAJO
+            ▪
           </span>
           <h2 className={styles.sectionTitle}>
             Ejecuta tu análisis en el Modo Activo
           </h2>
           <p className={styles.sectionDescription}>
-            Selecciona el perfil adecuado, adjunta tus archivos o enunciado y haz clic en Iniciar Análisis.
+            Selecciona un modo, carga tus archivos y ejecuta el análisis.
           </p>
         </div>
 
@@ -823,7 +688,7 @@ export const Home: React.FC<HomeProps> = ({
             <div>
               <h3 className={styles.workspaceContentTitle}>
                 <Settings2 className="w-5 h-5 text-sky-600" />
-                <span>Configuración: <strong className="text-sky-900">{activeMode}</strong></span>
+                <span><strong className="text-sky-900">{getModeName(activeMode)}</strong></span>
               </h3>
               <p className={styles.workspaceContentSubtitle}>
                 Asegúrate de incluir tus clases o enunciados antes de procesar.
@@ -942,7 +807,6 @@ export const Home: React.FC<HomeProps> = ({
                     <FileText className="w-4 h-4 text-indigo-600" />
                     Texto del Enunciado de tu Tarea / Examen:
                   </label>
-                  <span className={styles.statementTag}>Parser Gramatical POO</span>
                 </div>
                 <textarea
                   rows={6}
@@ -1014,7 +878,7 @@ export const Home: React.FC<HomeProps> = ({
                   Arrastra tu Proyecto Completo en Formato .ZIP
                 </h3>
                 <p className={styles.zipDropDescription}>
-                  Escanearemos la estructura interna para detectar carpetas basura y comentarios con firma de IA.
+                  Carga tu proyecto para auditoría pre-entrega.
                 </p>
 
                 <label className={`${styles.zipDropButton} bg-emerald-600 hover:bg-emerald-500`}>
@@ -1087,7 +951,7 @@ export const Home: React.FC<HomeProps> = ({
                   Carga tus Clases Java para Análisis de Calidad SonarQube
                 </h3>
                 <p className={styles.zipDropDescription}>
-                  Mide la Complejidad Cognitiva S3776 y genera suites de pruebas unitarias JUnit 5.
+                  Mide la calidad de tu código con análisis SonarQube.
                 </p>
 
                 <label className={`${styles.zipDropButton} bg-sky-600 hover:bg-sky-500`}>
@@ -1156,7 +1020,6 @@ export const Home: React.FC<HomeProps> = ({
           <div className={styles.executeCtaContainer}>
             <div className={styles.executeCtaLabel}>
               <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-              Motor de Evaluación Java Studio
             </div>
 
             <ChipButton
@@ -1176,7 +1039,8 @@ export const Home: React.FC<HomeProps> = ({
       </section>
 
 
-      {/* 8. FAQ ACCORDION PER MODE */}
+      {/* REMOVED: 8. FAQ ACCORDION PER MODE - Moved to ModesPage */}
+      {/* 6. FAQ SECTION */
       <section className={styles.faqSection}>
         <div className={styles.faqHeader}>
           <div>
@@ -1184,7 +1048,7 @@ export const Home: React.FC<HomeProps> = ({
               ▪ PREGUNTAS FRECUENTES
             </span>
             <h3 className={styles.faqTitle}>
-              Preguntas Frecuentes ({activeMode})
+              Preguntas Frecuentes
             </h3>
           </div>
 
@@ -1232,7 +1096,7 @@ export const Home: React.FC<HomeProps> = ({
       </section>
 
 
-      {/* 9. FINAL CTA (Pink-Purple Gradient Ethereal Section) */}
+      {/* 7. FINAL CTA (Pink-Purple Gradient Ethereal Section) */}
       <section className={styles.finalCtaSection}>
         <Reveal delay={0}>
           <div className={styles.finalCtaBadge}>
@@ -1240,14 +1104,14 @@ export const Home: React.FC<HomeProps> = ({
             <span>Impulsado por Fullstack Web Dev Lovers</span>
           </div>
           <h2 className={styles.finalCtaTitle}>
-            ¿Preparado para asegurar tu Aprobado con Distinción en Java II?
+            ¿Listo para explorar los 4 Modos Académicos?
           </h2>
           <p className={styles.finalCtaSubtitle}>
-            Carga tu proyecto de prueba o conecta tu Google Drive en segundos.
+            Elige el modo que mejor se adapte a tu necesidad actual.
           </p>
           <div className={styles.finalCtaActions}>
             <ChipButton variant="yellow" onClick={onLoadSample}>
-              ▪ Probar Demo Gratis
+              Probar Demo Gratis
             </ChipButton>
             <a
               href="https://fullstack-dev-lovers.vercel.app/"
@@ -1277,14 +1141,6 @@ export const Home: React.FC<HomeProps> = ({
               <div className={styles.megaMenuIcon}>
                 J
               </div>
-              <div>
-                <h3 className={styles.megaMenuTitle}>
-                  Java Studio Megamenú & Comunidad
-                </h3>
-                <p className={styles.megaMenuSubtitle}>
-                  Navegación integral por la plataforma, guías pedagógicas, rúbricas de evaluación y comunidad Fullstack Web Dev Lovers.
-                </p>
-              </div>
             </div>
 
             <div className={styles.megaMenuActions}>
@@ -1292,7 +1148,6 @@ export const Home: React.FC<HomeProps> = ({
                 onClick={() => setIsMegaMenuOpen(!isMegaMenuOpen)}
                 className={styles.toggleMegaMenuButton}
               >
-                <span>{isMegaMenuOpen ? 'Plegar Megamenú' : 'Desplegar Megamenú'}</span>
                 <ChevronDown className={`${styles.toggleMegaMenuChevron} ${isMegaMenuOpen ? 'rotate-180' : ''}`} />
               </button>
 
@@ -1315,11 +1170,8 @@ export const Home: React.FC<HomeProps> = ({
               <div className={styles.megaMenuGridHeader}>
                 <div className={styles.megaMenuGridTitle}>
                   <Sparkles className="w-4 h-4 text-pink-500" />
-                  <span>Megamenú de Navegación & Recursos por Categorías</span>
+                  <span>Navegación & Recursos</span>
                 </div>
-                <span className={styles.megaMenuGridSubtitle}>
-                  5 Columnas Especializadas
-                </span>
               </div>
 
               <div className={styles.megaMenuGrid}>
