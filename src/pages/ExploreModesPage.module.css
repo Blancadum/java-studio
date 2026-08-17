@@ -1,0 +1,77 @@
+/* src/pages/ExploreModesPage.module.css */
+
+.pageContainer {
+  @apply max-w-7xl mx-auto px-4 py-12;
+}
+
+.headerWrapper {
+  @apply mb-12;
+}
+
+.backButton {
+  @apply text-sm text-gray-600 hover:text-black mb-6 flex items-center gap-2;
+}
+
+.headerTitle {
+  @apply text-4xl font-bold mb-4;
+}
+
+.headerSubtitle {
+  @apply text-lg text-gray-700 max-w-2xl;
+}
+
+.modesGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6 mb-12;
+}
+
+.modeCard {
+  @apply rounded-lg p-8 border border-gray-200 hover:border-gray-400 transition-all;
+}
+
+.modeCardHeader {
+  @apply mb-4;
+}
+
+.modeCardIcon {
+  @apply text-4xl mb-2 block;
+}
+
+.modeCardTitle {
+  @apply text-2xl font-bold text-gray-900;
+}
+
+.modeCardDescription {
+  @apply text-gray-700 mb-6;
+}
+
+.highlightsWrapper {
+  @apply mb-6;
+}
+
+.highlightsTitle {
+  @apply text-sm font-semibold text-gray-900 mb-3;
+}
+
+.highlightItem {
+  @apply flex items-start gap-2 text-sm text-gray-700;
+}
+
+.ctaButton {
+  @apply w-full bg-black text-white py-3 rounded font-medium hover:bg-gray-800 transition-colors;
+}
+
+.additionalInfo {
+  @apply bg-gray-50 rounded-lg p-8 border border-gray-200;
+}
+
+.additionalInfoTitle {
+  @apply text-xl font-bold mb-4;
+}
+
+.additionalInfoText {
+  @apply space-y-4 text-gray-700;
+}
+
+.additionalInfoHighlight {
+  @apply font-semibold;
+}

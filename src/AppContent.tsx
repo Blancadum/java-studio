@@ -6,10 +6,10 @@ import { AuthModal } from './components/authModal/AuthModal';
 import { ArchitectureGuideView } from './components/architectureGuide/ArchitectureGuideView';
 import { PreSubmissionAuditView } from './components/preSubmision/PreSubmissionAuditView';
 import { SonarQualityView } from './components/sonar/SonarQualityView';
-import { JavaTutorChat } from './components/javaTutor/JavaTutorChat';
+import { JavaTutorChat } from './components/javaTutor/JavaTutorChat'; 
 import { JavaBotOnboardingWidget } from './components/javaBot/JavaBotOnboardingWidget';
 import { HomePage } from './pages/HomePage';
-import { ModesPage } from './pages/ModesPage'; // FASE 2 - nuevas modalities
+import { ExploreModesPage } from './pages/ExploreModesPage'; // Correct import for the modes selection page
 import { DesdeCeroPage } from './pages/modalidades/DesdeCeroPage';
 import { AntesDeEntregarPage } from './pages/modalidades/AntesDeEntregarPage';
 import { CorregirConFeedbackPage } from './pages/modalidades/CorregirConFeedbackPage';
@@ -258,6 +258,7 @@ public class ReservaNotFoundException extends Exception {
           return updated;
         });
       } catch (err) {
+        console.error('Error improving file:', err);
         setProposedFiles(prev => {
           const updated = [...prev];
           updated[existingIndex] = {
@@ -347,6 +348,15 @@ public class ReservaNotFoundException extends Exception {
     }
   };
 
+  const handleLogout = () => {
+    setUserProfile(null);
+    setAccessToken('');
+    setUserEmail('');
+    setDriveConnected(false);
+    setIsProfileModalOpen(false); // Close the modal after logout
+    // Optionally, clear any other session-related data or redirect
+  };
+
   const handleReset = () => {
     setAnalysisResult(null);
     setArchitectureGuide(null);
@@ -358,7 +368,10 @@ public class ReservaNotFoundException extends Exception {
     setProposedFiles([]);
   };
 
-  const hasAnyResults = analysisResult || architectureGuide || preSubmissionAudit || sonarQuality;
+  const handleGoBackFromExploreModes = () => {
+    setShowModalitiesPage(false);
+    setCurrentModalitySlug(null); // Navigate back to the main home/campus view
+  };
 
   return (
     <div className="min-h-screen bg-white text-black font-sans antialiased selection:bg-black selection:text-white">
@@ -381,8 +394,8 @@ public class ReservaNotFoundException extends Exception {
       {/* Main Content Area */}
       <main className="pb-16 bg-white">
         
-        {isAnalyzing && (
-      <div className="max-w-2xl mx-auto py-24 px-4 text-center space-y-4 bg-white" aria-live="polite" aria-busy="true">
+        {isAnalyzing ? (
+          <div className="max-w-2xl mx-auto py-24 px-4 text-center space-y-4 bg-white" aria-live="polite" aria-busy="true">
             <div className="w-16 h-16 rounded-3xl bg-black/10 border border-black/30 text-black flex items-center justify-center mx-auto shadow-xl animate-pulse">
               <Loader2 className="w-8 h-8 animate-spin" />
             </div>
@@ -393,9 +406,7 @@ public class ReservaNotFoundException extends Exception {
               Analizando estructura de clases Java, aplicando rúbrica universitaria y generando recomendaciones en código.
             </p>
           </div>
-        )}
-
-        {!isAnalyzing && analysisResult && (
+        ) : analysisResult ? (
           <AnalysisDashboard
             analysis={analysisResult}
             noFiles={noFiles}
@@ -405,36 +416,28 @@ public class ReservaNotFoundException extends Exception {
             onApplyProposal={handleApplyProposal}
             proposedFiles={proposedFiles}
           />
-        )}
-
-        {!isAnalyzing && !analysisResult && architectureGuide && (
+        ) : architectureGuide ? (
           <ArchitectureGuideView
             guide={architectureGuide}
             onReset={handleReset}
             onSaveSession={handleSaveCurrentSession}
             onOpenTutor={(query) => setTutorModalQuery(query)}
           />
-        )}
-
-        {!isAnalyzing && !analysisResult && !architectureGuide && preSubmissionAudit && (
-          <PreSubmissionAuditView
+        ) : preSubmissionAudit ? (
+          <PreSubmissionAuditView // Corrected component name
             audit={preSubmissionAudit}
             onReset={handleReset}
             onSaveSession={handleSaveCurrentSession}
             onOpenTutor={(query) => setTutorModalQuery(query)}
           />
-        )}
-
-        {!isAnalyzing && !analysisResult && !architectureGuide && !preSubmissionAudit && sonarQuality && (
+        ) : sonarQuality ? (
           <SonarQualityView
             sonar={sonarQuality}
             onReset={handleReset}
             onSaveSession={handleSaveCurrentSession}
             onOpenTutor={(query) => setTutorModalQuery(query)}
           />
-        )}
-
-        {!isAnalyzing && !hasAnyResults && (
+        ) : ( // This is the 'else' for the entire chain, covering !isAnalyzing && !hasAnyResults
           <>
             {currentModalitySlug === 'desde-cero' && activeMode === 'ARCHITECTURE_NOOB' && (
               <DesdeCeroPage
@@ -443,11 +446,10 @@ public class ReservaNotFoundException extends Exception {
                   setCurrentModalitySlug(null);
                   setShowModalitiesPage(true);
                 }}
-                onStartAnalysis={handleStartAnalysis}
+                onStartAnalysis={(files: JavaFile[]) => handleStartAnalysis(files, [], '', {})}
                 isAnalyzing={isAnalyzing}
               />
             )}
-
             {currentModalitySlug === 'antes-de-entregar' && activeMode === 'PRE_SUBMISSION_AUDIT' && (
               <AntesDeEntregarPage
                 onBack={() => {
@@ -455,11 +457,10 @@ public class ReservaNotFoundException extends Exception {
                   setCurrentModalitySlug(null);
                   setShowModalitiesPage(true);
                 }}
-                onStartAnalysis={handleStartAnalysis}
+                onStartAnalysis={(files: JavaFile[]) => handleStartAnalysis(files, [], '', {})}
                 isAnalyzing={isAnalyzing}
               />
             )}
-
             {currentModalitySlug === 'corregir-con-feedback' && activeMode === 'FEEDBACK_REVISION' && (
               <CorregirConFeedbackPage
                 onBack={() => {
@@ -467,7 +468,7 @@ public class ReservaNotFoundException extends Exception {
                   setCurrentModalitySlug(null);
                   setShowModalitiesPage(true);
                 }}
-                onStartAnalysis={(files, refinementValues) =>
+                onStartAnalysis={async (files: JavaFile[], refinementValues: { fixedFiles: JavaFile[], teacherDoc: string }) =>
                   handleStartAnalysis(
                     files, // Corresponds to inputNo for FEEDBACK_REVISION
                     refinementValues.fixedFiles, // Corresponds to inputFixed
@@ -478,7 +479,6 @@ public class ReservaNotFoundException extends Exception {
                 isAnalyzing={isAnalyzing}
               />
             )}
-
             {currentModalitySlug === 'buenas-practicas' && activeMode === 'SONAR_QUALITY' && (
               <BuenasPracticasPage
                 onBack={() => {
@@ -486,30 +486,16 @@ public class ReservaNotFoundException extends Exception {
                   setCurrentModalitySlug(null);
                   setShowModalitiesPage(true);
                 }}
-                onStartAnalysis={handleStartAnalysis}
+                onStartAnalysis={(files: JavaFile[]) => handleStartAnalysis(files, [], '', {})}
                 isAnalyzing={isAnalyzing}
               />
             )}
-
-            {showModalitiesPage && !currentModalitySlug && (
-              <ModesPage
-                onSelectMode={handleSelectMode}
-                onNavigateToMode={(modeSlug) => {
-                  // FASE 3: Route to ModeDetailPage
-                  // For now, just set active mode
-                  const modeMap: Record<string, StudentPersonaMode> = {
-                    'feedback-revision': 'FEEDBACK_REVISION',
-                    'architecture-noob': 'ARCHITECTURE_NOOB',
-                    'pre-submission-audit': 'PRE_SUBMISSION_AUDIT',
-                    'sonar-quality': 'SONAR_QUALITY',
-                  };
-                  if (modeMap[modeSlug]) {
-                    handleSelectMode(modeMap[modeSlug]);
-                  }
-                }}
+            {showModalitiesPage && !currentModalitySlug && ( // This block now uses ExploreModesPage
+              <ExploreModesPage
+                navigateToApp={handleSelectMode} // When a mode is selected, it's essentially navigating to the app for that mode
+                goBack={handleGoBackFromExploreModes}
               />
             )}
-
             {!showModalitiesPage && !currentModalitySlug && (
               <HomePage
                 activeMode={activeMode}
@@ -568,6 +554,7 @@ public class ReservaNotFoundException extends Exception {
           user={userProfile}
           onUpdateUser={(updated) => setUserProfile(updated)}
           onLoadSavedSession={handleLoadSavedSession}
+          onLogout={handleLogout}
         />
       )}
 

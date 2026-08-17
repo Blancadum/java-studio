@@ -1,36 +1,31 @@
-// generateImprovedFilePrompt.ts
+import { ImprovementProposal } from '../../src/data/types';
 
 export function getGenerateImprovedFilePrompt(
   fileTarget: string,
   currentCode: string,
-  proposalsToApply: any[],
-  teacherDoc?: string
+  proposalsToApply: ImprovementProposal[],
+  teacherDoc: string
 ): string {
   const proposalsText = proposalsToApply
-    .map(p => `- ${p.issueTitle}: ${p.explanation}\nCambio: ${p.originalCode} → ${p.proposedCode}`)
-    .join('\n\n');
+    .map(p => `- ${p.issueTitle}: ${p.description}. Propuesta: ${p.proposedCode}`)
+    .join('\n');
 
-  return `Eres un experto en Java II y refactorización de código universitario.
+  return `
+Eres un experto en refactorización de código Java.
+Tu tarea es aplicar una o más propuestas de mejora a un archivo de código existente.
 
-Tienes el siguiente archivo Java que necesita mejoras:
+Archivo a modificar: ${fileTarget}
 
-ARCHIVO: ${fileTarget}
-CÓDIGO ACTUAL:
+Código actual del archivo:
 \`\`\`java
 ${currentCode}
 \`\`\`
 
-${teacherDoc ? `NOTAS DEL PROFESOR:\n${teacherDoc}\n\n` : ''}
-
-MEJORAS A APLICAR:
+Propuestas de mejora a aplicar:
 ${proposalsText}
 
-Genera el archivo Java completo con TODAS las mejoras aplicadas correctamente.
-El código debe:
-- Compilar sin errores
-- Mantener la lógica original
-- Aplicar las mejoras indicadas
-- Seguir buenas prácticas POO
+${teacherDoc ? `Contexto adicional (feedback del profesor):\n${teacherDoc}` : ''}
 
-Devuelve ÚNICAMENTE el código Java limpio, sin explicaciones ni markdown.`;
+Devuelve ÚNICAMENTE el código Java completo del archivo ${fileTarget} con las mejoras aplicadas. No incluyas explicaciones ni la sintaxis de markdown \`\`\`java.
+`;
 }

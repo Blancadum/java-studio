@@ -1,0 +1,14 @@
+/* src/components/common/DocArticle.module.css */
+
+.article {
+  @apply border-b border-gray-200 pb-8 last:border-none last:pb-0; /* Keep this */
+}
+
+.title {
+  @apply text-2xl font-semibold mb-4; /* Keep this */
+}
+
+.content {
+  @apply text-gray-600; /* Keep this */
+  /* Add more specific styles for p, ul, li, strong, code within content if needed */
+}

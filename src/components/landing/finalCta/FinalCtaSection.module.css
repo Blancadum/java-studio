@@ -1,0 +1,39 @@
+/* src/components/landing/finalCta/FinalCtaSection.module.css */
+
+.finalCtaSection {
+  @apply py-20 px-6 text-center bg-gradient-to-b from-slate-50 to-white;
+}
+
+.finalCtaBadge {
+  @apply inline-flex items-center gap-2 px-4 py-2 bg-pink-100 text-pink-800 rounded-full text-sm font-medium mb-6;
+}
+
+.finalCtaBadgeIcon {
+  @apply w-3.5 h-3.5 text-pink-600;
+}
+
+.finalCtaTitle {
+  @apply text-4xl md:text-5xl font-bold text-slate-900 mb-4;
+}
+
+.finalCtaSubtitle {
+  @apply text-xl text-slate-600 max-w-2xl mx-auto mb-8;
+}
+
+.finalCtaActions {
+  @apply flex flex-col sm:flex-row items-center justify-center gap-4;
+}
+
+.communityLink {
+  @apply inline-flex items-center gap-2 px-6 py-2.5 text-slate-700 hover:text-purple-600 transition-colors font-medium;
+}
+
+.communityLinkIcon {
+  @apply w-4 h-4 text-purple-600;
+}
+
+.communityLinkExternalIcon {
+  @apply w-3 h-3;
+}
+
+/* Styles for ChipButton are handled by the ChipButton component itself */

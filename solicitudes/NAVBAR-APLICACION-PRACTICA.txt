@@ -1,0 +1,7 @@
+" Corregir con Feedback del Profe
+Mejora iterativa basada en retroalimentación real. Entiende qué te pedía el profesor y cómo tu código responde.
+
+botón (Empezar Análisis)
+..."
+
+Todo el contenido que hay en este fichero debe ir a parte, es la landing principal de la apicación. De ahí deben colgar las páginas de los modos específicos con las aplicaciones específicas. No pueden ir dentro e la home, deben ocupar un nivel de profundidad despues de la home. Y esta página en concreto debe estar enlazada en el nav principal superior. 

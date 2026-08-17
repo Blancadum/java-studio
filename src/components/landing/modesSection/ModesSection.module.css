@@ -1,0 +1,65 @@
+/* src/components/landing/modesSection/ModesSection.module.css */
+
+.section {
+  @apply py-20 px-6 bg-gradient-to-b from-white to-slate-50;
+}
+
+.container {
+  @apply max-w-6xl mx-auto;
+}
+
+.headerWrapper {
+  @apply text-center mb-16;
+}
+
+.headerTitle {
+  @apply text-4xl md:text-5xl font-bold text-slate-900 mb-4;
+}
+
+.headerSubtitle {
+  @apply text-xl text-slate-600 max-w-2xl mx-auto;
+}
+
+.modesGrid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.modeCard {
+  @apply relative bg-white rounded-2xl border border-slate-200 overflow-hidden hover:border-purple-300 hover:shadow-xl transition-all duration-300; /* Removed 'group' from @apply */
+}
+
+.modeCardGradientBar {
+  @apply absolute top-0 left-0 right-0 h-1 bg-gradient-to-r; /* Dynamic colors will be applied in JSX */
+}
+
+.modeCardContent {
+  @apply p-8;
+}
+
+.modeCardTitle {
+  @apply text-2xl font-bold text-slate-900 mb-2;
+}
+
+.modeCardSubtitle {
+  @apply text-sm font-semibold text-purple-600 mb-4 uppercase tracking-wide;
+}
+
+.modeCardDescription {
+  @apply text-slate-700 leading-relaxed mb-6;
+}
+
+.modeCardButton {
+  @apply inline-flex items-center gap-2 px-6 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-lg transition-all group-hover:scale-105;
+}
+
+.modeCardButtonIcon {
+  @apply w-4 h-4 group-hover:translate-x-1 transition-transform;
+}
+
+.footerNoteWrapper {
+  @apply mt-16 text-center;
+}
+
+.footerNoteText {
+  @apply text-slate-600 text-sm;
+}

@@ -1,67 +1,13 @@
-@import "tailwindcss";
-
-@theme {
-  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  --font-serif: "Source Serif 4", "Instrument Serif", Georgia, "Times New Roman", serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  --color-primary: #000000;
-  --color-secondary: #ffffff;
-  --color-text: #1a1a1a;
-  --color-text-light: #666666;
-  --color-border: #e5e5e5;
-  --color-bg: #fafafa;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
-  body {
-    font-family: var(--font-sans);
-    @apply bg-white text-slate-900 antialiased selection:bg-slate-900 selection:text-white;
+  * {
+    @apply antialiased;
   }
-
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 800;
-    letter-spacing: -0.02em;
+  
+  html {
+    font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   }
-
-  button {
-    @apply transition-all duration-200;
-  }
-}
-
-.font-serif {
-  font-family: var(--font-serif);
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fadeIn {
-  animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Custom Scrollbar for Code Viewers and Modals */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cccccc;
-  border-radius: 9999px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #999999;
 }

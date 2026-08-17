@@ -1,0 +1,30 @@
+.section {
+  @apply py-16 px-6 bg-slate-50;
+}
+
+.container {
+  @apply max-w-4xl mx-auto;
+}
+
+.title {
+  @apply text-3xl font-bold text-slate-900 mb-8 text-center;
+}
+
+.grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+.card {
+  @apply p-6 bg-white rounded-lg border border-slate-200;
+}
+
+.cardFull {
+  @apply md:col-span-2;
+}
+
+.cardTitle {
+  @apply font-bold text-lg text-purple-600 mb-2;
+}
+
+.cardDesc {
+  @apply text-sm text-slate-600;

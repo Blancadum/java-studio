@@ -1,0 +1,161 @@
+Hay un elemento dentro de algunas páginas (div) con estilos css inline que me gustaría poder pasar a componente. Se trata de (te pongo un ejemplo): 
+    <div className="min-h-screen bg-white text-black px-4 py-12 md:py-24">
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">Contacto</h1>
+        <p className="text-gray-700 text-lg mb-12">
+          ¿Preguntas, sugerencias o reportes? Nos encantaría escucharte.
+        </p>
+
+        <div className="grid md:grid-cols-2 gap-12">
+
+
+
+cabe la posibilidad de pasarlo a un componente y limpiar los estilos para que se vean en una hoja de estilos propia?
+
+
+
+Otro elemento (en PageRenderer.tsx): 
+
+"// If analyzing, show loader regardless of page
+  if (isAnalyzing) {
+    return (
+      <div className="max-w-2xl mx-auto py-24 px-4 text-center space-y-4 bg-white" aria-live="polite" aria-busy="true">
+        <div className="w-16 h-16 rounded-3xl bg-black/10 border border-black/30 text-black flex items-center justify-center mx-auto shadow-xl animate-pulse">
+          <Loader2 className="w-8 h-8 animate-spin" />
+        </div>
+        <h3 className="text-xl font-bold text-black">
+          Ejecutando Inteligencia Artificial en Modo: <span className="text-black">{activeMode}</span>
+        </h3>
+        <p className="text-xs text-gray-600 max-w-md mx-auto">
+          Analizando estructura de clases Java, aplicando rúbrica universitaria y generando recomendaciones en código.
+        </p>
+      </div>
+    );
+  }
+"
+
+Este tipo de elementos y prácticas no se alinean con las buenas prácticas de código reutilizable y aislado, no ofrecen versatilidad a la hora de corregir el código ni favorece la limpieza. Por eso necesito que no lo vuelvas a hacer así, que siempre que puedas, agrupes los ficheros según su función o según la parte que construye en el contexto de la página. Y que evites el uso del código css inline. 
+
+
+Otro ejemplo: landingpage:
+
+
+
+<div className="w-full bg-white text-black overflow-hidden">
+
+
+
+...
+
+// If analyzing, show loader regardless of page
+  if (isAnalyzing) {
+    return (
+      <div className="max-w-2xl mx-auto py-24 px-4 text-center space-y-4 bg-white" aria-live="polite" aria-busy="true">
+        <div className="w-16 h-16 rounded-3xl bg-black/10 border border-black/30 text-black flex items-center justify-center mx-auto shadow-xl animate-pulse">
+          <Loader2 className="w-8 h-8 animate-spin" />
+        </div>
+        <h3 className="text-xl font-bold text-black">
+          Ejecutando Inteligencia Artificial en Modo: <span className="text-black">{activeMode}</span>
+        </h3>
+        <p className="text-xs text-gray-600 max-w-md mx-auto">
+          Analizando estructura de clases Java, aplicando rúbrica universitaria y generando recomendaciones en código.
+        </p>
+      </div>
+    );
+  }
+
+  // If we have results, show the analysis view (regardless of currentPage)
+  if (hasAnyResults) {
+    if (analysisResult) {
+      return <AnalysisDashboard analysis={analysisResult} noFiles={noFiles} fixedFiles={fixedFiles} teacherDoc={teacherDoc} onReset={handleReset} onApplyProposal={handleApplyProposal} proposedFiles={proposedFiles} />;
+    }
+    if (architectureGuide) {
+      return <ArchitectureGuideView guide={architectureGuide} onReset={handleReset} onSaveSession={handleSaveCurrentSession} onOpenTutor={(query) => setTutorModalQuery(query)} />;
+    }
+    if (preSubmissionAudit) {
+      return <PreSubmissionAuditView audit={preSubmissionAudit} onReset={handleReset} onSaveSession={handleSaveCurrentSession} onOpenTutor={(query) => setTutorModalQuery(query)} />;
+    }
+    if (sonarQuality) {
+      return <SonarQualityView sonar={sonarQuality} onReset={handleReset} onSaveSession={handleSaveCurrentSession} onOpenTutor={(query) => setTutorModalQuery(query)} />;
+    }
+  }
+
+  // Page-based rendering (no active analysis)
+  switch (currentPage) {
+    case 'home':
+      return (
+        <LandingPage
+          userProfile={userProfile}
+          onLoadSample={handleLoadSample}
+          onNavigateTo={navigateTo}
+          onOpenAuth={() => setIsAuthModalOpen(true)}
+          onOpenTutorWithQuery={setTutorModalQuery}
+        />
+      );
+
+    case 'campus':
+      return userProfile ? (
+        <CampusPage
+          user={userProfile}
+          activeMode={activeMode}
+          onSelectMode={handleSelectMode}
+          onOpenDriveModal={() => setIsDriveModalOpen(true)}
+          onLoadSample={handleLoadSample}
+          onOpenProfile={() => setIsProfileModalOpen(true)}
+          driveConnected={driveConnected}
+          onConnectDrive={handleConnectDrive}
+          onOpenTutorWithQuery={setTutorModalQuery}
+          onStartAnalysis={handleStartAnalysis}
+          onLoadSession={handleLoadSavedSession}
+          navigateToApp={navigateToApp}
+        />
+      ) : (
+        <LandingPage
+          userProfile={userProfile}
+          onLoadSample={handleLoadSample}
+          onNavigateTo={navigateTo}
+          onOpenAuth={() => setIsAuthModalOpen(true)}
+          onOpenTutorWithQuery={setTutorModalQuery}
+        />
+      );
+
+    case 'app-desde-cero':
+      return <DesdeCeroPage onBack={goBack} onStartAnalysis={handleStartAnalysis} isAnalyzing={isAnalyzing} />;
+
+    case 'app-antes-de-entregar':
+      return <AntesDeEntregarPage onBack={goBack} onStartAnalysis={handleStartAnalysis} isAnalyzing={isAnalyzing} />;
+
+    case 'app-corregir-feedback':
+      return <CorregirConFeedbackPage onBack={goBack} onStartAnalysis={handleStartAnalysis} isAnalyzing={isAnalyzing} />;
+
+    case 'app-buenas-practicas':
+      return <BuenasPracticasPage onBack={goBack} onStartAnalysis={handleStartAnalysis} isAnalyzing={isAnalyzing} />;
+
+    case 'documentation':
+      return <DocumentationPage />;
+
+    case 'mode-detail-buenas-practicas':
+      return <ModeDetailBuenasPracticasPage onGoBack={() => navigateTo('explore-modes')} onStartApp={() => navigateToApp('SONAR_QUALITY')} />;
+
+    case 'mode-detail-antes-de-entregar':
+      return <ModeDetailAntesDeEntregarPage onGoBack={() => navigateTo('explore-modes')} onStartApp={() => navigateToApp('PRE_SUBMISSION_AUDIT')} />;
+
+    case 'mode-detail-desde-cero':
+      return <ModeDetailDesdeCeroPage onGoBack={() => navigateTo('explore-modes')} onStartApp={() => navigateToApp('ARCHITECTURE_NOOB')} />;
+
+    case 'mode-detail-corregir-feedback':
+      return <ModeDetailCorregirFeedbackPage onGoBack={() => navigateTo('explore-modes')} onStartApp={() => navigateToApp('FEEDBACK_REVISION')} />;
+
+    case 'privacy':
+      return <PrivacyPage />;
+
+    case 'terms':
+      return <TermsPage />;
+
+    case 'contact':
+      return <ContactPage />;
+
+  }
+};
+
+Está feo, verdad?

@@ -1,0 +1,28 @@
+/* src/components/common/LegalSection.module.css */
+
+.section {
+  @apply mb-8; /* Add some bottom margin to separate sections */ /* Keep this */
+}
+
+.title {
+  @apply text-2xl font-bold text-slate-900 mb-4 border-b border-slate-200 pb-2; /* Keep this */
+}
+
+/* Styles for children (p, ul, li, strong, a, code) will be inherited or defined by the parent page */
+/* Example for children:
+.section p {
+  @apply text-slate-700 text-sm leading-relaxed mb-4;
+}
+.section ul {
+  @apply list-disc pl-5 space-y-1;
+}
+.section strong {
+  @apply font-semibold text-slate-900;
+}
+.section a {
+  @apply text-pink-600 font-bold hover:underline;
+}
+.section code {
+  @apply font-mono text-xs;
+}
+*/

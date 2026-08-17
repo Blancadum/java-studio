@@ -1,0 +1,41 @@
+/* src/components/landing/heroSection/HeroSection.module.css */
+
+.section {
+  @apply w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-white to-gray-50 py-20 px-4;
+}
+
+.container {
+  @apply max-w-4xl mx-auto text-center space-y-6;
+}
+
+.badge {
+  @apply inline-flex items-center gap-2 px-4 py-2 bg-purple-100 text-purple-900 rounded-full text-sm font-medium;
+}
+
+.badgeIcon {
+  @apply w-4 h-4;
+}
+
+.title {
+  @apply text-5xl md:text-6xl font-bold text-black leading-tight;
+}
+
+.titleHighlight {
+  @apply bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent;
+}
+
+.subtitle {
+  @apply text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed;
+}
+
+.ctaWrapper {
+  @apply flex justify-center pt-4;
+}
+
+.ctaButton {
+  @apply inline-flex items-center gap-2 px-8 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors;
+}
+
+.ctaIcon {
+  @apply w-4 h-4;
+}

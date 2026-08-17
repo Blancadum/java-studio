@@ -193,3 +193,27 @@ export interface UserProfile {
   };
   sessions: SavedSession[];
 }
+
+// Interface for legal content sections
+export interface LegalSectionItem {
+  title: string;
+  content: React.ReactNode;
+}
+
+// Define PageType as a union of known page strings
+export type PageType =
+  | 'home'
+  | 'campus'
+  | 'app-desde-cero'
+  | 'app-antes-de-entregar'
+  | 'app-corregir-feedback'
+  | 'app-buenas-practicas'
+  | 'documentation'
+  | 'mode-detail-buenas-practicas'
+  | 'mode-detail-antes-de-entregar'
+  | 'mode-detail-desde-cero'
+  | 'mode-detail-corregir-feedback'
+  | 'privacy'
+  | 'terms'
+  | 'contact'
+  | 'explore-modes'; // Added explore-modes

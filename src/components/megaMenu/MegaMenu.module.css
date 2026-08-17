@@ -1,0 +1,12 @@
+@reference tailwindcss;
+.megaMenu { @apply fixed inset-0 bg-black/50 backdrop-blur-sm z-40 flex items-start justify-center pt-20; }
+.megaMenuContent { @apply bg-white rounded-2xl shadow-2xl max-w-5xl w-full max-h-[70vh] overflow-y-auto; }
+.megaMenuGrid { @apply grid grid-cols-1 md:grid-cols-3 gap-12 p-8; }
+.menuColumn { @apply space-y-4; }
+.columnTitle { @apply text-sm font-bold text-slate-900 uppercase tracking-wider; }
+.linksList { @apply space-y-3; }
+.menuLink { @apply block cursor-pointer; }
+.menuLinkText { @apply text-sm text-slate-700 hover:text-purple-600 font-medium transition-colors; }
+.menuLinkDesc { @apply text-xs text-slate-500 group-hover:text-slate-700 mt-1; }
+.megaMenuFooter { @apply border-t border-slate-200 px-8 py-4 flex items-center justify-between; }
+.closeButton { @apply p-2 hover:bg-slate-100 rounded-lg transition-colors; }

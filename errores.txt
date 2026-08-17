@@ -1,0 +1,86 @@
+Warning: JWT_SECRET is not set. Using a default for development.
+Server Java II Review Studio listening on port 3000
+1:19:33 AM [vite] Internal server error: /Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/src/AppContent.tsx: Expected corresponding JSX closing tag for <div>. (552:6)
+
+  550 |           </>
+  551 |         )}
+> 552 |       </main>
+      |       ^
+  553 |
+  554 |       {/* Floating JavaBot Onboarding Router Widget */}
+  555 |       <JavaBotOnboardingWidget
+  Plugin: vite:react-babel
+  File: /Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/src/AppContent.tsx:552:6
+  550|            </>
+  551|          )}
+  552|        </main>
+     |        ^
+  553|  
+  554|        {/* Floating JavaBot Onboarding Router Widget */}
+      at toParseError (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parse-error.ts:96:45)
+      at TypeScriptParserMixin.raise (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/tokenizer/index.ts:1504:19)
+      at TypeScriptParserMixin.jsxParseElementAt (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/plugins/jsx/index.ts:527:18)
+      at TypeScriptParserMixin.jsxParseElement (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/plugins/jsx/index.ts:559:19)
+      at TypeScriptParserMixin.parseExprAtom (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/plugins/jsx/index.ts:573:21)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:742:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:721:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:683:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/plugins/typescript/index.ts:3893:20)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:417:14)
+      at TypeScriptParserMixin.parseExprOps (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:429:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:384:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:301:21)
+      at fn (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/plugins/typescript/index.ts:3745:23)
+      at TypeScriptParserMixin.tryParse (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/util.ts:174:20)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/plugins/typescript/index.ts:3744:20)
+      at callback (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:257:12)
+      at TypeScriptParserMixin.allowInAnd (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:3227:12)
+      at TypeScriptParserMixin.parseMaybeAssignAllowIn (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:256:17)
+      at TypeScriptParserMixin.parseMaybeAssignAllowInOrVoidPattern (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:3341:17)
+      at TypeScriptParserMixin.parseParenAndDistinguishExpression (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:1852:16)
+      at TypeScriptParserMixin.parseExprAtom (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:1197:21)
+      at TypeScriptParserMixin.parseExprAtom (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/plugins/jsx/index.ts:583:22)
+      at TypeScriptParserMixin.parseExprSubscripts (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:742:23)
+      at TypeScriptParserMixin.parseUpdate (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:721:21)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:683:23)
+      at TypeScriptParserMixin.parseMaybeUnary (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/plugins/typescript/index.ts:3893:20)
+      at TypeScriptParserMixin.parseMaybeUnaryOrPrivate (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:417:14)
+      at TypeScriptParserMixin.parseExprOps (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:429:23)
+      at TypeScriptParserMixin.parseMaybeConditional (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:384:23)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:301:21)
+      at TypeScriptParserMixin.parseMaybeAssign (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/plugins/typescript/index.ts:3764:22)
+      at TypeScriptParserMixin.parseExpressionBase (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:226:23)
+      at callback (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:217:39)
+      at TypeScriptParserMixin.allowInAnd (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:3222:16)
+      at TypeScriptParserMixin.parseExpression (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:217:17)
+      at TypeScriptParserMixin.parseReturnStatement (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/statement.ts:1115:28)
+      at TypeScriptParserMixin.parseStatementContent (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/statement.ts:543:21)
+      at TypeScriptParserMixin.parseStatementContent (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/plugins/typescript/index.ts:3220:20)
+      at TypeScriptParserMixin.parseStatementLike (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/statement.ts:482:17)
+      at TypeScriptParserMixin.parseStatementListItem (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/statement.ts:431:17)
+      at TypeScriptParserMixin.parseBlockOrModuleBlockBody (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/statement.ts:1444:16)
+      at TypeScriptParserMixin.parseBlockBody (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/statement.ts:1417:10)
+      at TypeScriptParserMixin.parseBlock (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/statement.ts:1385:10)
+      at TypeScriptParserMixin.parseFunctionBody (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:2651:24)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:2620:10)
+      at TypeScriptParserMixin.parseFunctionBodyAndFinish (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/plugins/typescript/index.ts:2609:20)
+      at callback (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/statement.ts:1695:12)
+      at TypeScriptParserMixin.withSmartMixTopicForbiddingContext (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/expression.ts:3201:14)
+      at TypeScriptParserMixin.parseFunction (/Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/node_modules/@babel/parser/src/parser/statement.ts:1693:10)
+1:19:33 AM [vite] (client) Pre-transform error: /Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/src/AppContent.tsx: Expected corresponding JSX closing tag for <div>. (552:6)
+
+  550 |           </>
+  551 |         )}
+> 552 |       </main>
+      |       ^
+  553 |
+  554 |       {/* Floating JavaBot Onboarding Router Widget */}
+  555 |       <JavaBotOnboardingWidget
+  Plugin: vite:react-babel
+  File: /Users/admin/Documents/GESTORIA/PROYECTOS/java-studio/src/AppContent.tsx:552:6
+  550|            </>
+  551|          )}
+  552|        </main>
+     |        ^
+  553|  
+  554|        {/* Floating JavaBot Onboarding Router Widget */}
